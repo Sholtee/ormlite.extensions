@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-[assembly: InternalsVisibleToAttribute("Solti.Utils.OrmLite.Extensions.Internals.BulkedDbConnection.IDbCommandInterceptor_System.Data.IDbCommand_Proxy")]
+[assembly: InternalsVisibleTo("Solti.Utils.OrmLite.Extensions.Internals.BulkedDbConnection.IDbCommandInterceptor_System.Data.IDbCommand_Proxy")]
 
 namespace Solti.Utils.OrmLite.Extensions.Internals
 {
