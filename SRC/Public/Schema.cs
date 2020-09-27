@@ -64,10 +64,14 @@ namespace Solti.Utils.OrmLite.Extensions
         /// </summary>
         public void CreateTablesCascaded() 
         {
+            using IBulkedDbConnection connection = Connection.CreateBulkedDbConnection();
+
             foreach (Type table in Tables) 
             {
                 Connection.CreateTableIfNotExists(table);
             }
+
+            connection.Flush();
         }
 
         /// <summary>
@@ -75,10 +79,14 @@ namespace Solti.Utils.OrmLite.Extensions
         /// </summary>
         public void DropTablesCascaded() 
         {
+            using IBulkedDbConnection connection = Connection.CreateBulkedDbConnection();
+
             foreach (Type table in Tables.Reverse())
             {
                 Connection.DropTable(table);
             }
+
+            connection.Flush();
         }
     }
 }
