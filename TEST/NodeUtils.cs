@@ -28,6 +28,7 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         [Order(Value = 0)]
         private class Node0
         {
+            public int Irrelevant { get; }
         }
 
         [Order(Value = 0)]
@@ -50,6 +51,8 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
 
             [References(typeof(Node2_ReferencingNode1))]
             public int Node2 { get; }
+
+            public int Irrelevant { get; }
         }
 
         public static IEnumerable<ICollection<Type>> Nodes 
@@ -85,6 +88,8 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         {
             [References(typeof(SelfReferencingNode))]
             public int Self { get; }
+
+            public int Irrelevant { get; }
         }
 
         public class SelfReferencingNode1 
@@ -95,6 +100,8 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
 
         public class SelfReferencingNode2
         {
+            public int Irrelevant { get; }
+
             [References(typeof(SelfReferencingNode1))]
             public int Node1 { get; }
         }
