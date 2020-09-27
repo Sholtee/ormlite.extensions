@@ -13,7 +13,9 @@ using ServiceStack.DataAnnotations;
 
 namespace Solti.Utils.OrmLite.Extensions.Tests
 {
-    using Internals;
+    using Properties;
+
+    using static Internals.NodeUtils;
 
     [TestFixture]
     public class NodeUtilsTests
@@ -28,21 +30,20 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         {
         }
 
-
         [Order(Value = 0)]
         private class Node1 
         { 
         }
 
         [Order(Value = 1)]
-        public class Node2_ReferencingNode1 
+        private class Node2_ReferencingNode1 
         {
             [References(typeof(Node1))]
             public int Node1 { get; }
         }
 
         [Order(Value = 2)]
-        public class Node3_ReferencingNode1AndNode2
+        private class Node3_ReferencingNode1AndNode2
         {
             [References(typeof(Node1))]
             public int Node1 { get; }
@@ -73,8 +74,43 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         [TestCaseSource(nameof(Nodes))]
         public void Flatten_ShouldSort(ICollection<Type> nodes) 
         {
-            ICollection<Type> result = NodeUtils.Flatten(nodes);
+            ICollection<Type> result = Flatten(nodes);
             Assert.That(result.SequenceEqual(nodes.Distinct().OrderBy(node => node.GetCustomAttribute<OrderAttribute>().Value)));
         }
+
+        [Test]
+        public void Flatten_ShouldThrowOnUnregisteredNode() => Assert.Throws<InvalidOperationException>(() => Flatten(new[] { typeof(Node2_ReferencingNode1) }), Resources.UNKNOWN_NODE);
+
+        private class SelfReferencingNode 
+        {
+            [References(typeof(SelfReferencingNode))]
+            public int Self { get; }
+        }
+
+        public class SelfReferencingNode1 
+        {
+            [References(typeof(SelfReferencingNode2))]
+            public int Node2 { get; }
+        }
+
+        public class SelfReferencingNode2
+        {
+            [References(typeof(SelfReferencingNode1))]
+            public int Node1 { get; }
+        }
+
+        public static IEnumerable<ICollection<Type>> CircularNodes
+        {
+            get 
+            {
+                yield return new[] { typeof(Node0), typeof(SelfReferencingNode) };
+
+                yield return new[] { typeof(SelfReferencingNode1), typeof(SelfReferencingNode2) };
+                yield return new[] { typeof(SelfReferencingNode2), typeof(SelfReferencingNode1) };
+            }
+        }
+
+        [TestCaseSource(nameof(CircularNodes))]
+        public void Flatten_ShouldThrowOnCircularReference(ICollection<Type> nodes) => Assert.Throws<InvalidOperationException>(() => Flatten(nodes), Resources.CIRCULAR_REFERENCE);
     }
 }

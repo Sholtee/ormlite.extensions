@@ -77,7 +77,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                         Index = index
                     })
                     .Where(x => x.Item == currentPath.Peek())
-                    .LastOrDefault()?.Index ?? -1;
+                    .FirstOrDefault()?.Index ?? -1;
 
                 if (firstIndex < currentPath.Count - 1)
                     throw new InvalidOperationException(string.Format(Resources.Culture, Resources.CIRCULAR_REFERENCE, string.Join(" -> ", path.Skip(firstIndex))));
@@ -89,7 +89,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                 {
                     if (reference == null) continue;
 
-                    if (!nodes.Contains(node))
+                    if (!nodes.Contains(reference))
                         throw new InvalidOperationException(string.Format(Resources.Culture, Resources.UNKNOWN_NODE, node));
 
                     yield return reference;
