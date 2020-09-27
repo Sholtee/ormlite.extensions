@@ -66,7 +66,7 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         }
 
         [Test]
-        public void DropTablesCascaded_ShouldCreateTheTables()
+        public void DropTablesCascaded_ShouldDropTheTables()
         {
             var schema = new Schema(Connection, typeof(SchemaTests).Assembly);
 
