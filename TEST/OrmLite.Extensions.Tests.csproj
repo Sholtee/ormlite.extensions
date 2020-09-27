@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -22,14 +22,12 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.*" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.*" />
     <PackageReference Include="NunitXml.TestLogger" Version="2.*" />
+    <PackageReference Include="ServiceStack.OrmLite.Sqlite.Core" Version="5.*" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.*" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SRC\OrmLite.Extensions.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="ServiceStack.OrmLite.Sqlite.Core" Version="5.*" />
   </ItemGroup>
 
 </Project>
