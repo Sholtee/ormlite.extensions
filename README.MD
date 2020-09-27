@@ -1,0 +1,2 @@
+# Solti.Utils.OrmLite.Extensions [![Build status](https://ci.appveyor.com/api/projects/status/vk8y761wbgwtusn4/branch/master?svg=true)](https://ci.appveyor.com/project/Sholtee/ormlite-extensions/branch/master) ![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/sholtee/ormlite-extensions/master) [![Coverage Status](https://coveralls.io/repos/github/Sholtee/ormlite.extensions/badge.svg?branch=master)](https://coveralls.io/github/Sholtee/ormlite.extensions?branch=master)
+> [ServiceStack.OrmLite](https://github.com/ServiceStack/ServiceStack.OrmLite ) extensions
