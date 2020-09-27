@@ -35,6 +35,44 @@ references:
   commentId: T:Solti.Utils.OrmLite.Extensions.DataTableAttribute
   fullName: Solti.Utils.OrmLite.Extensions.DataTableAttribute
   nameWithType: DataTableAttribute
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection
+  name: IBulkedDbConnection
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection
+  nameWithType: IBulkedDbConnection
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
+  name: Flush()
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_Flush
+  commentId: M:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush()
+  nameWithType: IBulkedDbConnection.Flush()
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush*
+  name: Flush
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_Flush_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
+  nameWithType: IBulkedDbConnection.Flush
+- uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
+  name: IDbConnectionExtensions
+  href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
+  fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
+  nameWithType: IDbConnectionExtensions
+- uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(System.Data.IDbConnection)
+  name: CreateBulkedDbConnection(IDbConnection)
+  href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html#Solti_Utils_OrmLite_Extensions_IDbConnectionExtensions_CreateBulkedDbConnection_System_Data_IDbConnection_
+  commentId: M:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(System.Data.IDbConnection)
+  fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(System.Data.IDbConnection)
+  nameWithType: IDbConnectionExtensions.CreateBulkedDbConnection(IDbConnection)
+- uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection*
+  name: CreateBulkedDbConnection
+  href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html#Solti_Utils_OrmLite_Extensions_IDbConnectionExtensions_CreateBulkedDbConnection_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection
+  nameWithType: IDbConnectionExtensions.CreateBulkedDbConnection
 - uid: Solti.Utils.OrmLite.Extensions.Schema
   name: Schema
   href: Solti.Utils.OrmLite.Extensions.Schema.html
