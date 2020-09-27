@@ -5,7 +5,7 @@
   "vendor": "\\Vendor",
   "tests": "\\TEST\\OrmLite.Extensions.Tests.csproj",
   "artifacts": "\\Artifacts",
-  "coveragefilter": "+[Solti.Utils.OrmLite.Extensions*]* -[Solti.Utils.OrmLite.Extensions.Tests]*",
+  "coveragefilter": "+[Solti.Utils.OrmLite.Extensions*]* -[Solti.Utils.OrmLite.Extensions.Tests]* -[*]*.Properties.*",
   "perftests": "\\PERF\\OrmLite.Extensions.Perf.csproj",
   "docsbranch": "gh-pages",
   "CI": "AppVeyor"
