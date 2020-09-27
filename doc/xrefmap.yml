@@ -7,6 +7,28 @@ references:
   commentId: N:Solti.Utils.OrmLite.Extensions
   fullName: Solti.Utils.OrmLite.Extensions
   nameWithType: Solti.Utils.OrmLite.Extensions
+- uid: Solti.Utils.OrmLite.Extensions.CommandText
+  name: CommandText
+  href: Solti.Utils.OrmLite.Extensions.CommandText.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.CommandText
+  fullName: Solti.Utils.OrmLite.Extensions.CommandText
+  nameWithType: CommandText
+- uid: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String,System.Data.IDataParameter[])
+  name: Format(String, IDataParameter[])
+  href: Solti.Utils.OrmLite.Extensions.CommandText.html#Solti_Utils_OrmLite_Extensions_CommandText_Format_System_String_System_Data_IDataParameter___
+  commentId: M:Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String,System.Data.IDataParameter[])
+  name.vb: Format(String, IDataParameter())
+  fullName: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String, System.Data.IDataParameter[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String, System.Data.IDataParameter())
+  nameWithType: CommandText.Format(String, IDataParameter[])
+  nameWithType.vb: CommandText.Format(String, IDataParameter())
+- uid: Solti.Utils.OrmLite.Extensions.CommandText.Format*
+  name: Format
+  href: Solti.Utils.OrmLite.Extensions.CommandText.html#Solti_Utils_OrmLite_Extensions_CommandText_Format_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.CommandText.Format
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.CommandText.Format
+  nameWithType: CommandText.Format
 - uid: Solti.Utils.OrmLite.Extensions.DataTableAttribute
   name: DataTableAttribute
   href: Solti.Utils.OrmLite.Extensions.DataTableAttribute.html
