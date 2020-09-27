@@ -87,7 +87,8 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
             {
                 foreach (Type? reference in node.GetProperties().Select(prop => prop.GetCustomAttribute<ReferencesAttribute>()?.Type))
                 {
-                    if (reference == null) continue;
+                    if (reference == null)
+                        continue;
 
                     if (!nodes.Contains(reference))
                         throw new InvalidOperationException(string.Format(Resources.Culture, Resources.UNKNOWN_NODE, node));

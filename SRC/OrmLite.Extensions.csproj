@@ -58,10 +58,6 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Public\" />
-  </ItemGroup>
-
   <PropertyGroup>
     <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <Product>OrmLite.Extensions</Product>
