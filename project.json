@@ -1,0 +1,12 @@
+{
+  "bin": "\\BIN",
+  "solution": "\\OrmLite.Extensions.sln",
+  "app": "\\SRC\\OrmLite.Extensions.csproj",
+  "vendor": "\\Vendor",
+  "tests": "\\TEST\\OrmLite.Extensions.csproj",
+  "artifacts": "\\Artifacts",
+  "coveragefilter": "+[Solti.Utils.OrmLite.Extensions*]* -[Solti.Utils.OrmLite.Extensions.Tests]*",
+  "perftests": "\\PERF\\OrmLite.Extensions.Perf.csproj",
+  "docsbranch": "gh-pages",
+  "CI": "AppVeyor"
+}

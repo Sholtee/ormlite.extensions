@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <Authors>Denes Solti</Authors>
+    <Version>1.0.0</Version>
+    <AssemblyName>Solti.Utils.OrmLite.Extensions</AssemblyName>
+    <RootNamespace>Solti.Utils.OrmLite.Extensions</RootNamespace>
+    <Configurations>Debug;Release</Configurations>
+    <LangVersion>8</LangVersion>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>CA2007</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <OutputPath>..\BIN\$(Configuration)</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <OutputPath>..\BIN\$(Configuration)</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(CI)' == ''">
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.*">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="docfx.json" />
+    <None Remove="index.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icon.png" Pack="true" PackagePath=""/>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <Product>OrmLite.Extensions</Product>
+    <Description>OrmLite extensions</Description>
+    <PackageId>Solti.Utils.OrmLite.Extensions</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>OrmLite</PackageTags>
+    <PackageReleaseNotes>See https://github.com/Sholtee/ormlite.extensions/blob/master/history.md </PackageReleaseNotes>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Sholtee/ormlite.extensions</RepositoryUrl>
+    <RepositoryBranch>$(CurrentBranch)</RepositoryBranch>
+  </PropertyGroup>
+
+</Project>
