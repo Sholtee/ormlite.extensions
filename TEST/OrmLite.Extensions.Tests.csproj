@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <AssemblyName>Solti.Utils.OrmLite.Extensions.Tests</AssemblyName>
+    <RootNamespace>Solti.Utils.OrmLite.Extensions.Tests</RootNamespace>
+    <Configurations>Debug</Configurations>
+    <OutputType>Library</OutputType>
+    <Configurations>Debug</Configurations>
+    <OutputPath>..\BIN\$(Configuration)</OutputPath>
+  </PropertyGroup>
+
+  <!--OpenCover requires .NET Core 2.2 while Test Explorer needs 3.X-->
+  <PropertyGroup Condition="'$(CI)'==''">
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.*" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.*" />
+    <PackageReference Include="NunitXml.TestLogger" Version="2.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SRC\OrmLite.Extensions.csproj" />
+  </ItemGroup>
+
+</Project>
