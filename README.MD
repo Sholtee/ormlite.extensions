@@ -36,7 +36,7 @@ private class Table3_ReferencingNode1AndTable2
 var schema = new Schema(Connection, typeof(Table1).Assembly);
 schema.CreateTablesCascaded();
 ...
-schema.DropTablesCascaded()
+schema.DropTablesCascaded();
 ```
 
 ## Bulked write operations
