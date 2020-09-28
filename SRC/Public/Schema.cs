@@ -42,12 +42,7 @@ namespace Solti.Utils.OrmLite.Extensions
             if (tables == null)
                 throw new ArgumentNullException(nameof(tables));
 
-            Tables = NodeUtils.Flatten
-            (
-                tables
-                    .Where(type => type.GetCustomAttribute<DataTableAttribute>(inherit: false) != null)
-                    .ToArray()
-            );
+            Tables = NodeUtils.Flatten(tables);
         }
 
         /// <summary>
@@ -55,7 +50,10 @@ namespace Solti.Utils.OrmLite.Extensions
         /// </summary>
         /// <param name="connection">The database connection</param>
         /// <param name="asmsToSearch">Assemblies that contain the data table definitions.</param>
-        public Schema(IDbConnection connection, params Assembly[] asmsToSearch): this(connection, asmsToSearch.SelectMany(asm => asm.GetTypes()).ToArray())
+        public Schema(IDbConnection connection, params Assembly[] asmsToSearch): this(connection, asmsToSearch
+            .SelectMany(asm => asm.GetTypes())
+            .Where(type => type.GetCustomAttribute<DataTableAttribute>(inherit: false) != null)
+            .ToArray())
         {
         }
 
