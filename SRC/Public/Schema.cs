@@ -64,29 +64,37 @@ namespace Solti.Utils.OrmLite.Extensions
         /// </summary>
         public void CreateTablesCascaded() 
         {
+            IOrmLiteDialectProvider dialectProvider = Connection.GetDialectProvider();
+
+            //
+            // Ezt nem lehet kotegelten lekerdezni mivel az IDialectProvider-ben nincs 
+            // "ToTableExistsStatement" v hasonlo
+            //
+
+            IEnumerable<Type> tablesToCreate = Tables.Where(table => !Connection.TableExists
+            (
+                dialectProvider.NamingStrategy.GetTableName(table.GetModelMetadata()))
+            );
+
             using IBulkedDbConnection connection = Connection.CreateBulkedDbConnection();
 
-            foreach (Type table in Tables) 
+            foreach (Type table in tablesToCreate) 
             {
-                Connection.CreateTableIfNotExists(table);
+                connection.ExecuteNonQuery(dialectProvider.ToCreateTableStatement(table));
             }
 
             connection.Flush();
         }
 
         /// <summary>
-        /// Drops the tables in the schema.
+        /// Drops the tables in the schema
         /// </summary>
-        public void DropTablesCascaded() 
-        {
-            using IBulkedDbConnection connection = Connection.CreateBulkedDbConnection();
+        public void DropTablesCascaded() =>
+            //
+            // Itt semmit nem lehet kotegelten vegrehajtani mivel az IDialectProvider-ben nincs
+            // sem "ToTableExistsStatement" sem "ToDropTableStatement()" v hasonlo. 
+            // 
 
-            foreach (Type table in Tables.Reverse())
-            {
-                Connection.DropTable(table);
-            }
-
-            connection.Flush();
-        }
+            Connection.DropTables(Tables.Reverse().ToArray());
     }
 }
