@@ -32,12 +32,16 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         [DataTable]
         private class Table1
         {
-            public int Irrelevant { get; set; }
+            [PrimaryKey]
+            public int Id { get; set; }
         }
 
         [DataTable]
         private class Table2_ReferencingTable1
         {
+            [PrimaryKey]
+            public int Id { get; set; }
+
             [References(typeof(Table1))]
             public int Table1 { get; set; }
         }
@@ -45,6 +49,9 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         [DataTable]
         private class Table3_ReferencingNode1AndTable2
         {
+            [PrimaryKey]
+            public int Id { get; set; }
+
             [References(typeof(Table1))]
             public int Table1 { get; set; }
 
