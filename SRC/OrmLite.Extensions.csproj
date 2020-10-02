@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <Authors>Denes Solti</Authors>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <AssemblyName>Solti.Utils.OrmLite.Extensions</AssemblyName>
     <RootNamespace>Solti.Utils.OrmLite.Extensions</RootNamespace>
     <Configurations>Debug;Release</Configurations>
