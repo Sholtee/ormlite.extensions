@@ -4,6 +4,7 @@
 * Author: Denes Solti                                                           *
 ********************************************************************************/
 using System.Data;
+using System.Threading.Tasks;
 
 namespace Solti.Utils.OrmLite.Extensions
 {
@@ -17,5 +18,11 @@ namespace Solti.Utils.OrmLite.Extensions
         /// </summary>
         /// <returns>Rows affected.</returns>
         int Flush();
+
+        /// <summary>
+        /// Executes all the write commands as a statement block against the connection.
+        /// </summary>
+        /// <returns>Rows affected.</returns>
+        Task<int> FlushAsync();
     }
 }

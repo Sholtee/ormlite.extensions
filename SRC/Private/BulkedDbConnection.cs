@@ -10,6 +10,9 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
+
+using ServiceStack.OrmLite;
 
 [assembly: InternalsVisibleTo("Solti.Utils.OrmLite.Extensions.Internals.BulkedDbConnection.IDbCommandInterceptor_System.Data.IDbCommand_Proxy")]
 
@@ -18,7 +21,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
     using Primitives;
     using Proxy;
     using Proxy.Generators;
-    
+
     internal sealed class BulkedDbConnection: IBulkedDbConnection
     {
         internal IDbConnection Connection { get; }
@@ -61,10 +64,9 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                 switch (method.Name)
                 {
                     case nameof(Target.ExecuteNonQuery):
-                        string command = CommandText.Format(Target!.CommandText, Target
+                        string command = OrmLiteConfig.DialectProvider.MergeParamsIntoSql(Target!.CommandText, Target
                             .Parameters
-                            .Cast<IDataParameter>()
-                            .ToArray());
+                            .Cast<IDbDataParameter>());
 
                         if (!command.EndsWith(";", StringComparison.Ordinal)) command += ";";
                         Parent.Buffer.AppendLine(command);
@@ -105,13 +107,18 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
         {
             if (Buffer.Length == 0) return 0;
 
-            using (IDbCommand cmd = Connection.CreateCommand())
-            {
-                cmd.CommandText = Buffer.ToString();
-                Buffer.Clear();
+            int result = Connection.ExecuteNonQuery(Buffer.ToString());
+            Buffer.Clear();
+            return result;
+        }
 
-                return cmd.ExecuteNonQuery();
-            }
+        public Task<int> FlushAsync() 
+        {
+            if (Buffer.Length == 0) return Task.FromResult(0);
+
+            Task<int> result = Connection.ExecuteNonQueryAsync(Buffer.ToString());
+            Buffer.Clear();
+            return result;
         }
 
         public override string ToString() => Buffer.ToString();

@@ -9,6 +9,8 @@ using System.Data.SqlClient;
 
 using Moq;
 using NUnit.Framework;
+
+using ServiceStack.DataAnnotations;
 using ServiceStack.OrmLite;
 
 namespace Solti.Utils.OrmLite.Extensions.Tests
@@ -62,12 +64,49 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
 
                 var mockDbCommand = new Mock<IDbCommand>(MockBehavior.Strict);
                 mockDbCommand.Setup(cmd => cmd.ExecuteNonQuery()).Returns(0);
-                mockDbCommand.SetupSet(cmd => cmd.CommandText = It.IsAny<string>()).Verifiable();
                 mockDbCommand.Setup(cmd => cmd.Dispose());
+                mockDbCommand.SetupSet(cmd => cmd.CommandText = It.IsAny<string>()).Verifiable();
+                mockDbCommand.SetupSet(cmd => cmd.Transaction = null);
+                mockDbCommand.SetupSet(cmd => cmd.CommandTimeout = It.IsAny<int>());
+                mockDbCommand.SetupGet(cmd => cmd.CommandText).Returns(bulkCmd);
 
                 mockDbConnection.Setup(c => c.CreateCommand()).Returns(() => mockDbCommand.Object);
 
-                bulk.Flush();
+                Assert.DoesNotThrow(() => bulk.Flush());
+                Assert.That(bulk.ToString().Length, Is.EqualTo(0));
+
+                mockDbCommand.VerifySet(cmd => cmd.CommandText = It.Is<string>(val => val == bulkCmd));
+                mockDbCommand.Verify(cmd => cmd.ExecuteNonQuery(), Times.Once);
+            }
+        }
+
+        [Test]
+        public void Bulk_ShouldFlushAsync()
+        {
+            var mockDbConnection = new Mock<IDbConnection>(MockBehavior.Strict);
+            mockDbConnection.Setup(c => c.CreateCommand()).Returns(() => new SqlCommand());
+
+            using (IBulkedDbConnection bulk = mockDbConnection.Object.CreateBulkedDbConnection())
+            {
+                using (IDbCommand cmd = bulk.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM 'KUTYA'";
+                    cmd.ExecuteNonQuery();
+                }
+
+                string bulkCmd = bulk.ToString();
+
+                var mockDbCommand = new Mock<IDbCommand>(MockBehavior.Strict);
+                mockDbCommand.Setup(cmd => cmd.ExecuteNonQuery()).Returns(0);
+                mockDbCommand.Setup(cmd => cmd.Dispose());
+                mockDbCommand.SetupSet(cmd => cmd.CommandText = It.IsAny<string>()).Verifiable();
+                mockDbCommand.SetupSet(cmd => cmd.Transaction = null);
+                mockDbCommand.SetupSet(cmd => cmd.CommandTimeout = It.IsAny<int>());
+                mockDbCommand.SetupGet(cmd => cmd.CommandText).Returns(bulkCmd);
+
+                mockDbConnection.Setup(c => c.CreateCommand()).Returns(() => mockDbCommand.Object);
+
+                Assert.DoesNotThrowAsync(bulk.FlushAsync);
                 Assert.That(bulk.ToString().Length, Is.EqualTo(0));
 
                 mockDbCommand.VerifySet(cmd => cmd.CommandText = It.Is<string>(val => val == bulkCmd));
@@ -133,6 +172,34 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
             {
                 Assert.Throws<NotSupportedException>(() => bulk.BeginTransaction());
                 Assert.Throws<NotSupportedException>(() => bulk.BeginTransaction(default));
+            }
+        }
+
+        public class Table 
+        {
+            [AutoIncrement, PrimaryKey]
+            public int Id { get; set; }
+
+            public string Data { get; set; }
+        }
+
+        [Test]
+        public void Bulk_ShouldWorkInRealLife() 
+        {
+            using (IDbConnection conn = new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider).CreateDbConnection()) 
+            {
+                conn.Open();
+                conn.CreateTable<Table>();
+
+                using (IBulkedDbConnection bulk = conn.CreateBulkedDbConnection()) 
+                {
+                    bulk.Insert(new Table { Data = "cica" });
+                    bulk.Insert(new Table { Data = "kutya" });
+
+                    bulk.Flush();
+                }
+
+                Assert.That(conn.Select<Table>().Count, Is.EqualTo(2));
             }
         }
     }
