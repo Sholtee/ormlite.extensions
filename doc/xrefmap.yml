@@ -54,6 +54,19 @@ references:
   isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
   nameWithType: IBulkedDbConnection.Flush
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
+  name: FlushAsync()
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync
+  commentId: M:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync()
+  nameWithType: IBulkedDbConnection.FlushAsync()
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync*
+  name: FlushAsync
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
+  nameWithType: IBulkedDbConnection.FlushAsync
 - uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
   name: IDbConnectionExtensions
   href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html
