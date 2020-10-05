@@ -10,6 +10,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using ServiceStack.OrmLite;
@@ -59,6 +60,8 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
             public IDbCommandInterceptor(BulkedDbConnection parent) : base(parent.Connection.CreateCommand()) => 
                 Parent = parent;
 
+            private static readonly Regex FCommandTerminated = new Regex(";\\s*$", RegexOptions.Compiled);
+
             public override object? Invoke(MethodInfo method, object?[] args, MemberInfo extra)
             {
                 switch (method.Name)
@@ -68,7 +71,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                             .Parameters
                             .Cast<IDbDataParameter>());
 
-                        if (!command.EndsWith(";", StringComparison.Ordinal)) command += ";";
+                        if (!FCommandTerminated.IsMatch(command)) command += ";";
                         Parent.Buffer.AppendLine(command);
 
                         return 0;
