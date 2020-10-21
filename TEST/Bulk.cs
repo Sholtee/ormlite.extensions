@@ -106,7 +106,7 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
 
                 mockDbConnection.Setup(c => c.CreateCommand()).Returns(() => mockDbCommand.Object);
 
-                Assert.DoesNotThrowAsync(bulk.FlushAsync);
+                Assert.DoesNotThrowAsync(() => bulk.FlushAsync());
                 Assert.That(bulk.ToString().Length, Is.EqualTo(0));
 
                 mockDbCommand.VerifySet(cmd => cmd.CommandText = It.Is<string>(val => val == bulkCmd));

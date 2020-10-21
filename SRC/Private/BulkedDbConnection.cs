@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 using ServiceStack.OrmLite;
@@ -115,11 +116,11 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
             return result;
         }
 
-        public Task<int> FlushAsync() 
+        public Task<int> FlushAsync(CancellationToken cancellation) 
         {
             if (Buffer.Length == 0) return Task.FromResult(0);
 
-            Task<int> result = Connection.ExecuteNonQueryAsync(Buffer.ToString());
+            Task<int> result = Connection.ExecuteNonQueryAsync(Buffer.ToString(), cancellation);
             Buffer.Clear();
             return result;
         }
