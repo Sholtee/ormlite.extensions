@@ -111,9 +111,14 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
         {
             if (Buffer.Length == 0) return 0;
 
-            int result = Connection.ExecuteNonQuery(Buffer.ToString());
-            Buffer.Clear();
-            return result;
+            try
+            {
+                return Connection.ExecuteNonQuery(Buffer.ToString());
+            }
+            finally
+            {
+                Buffer.Clear();
+            }
         }
 
         public Task<int> FlushAsync(CancellationToken cancellation) 
