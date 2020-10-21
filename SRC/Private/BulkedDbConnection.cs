@@ -120,9 +120,14 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
         {
             if (Buffer.Length == 0) return Task.FromResult(0);
 
-            Task<int> result = Connection.ExecuteNonQueryAsync(Buffer.ToString(), cancellation);
-            Buffer.Clear();
-            return result;
+            try
+            {
+                return Connection.ExecuteNonQueryAsync(Buffer.ToString(), cancellation);
+            }
+            finally
+            {
+                Buffer.Clear();
+            }
         }
 
         public override string ToString() => Buffer.ToString();
