@@ -54,12 +54,12 @@ references:
   isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
   nameWithType: IBulkedDbConnection.Flush
-- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
-  name: FlushAsync()
-  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync
-  commentId: M:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
-  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync()
-  nameWithType: IBulkedDbConnection.FlushAsync()
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
+  name: FlushAsync(CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync_System_Threading_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
+  nameWithType: IBulkedDbConnection.FlushAsync(CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync*
   name: FlushAsync
   href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync_
