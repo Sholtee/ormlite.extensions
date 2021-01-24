@@ -8,7 +8,6 @@ using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -16,13 +15,15 @@ using System.Threading.Tasks;
 
 using ServiceStack.OrmLite;
 
-[assembly: InternalsVisibleTo("Solti.Utils.OrmLite.Extensions.Internals.BulkedDbConnection.IDbCommandInterceptor_System.Data.IDbCommand_Proxy")]
+using Solti.Utils.Proxy;
+using Solti.Utils.Proxy.Attributes;
+using Solti.Utils.Proxy.Generators;
+
+[assembly: EmbedGeneratedType(typeof(ProxyGenerator<IDbCommand, Solti.Utils.OrmLite.Extensions.Internals.BulkedDbConnection.IDbCommandInterceptor>))]
 
 namespace Solti.Utils.OrmLite.Extensions.Internals
 {
     using Primitives;
-    using Proxy;
-    using Proxy.Generators;
 
     internal sealed class BulkedDbConnection: IBulkedDbConnection
     {
@@ -85,10 +86,8 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
             }
         }
 
-        #pragma warning disable CS0618 // Type or member is obsolete
         public IDbCommand CreateCommand() => (IDbCommand) ProxyGenerator<IDbCommand, IDbCommandInterceptor>
-            .GeneratedType
-        #pragma warning restore CS0618
+            .GetGeneratedType()
             .GetConstructor(new[] { typeof(BulkedDbConnection) })
             .ToStaticDelegate()
             .Invoke(new object[] { this });
