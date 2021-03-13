@@ -7,10 +7,11 @@
     <AssemblyName>Solti.Utils.OrmLite.Extensions</AssemblyName>
     <RootNamespace>Solti.Utils.OrmLite.Extensions</RootNamespace>
     <Configurations>Debug;Release</Configurations>
-    <LangVersion>8</LangVersion>
+    <LangVersion>9</LangVersion>
     <Nullable>enable</Nullable>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <NoWarn>CA2007</NoWarn>
+    <NoWarn>CA1825;CA2007</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

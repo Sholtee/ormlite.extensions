@@ -5,6 +5,7 @@
 ********************************************************************************/
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -23,6 +24,7 @@ namespace Solti.Utils.OrmLite.Extensions
         /// <summary>
         /// Formats the given SQL template. Templates may contain positional (?), named (@Name), or indexed ({0}) placeholders. 
         /// </summary>
+        [SuppressMessage("Usage", "CA2201:Do not raise reserved exception types")]
         public static string Format(string sql, params IDataParameter[] paramz)
         {
             if (sql == null) 
