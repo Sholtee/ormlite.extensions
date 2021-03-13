@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <Authors>Denes Solti</Authors>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <AssemblyName>Solti.Utils.OrmLite.Extensions</AssemblyName>
     <RootNamespace>Solti.Utils.OrmLite.Extensions</RootNamespace>
     <Configurations>Debug;Release</Configurations>
@@ -46,7 +46,7 @@
     </PackageReference>
     <PackageReference Include="ServiceStack.OrmLite.Core" Version="5.*" />
     <PackageReference Include="ProxyGen.NET" Version="4.*" />
-    <PackageReference Include="Solti.Utils.Primitives" Version="1.*" />
+    <PackageReference Include="Solti.Utils.Primitives" Version="2.*" />
   </ItemGroup>
 
   <ItemGroup>
