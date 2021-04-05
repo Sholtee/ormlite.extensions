@@ -5,6 +5,7 @@
 ********************************************************************************/
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
@@ -62,7 +63,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
             public IDbCommandInterceptor(BulkedDbConnection parent) : base(parent.Connection.CreateCommand()) => 
                 Parent = parent;
 
-            private static readonly Regex FCommandTerminated = new Regex(";\\s*$", RegexOptions.Compiled);
+            private static readonly Regex FCommandTerminated = new(";\\s*$", RegexOptions.Compiled);
 
             public override object? Invoke(MethodInfo method, object?[] args, MemberInfo extra)
             {
@@ -71,7 +72,18 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                     case nameof(Target.ExecuteNonQuery):
                         string command = OrmLiteConfig.DialectProvider.MergeParamsIntoSql(Target!.CommandText, Target
                             .Parameters
-                            .Cast<IDbDataParameter>());
+                            .Cast<IDbDataParameter>()
+                            .Select(para => 
+                            {
+                                //
+                                // SqlParameter eseten ha SqlValue.IsNull akkor elofordul h Value == '{}' (gozom nincs miert)
+                                //
+
+                                if (para is SqlParameter sqlParameter && sqlParameter.SqlValue.ToString().Equals("NULL", StringComparison.OrdinalIgnoreCase))
+                                    para.Value = null;
+
+                                return para;
+                            }));
 
                         if (!FCommandTerminated.IsMatch(command)) command += ";";
                         Parent.Buffer.AppendLine(command);

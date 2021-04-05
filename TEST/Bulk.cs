@@ -134,6 +134,26 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
             }
         }
 
+        private class MyEntity 
+        {
+            public int Id { get; set; }
+            public string Value { get; set; }
+        }
+
+        [Test]
+        public void Bulk_ShouldHandleNulls()
+        {
+            var mockDbConnection = new Mock<IDbConnection>(MockBehavior.Strict);
+            mockDbConnection.Setup(c => c.CreateCommand()).Returns(() => new SqlCommand());
+
+            using IBulkedDbConnection bulk = mockDbConnection.Object.CreateBulkedDbConnection();
+
+            bulk.Insert(new MyEntity { Id = 1, Value = "cica" });
+            bulk.Insert(new MyEntity { Id = 2, Value = null });
+
+            Assert.That(bulk.ToString(), Is.EqualTo("INSERT INTO \"MyEntity\" (\"Id\",\"Value\") VALUES (1,'cica');\r\nINSERT INTO \"MyEntity\" (\"Id\",\"Value\") VALUES (2,null);\r\n"));
+        }
+
         [Test]
         public void Bulk_ShouldNotAllowReadCommands()
         {
