@@ -5,7 +5,6 @@
 ********************************************************************************/
 using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
@@ -76,10 +75,10 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                             .Select(para => 
                             {
                                 //
-                                // SqlParameter eseten ha SqlValue.IsNull akkor elofordul h Value == '{}' (gozom nincs miert)
+                                // OrmLite valahol baszik rendesen lekezeni a DBNull-t
                                 //
 
-                                if (para is SqlParameter sqlParameter && sqlParameter.SqlValue.ToString().Equals("NULL", StringComparison.OrdinalIgnoreCase))
+                                if (para.Value?.GetType() == typeof(DBNull))
                                     para.Value = null;
 
                                 return para;

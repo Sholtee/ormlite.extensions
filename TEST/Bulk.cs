@@ -137,7 +137,7 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         private class MyEntity 
         {
             public int Id { get; set; }
-            public string Value { get; set; }
+            public string? Value { get; set; }
         }
 
         [Test]
