@@ -169,3 +169,44 @@ references:
   isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.Tables
   nameWithType: Schema.Tables
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute
+  name: ValuesAttribute
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.ValuesAttribute
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute
+  nameWithType: ValuesAttribute
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor
+  name: ValuesAttribute()
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute()
+  nameWithType: ValuesAttribute.ValuesAttribute()
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor(System.Object[])
+  name: ValuesAttribute(Object[])
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute__ctor_System_Object___
+  commentId: M:Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor(System.Object[])
+  name.vb: ValuesAttribute(Object())
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute(System.Object[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute(System.Object())
+  nameWithType: ValuesAttribute.ValuesAttribute(Object[])
+  nameWithType.vb: ValuesAttribute.ValuesAttribute(Object())
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor*
+  name: ValuesAttribute
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute
+  nameWithType: ValuesAttribute.ValuesAttribute
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  name: Items
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute_Items
+  commentId: P:Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  nameWithType: ValuesAttribute.Items
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items*
+  name: Items
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute_Items_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  nameWithType: ValuesAttribute.Items
