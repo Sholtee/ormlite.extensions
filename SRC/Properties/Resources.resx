@@ -123,4 +123,7 @@
   <data name="UNKNOWN_NODE" xml:space="preserve">
     <value>Referenced node ({0}) must be present in the nodes list.</value>
   </data>
+  <data name="VALUE_COUNT_NOT_MATCH" xml:space="preserve">
+    <value>The value count must match the field count.</value>
+  </data>
 </root>

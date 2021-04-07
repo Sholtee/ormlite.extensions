@@ -5,6 +5,7 @@
 ********************************************************************************/
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -15,6 +16,8 @@ using ServiceStack.OrmLite;
 namespace Solti.Utils.OrmLite.Extensions
 {
     using Internals;
+    using Primitives;
+    using Properties;
     
     /// <summary>
     /// Represents a database schema.
@@ -39,7 +42,7 @@ namespace Solti.Utils.OrmLite.Extensions
         {
             Connection = connection ?? throw new ArgumentNullException(nameof(connection));
 
-            if (tables == null)
+            if (tables is null)
                 throw new ArgumentNullException(nameof(tables));
 
             Tables = NodeUtils.Flatten(tables);
@@ -52,7 +55,7 @@ namespace Solti.Utils.OrmLite.Extensions
         /// <param name="asmsToSearch">Assemblies that contain the data table definitions.</param>
         public Schema(IDbConnection connection, params Assembly[] asmsToSearch): this(connection, asmsToSearch
             .SelectMany(asm => asm.GetTypes())
-            .Where(type => type.GetCustomAttribute<DataTableAttribute>(inherit: false) != null)
+            .Where(type => type.GetCustomAttribute<DataTableAttribute>(inherit: false) is not null)
             .ToArray())
         {
         }
@@ -74,14 +77,50 @@ namespace Solti.Utils.OrmLite.Extensions
                 dialectProvider.NamingStrategy.GetTableName(table.GetModelMetadata()))
             );
 
-            using IBulkedDbConnection connection = Connection.CreateBulkedDbConnection();
+            using IBulkedDbConnection bulk = Connection.CreateBulkedDbConnection();
 
             foreach (Type table in tablesToCreate) 
             {
-                connection.ExecuteNonQuery(dialectProvider.ToCreateTableStatement(table));
+                bulk.ExecuteNonQuery(dialectProvider.ToCreateTableStatement(table));
+
+                var setters = table
+                    .GetModelMetadata()
+                    .FieldDefinitions
+                    .Select(def => new
+                    {
+                        Fn = def.PropertyInfo.ToSetter(),
+                        def.FieldType
+                    })
+                    .ToArray();
+
+                Func<object?[], object> insert = ((Func<object, bool, long>) bulk.Insert)
+                    .Method
+                    .GetGenericMethodDefinition()
+                    .MakeGenericMethod(table)
+                    .ToStaticDelegate();
+
+                foreach (ValuesAttribute values in table.GetCustomAttributes<ValuesAttribute>())
+                {
+                    if (values.Items.Count != setters.Length)
+                        throw new InvalidOperationException(Resources.VALUE_COUNT_NOT_MATCH);
+
+                    object inst = Activator.CreateInstance(table)!;
+
+                    for (int i = 0; i < setters.Length; i++)
+                    {
+                        object? val = values.Items[i];
+                        var setter = setters[i];
+
+                        setter.Fn(inst, val is null || val.GetType() == setter.FieldType
+                            ? val
+                            : TypeDescriptor.GetConverter(setter.FieldType).ConvertFrom(val));
+                    }
+
+                    insert(new object?[] { bulk, inst, false });
+                }
             }
 
-            connection.Flush();
+            bulk.Flush();
         }
 
         /// <summary>

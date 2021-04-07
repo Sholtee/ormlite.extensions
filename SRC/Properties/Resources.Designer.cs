@@ -77,5 +77,14 @@ namespace Solti.Utils.OrmLite.Extensions.Properties {
                 return ResourceManager.GetString("UNKNOWN_NODE", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value count must match the field count..
+        /// </summary>
+        internal static string VALUE_COUNT_NOT_MATCH {
+            get {
+                return ResourceManager.GetString("VALUE_COUNT_NOT_MATCH", resourceCulture);
+            }
+        }
     }
 }
