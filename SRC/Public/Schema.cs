@@ -99,12 +99,15 @@ namespace Solti.Utils.OrmLite.Extensions
                     .MakeGenericMethod(table)
                     .ToStaticDelegate();
 
+                Func<object?[], object> factory = (table.GetConstructor(Type.EmptyTypes) ?? throw new MissingMemberException(table.Name, "ctor"))
+                    .ToStaticDelegate();
+
                 foreach (ValuesAttribute values in table.GetCustomAttributes<ValuesAttribute>())
                 {
                     if (values.Items.Count != setters.Length)
                         throw new InvalidOperationException(Resources.VALUE_COUNT_NOT_MATCH);
 
-                    object inst = Activator.CreateInstance(table)!;
+                    object inst = factory(Array.Empty<object?>());
 
                     for (int i = 0; i < setters.Length; i++)
                     {
