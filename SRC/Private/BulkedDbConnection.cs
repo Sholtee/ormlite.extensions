@@ -75,10 +75,10 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                             .Select(para => 
                             {
                                 //
-                                // OrmLite valahol baszik rendesen lekezeni a DBNull-t
+                                // MergeParamsIntoSql() baszik rendesen lekezeni a DBNull-t
                                 //
 
-                                if (para.Value?.GetType() == typeof(DBNull))
+                                if (para.Value == DBNull.Value)
                                     para.Value = null;
 
                                 return para;
