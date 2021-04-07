@@ -7,13 +7,16 @@ using ServiceStack.DataAnnotations;
 using Solti.Utils.OrmLite.Extension;
 ...
 [DataTable]
+[Values(1, "{4399A489-B140-4A04-BCBC-8C31082F431F}")] // predefined row
 private class Table1
 {
   [PrimaryKey]
   public int Id { get; set; }
+  public Guid Data {get; set;}
 }
 
 [DataTable]
+[Values(1, 1)]
 private class Table2_ReferencingTable1
 {
   [PrimaryKey]
