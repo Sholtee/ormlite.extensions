@@ -64,9 +64,9 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
 
             private static readonly Regex FCommandTerminated = new(";\\s*$", RegexOptions.Compiled);
 
-            public override object? Invoke(MethodInfo method, object?[] args, MemberInfo extra)
+            public override object? Invoke(InvocationContext context)
             {
-                switch (method.Name)
+                switch (context.Method.Name)
                 {
                     case nameof(Target.ExecuteNonQuery):
                         string command = OrmLiteConfig.DialectProvider.MergeParamsIntoSql(Target!.CommandText, Target
@@ -93,7 +93,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                         throw new NotSupportedException();
                 }
 
-                return base.Invoke(method, args, extra);
+                return base.Invoke(context);
             }
         }
 
