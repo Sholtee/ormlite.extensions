@@ -1,3 +1,212 @@
 ### YamlMime:XRefMap
 sorted: true
-references: []
+references:
+- uid: Solti.Utils.OrmLite.Extensions
+  name: Solti.Utils.OrmLite.Extensions
+  href: Solti.Utils.OrmLite.Extensions.html
+  commentId: N:Solti.Utils.OrmLite.Extensions
+  fullName: Solti.Utils.OrmLite.Extensions
+  nameWithType: Solti.Utils.OrmLite.Extensions
+- uid: Solti.Utils.OrmLite.Extensions.CommandText
+  name: CommandText
+  href: Solti.Utils.OrmLite.Extensions.CommandText.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.CommandText
+  fullName: Solti.Utils.OrmLite.Extensions.CommandText
+  nameWithType: CommandText
+- uid: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String,System.Data.IDataParameter[])
+  name: Format(String, IDataParameter[])
+  href: Solti.Utils.OrmLite.Extensions.CommandText.html#Solti_Utils_OrmLite_Extensions_CommandText_Format_System_String_System_Data_IDataParameter___
+  commentId: M:Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String,System.Data.IDataParameter[])
+  name.vb: Format(String, IDataParameter())
+  fullName: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String, System.Data.IDataParameter[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String, System.Data.IDataParameter())
+  nameWithType: CommandText.Format(String, IDataParameter[])
+  nameWithType.vb: CommandText.Format(String, IDataParameter())
+- uid: Solti.Utils.OrmLite.Extensions.CommandText.Format*
+  name: Format
+  href: Solti.Utils.OrmLite.Extensions.CommandText.html#Solti_Utils_OrmLite_Extensions_CommandText_Format_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.CommandText.Format
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.CommandText.Format
+  nameWithType: CommandText.Format
+- uid: Solti.Utils.OrmLite.Extensions.DataTableAttribute
+  name: DataTableAttribute
+  href: Solti.Utils.OrmLite.Extensions.DataTableAttribute.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.DataTableAttribute
+  fullName: Solti.Utils.OrmLite.Extensions.DataTableAttribute
+  nameWithType: DataTableAttribute
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection
+  name: IBulkedDbConnection
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection
+  nameWithType: IBulkedDbConnection
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
+  name: Flush()
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_Flush
+  commentId: M:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush()
+  nameWithType: IBulkedDbConnection.Flush()
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush*
+  name: Flush
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_Flush_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
+  nameWithType: IBulkedDbConnection.Flush
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
+  name: FlushAsync(CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync_System_Threading_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
+  nameWithType: IBulkedDbConnection.FlushAsync(CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync*
+  name: FlushAsync
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
+  nameWithType: IBulkedDbConnection.FlushAsync
+- uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
+  name: IDbConnectionExtensions
+  href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
+  fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
+  nameWithType: IDbConnectionExtensions
+- uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(System.Data.IDbConnection)
+  name: CreateBulkedDbConnection(IDbConnection)
+  href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html#Solti_Utils_OrmLite_Extensions_IDbConnectionExtensions_CreateBulkedDbConnection_System_Data_IDbConnection_
+  commentId: M:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(System.Data.IDbConnection)
+  fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(System.Data.IDbConnection)
+  nameWithType: IDbConnectionExtensions.CreateBulkedDbConnection(IDbConnection)
+- uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection*
+  name: CreateBulkedDbConnection
+  href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html#Solti_Utils_OrmLite_Extensions_IDbConnectionExtensions_CreateBulkedDbConnection_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection
+  nameWithType: IDbConnectionExtensions.CreateBulkedDbConnection
+- uid: Solti.Utils.OrmLite.Extensions.Schema
+  name: Schema
+  href: Solti.Utils.OrmLite.Extensions.Schema.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.Schema
+  fullName: Solti.Utils.OrmLite.Extensions.Schema
+  nameWithType: Schema
+- uid: Solti.Utils.OrmLite.Extensions.Schema.#ctor(System.Data.IDbConnection,System.Reflection.Assembly[])
+  name: Schema(IDbConnection, Assembly[])
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema__ctor_System_Data_IDbConnection_System_Reflection_Assembly___
+  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.#ctor(System.Data.IDbConnection,System.Reflection.Assembly[])
+  name.vb: Schema(IDbConnection, Assembly())
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection, System.Reflection.Assembly[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection, System.Reflection.Assembly())
+  nameWithType: Schema.Schema(IDbConnection, Assembly[])
+  nameWithType.vb: Schema.Schema(IDbConnection, Assembly())
+- uid: Solti.Utils.OrmLite.Extensions.Schema.#ctor(System.Data.IDbConnection,System.Type[])
+  name: Schema(IDbConnection, Type[])
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema__ctor_System_Data_IDbConnection_System_Type___
+  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.#ctor(System.Data.IDbConnection,System.Type[])
+  name.vb: Schema(IDbConnection, Type())
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection, System.Type[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection, System.Type())
+  nameWithType: Schema.Schema(IDbConnection, Type[])
+  nameWithType.vb: Schema.Schema(IDbConnection, Type())
+- uid: Solti.Utils.OrmLite.Extensions.Schema.#ctor*
+  name: Schema
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.#ctor
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Schema
+  nameWithType: Schema.Schema
+- uid: Solti.Utils.OrmLite.Extensions.Schema.Connection
+  name: Connection
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Connection
+  commentId: P:Solti.Utils.OrmLite.Extensions.Schema.Connection
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Connection
+  nameWithType: Schema.Connection
+- uid: Solti.Utils.OrmLite.Extensions.Schema.Connection*
+  name: Connection
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Connection_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.Connection
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Connection
+  nameWithType: Schema.Connection
+- uid: Solti.Utils.OrmLite.Extensions.Schema.CreateTablesCascaded
+  name: CreateTablesCascaded()
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_CreateTablesCascaded
+  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.CreateTablesCascaded
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.CreateTablesCascaded()
+  nameWithType: Schema.CreateTablesCascaded()
+- uid: Solti.Utils.OrmLite.Extensions.Schema.CreateTablesCascaded*
+  name: CreateTablesCascaded
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_CreateTablesCascaded_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.CreateTablesCascaded
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.CreateTablesCascaded
+  nameWithType: Schema.CreateTablesCascaded
+- uid: Solti.Utils.OrmLite.Extensions.Schema.DropTablesCascaded
+  name: DropTablesCascaded()
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_DropTablesCascaded
+  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.DropTablesCascaded
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.DropTablesCascaded()
+  nameWithType: Schema.DropTablesCascaded()
+- uid: Solti.Utils.OrmLite.Extensions.Schema.DropTablesCascaded*
+  name: DropTablesCascaded
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_DropTablesCascaded_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.DropTablesCascaded
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.DropTablesCascaded
+  nameWithType: Schema.DropTablesCascaded
+- uid: Solti.Utils.OrmLite.Extensions.Schema.Tables
+  name: Tables
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Tables
+  commentId: P:Solti.Utils.OrmLite.Extensions.Schema.Tables
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Tables
+  nameWithType: Schema.Tables
+- uid: Solti.Utils.OrmLite.Extensions.Schema.Tables*
+  name: Tables
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Tables_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.Tables
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Tables
+  nameWithType: Schema.Tables
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute
+  name: ValuesAttribute
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.ValuesAttribute
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute
+  nameWithType: ValuesAttribute
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor
+  name: ValuesAttribute()
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute()
+  nameWithType: ValuesAttribute.ValuesAttribute()
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor(System.Object[])
+  name: ValuesAttribute(Object[])
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute__ctor_System_Object___
+  commentId: M:Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor(System.Object[])
+  name.vb: ValuesAttribute(Object())
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute(System.Object[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute(System.Object())
+  nameWithType: ValuesAttribute.ValuesAttribute(Object[])
+  nameWithType.vb: ValuesAttribute.ValuesAttribute(Object())
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor*
+  name: ValuesAttribute
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute
+  nameWithType: ValuesAttribute.ValuesAttribute
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  name: Items
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute_Items
+  commentId: P:Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  nameWithType: ValuesAttribute.Items
+- uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items*
+  name: Items
+  href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute_Items_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
+  nameWithType: ValuesAttribute.Items
