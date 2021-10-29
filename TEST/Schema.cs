@@ -98,7 +98,7 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
 
             Table2_ReferencingTable1 t2 = Connection.SelectByIds<Table2_ReferencingTable1>(new[] { Guid.Parse("{1529C28D-0A0D-4D84-9FDF-563B814B23B6}") }).Single();
             Assert.That(t2.Table1, Is.EqualTo(Guid.Parse("{A8273CE3-3F29-4F52-9B8A-E12650668FC1}")));
-            Assert.That(t2.Date, Is.EqualTo(DateTime.Parse("1986-10-26 00:00:00")));
+            Assert.That(t2.Date, Is.EqualTo(DateTime.Parse("1986-10-26 00:00:00").ToLocalTime()));
             Assert.That(t2.Void, Is.Null);
         }
 
