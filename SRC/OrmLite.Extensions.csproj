@@ -36,7 +36,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\icon.png" Pack="true" PackagePath="" />
+    <None Include="..\icon.png" Pack="true" PackagePath="\" />
+    <None Include="..\README.MD" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -78,6 +79,7 @@
     <PackageTags>OrmLite</PackageTags>
     <PackageReleaseNotes>See https://github.com/Sholtee/ormlite.extensions/blob/master/history.md </PackageReleaseNotes>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Sholtee/ormlite.extensions</RepositoryUrl>
     <RepositoryBranch>$(CurrentBranch)</RepositoryBranch>
