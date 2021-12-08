@@ -37,9 +37,16 @@ private class Table3_ReferencingNode1AndTable2
 }
 ...
 var schema = new Schema(Connection, typeof(Table1).Assembly);
-schema.CreateTablesCascaded();
+
+if (!schema.IsInitialized)
+  schema.Initialze();
+else
+{
+  schema.Migrate("step_1", "sql...");
+  schema.Migrate("step_2", "sql...");
+}
 ...
-schema.DropTablesCascaded();
+schema.Drop();
 ```
 
 ## Bulked write operations
