@@ -104,14 +104,12 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.data.idbconnection">IDbConnection</a></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>The database connection</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a>[]</td>
         <td><span class="parametername">asmsToSearch</span></td>
-        <td><p>Assemblies that contain the data table definitions.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -172,14 +170,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_Schema_Tables_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Tables*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Schema_Tables" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Tables">Tables</h4>
-  <div class="markdown level1 summary"><p>Tables contained by this <a class="xref" href="Solti.Utils.OrmLite.Extensions.Schema.html">Schema</a>.</p>
+  <a id="Solti_Utils_OrmLite_Extensions_Schema_IsInitialized_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.IsInitialized*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Schema_IsInitialized" data-uid="Solti.Utils.OrmLite.Extensions.Schema.IsInitialized">IsInitialized</h4>
+  <div class="markdown level1 summary"><p>Returns true if the schema has already been initialized.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICollection&lt;Type&gt; Tables { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsInitialized { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -191,31 +189,125 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Solti_Utils_OrmLite_Extensions_Schema_Tables_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Tables*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Schema_Tables" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Tables">Tables</h4>
+  <div class="markdown level1 summary"><p>Table definitions in this schema.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Type&gt; Tables { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="Solti_Utils_OrmLite_Extensions_Schema_CreateTablesCascaded_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.CreateTablesCascaded*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Schema_CreateTablesCascaded" data-uid="Solti.Utils.OrmLite.Extensions.Schema.CreateTablesCascaded">CreateTablesCascaded()</h4>
-  <div class="markdown level1 summary"><p>Creates the tables in the schema.</p>
+  <a id="Solti_Utils_OrmLite_Extensions_Schema_Drop_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Drop*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Schema_Drop" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Drop">Drop()</h4>
+  <div class="markdown level1 summary"><p>Drops the schema.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void CreateTablesCascaded()</code></pre>
+    <pre><code class="lang-csharp hljs">public void Drop()</code></pre>
   </div>
-  <a id="Solti_Utils_OrmLite_Extensions_Schema_DropTablesCascaded_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.DropTablesCascaded*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Schema_DropTablesCascaded" data-uid="Solti.Utils.OrmLite.Extensions.Schema.DropTablesCascaded">DropTablesCascaded()</h4>
-  <div class="markdown level1 summary"><p>Drops the tables in the schema</p>
+  <a id="Solti_Utils_OrmLite_Extensions_Schema_GetLastMigration_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.GetLastMigration*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Schema_GetLastMigration" data-uid="Solti.Utils.OrmLite.Extensions.Schema.GetLastMigration">GetLastMigration()</h4>
+  <div class="markdown level1 summary"><p>Gets the name of the last migration script.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void DropTablesCascaded()</code></pre>
+    <pre><code class="lang-csharp hljs">public string GetLastMigration()</code></pre>
   </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Solti_Utils_OrmLite_Extensions_Schema_Initialize_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Initialize*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Schema_Initialize" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"><p>Initializes the schema.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize()</code></pre>
+  </div>
+  <a id="Solti_Utils_OrmLite_Extensions_Schema_Migrate_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Migrate*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Schema_Migrate_System_String_System_String_" data-uid="Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.String,System.String)">Migrate(String, String)</h4>
+  <div class="markdown level1 summary"><p>Executes a named migration script.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Migrate(string name, string sql)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">sql</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
