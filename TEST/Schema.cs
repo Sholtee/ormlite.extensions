@@ -22,12 +22,20 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
 
         public IDbConnection Connection { get; set; }
 
+        public Schema Schema { get; set; }
+
         [SetUp]
-        public void Setup() => Connection = ConnectionFactory.OpenDbConnection();
+        public void Setup()
+        {
+            Connection = ConnectionFactory.OpenDbConnection();
+            Schema = new Schema(Connection, typeof(SchemaTests).Assembly);
+        }
 
         [TearDown]
         public void Teardown() 
         {
+            Schema.Drop();
+
             Connection.Dispose();
             Connection = null;
         }
@@ -75,22 +83,18 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         }
 
         [Test]
-        public void CreateTablesCascaded_ShouldCreateTheTables() 
+        public void Initialize_ShouldCreateTables() 
         {
-            var schema = new Schema(Connection, typeof(SchemaTests).Assembly);
-
-            Assert.DoesNotThrow(schema.CreateTablesCascaded);
+            Assert.DoesNotThrow(Schema.Initialize);
             Assert.That(Connection.TableExists<Table1>());
             Assert.That(Connection.TableExists<Table2_ReferencingTable1>());
             Assert.That(Connection.TableExists<Table3_ReferencingNode1AndTable2>());
         }
 
         [Test]
-        public void CreateTables_ShouldInsertTheWiredRows() 
+        public void Initialize_ShouldInsertTheWiredRows() 
         {
-            var schema = new Schema(Connection, typeof(SchemaTests).Assembly);
-
-            schema.CreateTablesCascaded();
+            Schema.Initialize();
 
             Table1 t1 = Connection.SelectByIds<Table1>(new[] { Guid.Parse("{A8273CE3-3F29-4F52-9B8A-E12650668FC1}") }).Single();
             Assert.That(t1.StringField, Is.EqualTo("Cica"));
@@ -103,16 +107,46 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         }
 
         [Test]
-        public void DropTablesCascaded_ShouldDropTheTables()
+        public void Initialize_ShouldThowIfTheSchemaHasAlreadyBeenInitialized()
         {
-            var schema = new Schema(Connection, typeof(SchemaTests).Assembly);
+            Schema.Initialize();
+            Assert.Throws<InvalidOperationException>(Schema.Initialize);
+        }
 
-            Assert.DoesNotThrow(schema.CreateTablesCascaded);
-            Assert.DoesNotThrow(schema.DropTablesCascaded);
+        [Test]
+        public void Drop_ShouldDropTheTables()
+        {
+            Assert.DoesNotThrow(Schema.Initialize);
+            Assert.DoesNotThrow(Schema.Drop);
 
             Assert.That(!Connection.TableExists<Table1>());
             Assert.That(!Connection.TableExists<Table2_ReferencingTable1>());
             Assert.That(!Connection.TableExists<Table3_ReferencingNode1AndTable2>());
+        }
+
+        [Test]
+        public void IsInitialized_ShouldReturnTrueIfTheSchemaHasAlreadyBeenInitialized()
+        {
+            Assert.IsFalse(Schema.IsInitialized);
+
+            Schema.Initialize();
+
+            Assert.That(Schema.IsInitialized);
+            Assert.That(Schema.GetLastMigration(), Is.EqualTo(Schema.INITIAL_COMMIT));
+        }
+
+        [Test]
+        public void Migrate_ShouldSaveTheMigrationStep()
+        {
+            Schema.Initialize();
+
+            Connection.Insert(new Table1 { Id = Guid.NewGuid(), IntField = 10, StringField = "kutya" });
+
+            const string migrationName = nameof(migrationName);
+
+            Assert.That(Schema.Migrate(migrationName, "UPDATE \"Table1\" SET \"IntField\" = 0"));
+            Assert.That(Connection.Select<Table1>().All(t => t.IntField == 0));
+            Assert.That(Schema.GetLastMigration(), Is.EqualTo(migrationName));
         }
     }
 }
