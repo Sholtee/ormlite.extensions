@@ -79,7 +79,7 @@
     <PackageTags>OrmLite</PackageTags>
     <PackageReleaseNotes>See https://github.com/Sholtee/ormlite.extensions/blob/master/history.md </PackageReleaseNotes>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.MD</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Sholtee/ormlite.extensions</RepositoryUrl>
     <RepositoryBranch>$(CurrentBranch)</RepositoryBranch>
