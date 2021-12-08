@@ -77,7 +77,7 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         [TestCaseSource(nameof(Nodes))]
         public void Flatten_ShouldSort(ICollection<Type> nodes) 
         {
-            ICollection<Type> result = Flatten(nodes);
+            IReadOnlyList<Type> result = Flatten(nodes);
             Assert.That(result.SequenceEqual(nodes.Distinct().OrderBy(node => node.GetCustomAttribute<OrderAttribute>().Value)));
         }
 

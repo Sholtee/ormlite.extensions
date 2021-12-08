@@ -19,20 +19,11 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
         /// <summary>
         /// Sorts the given <paramref name="nodes"/> into a linear order where the referenced node appears before referencing node respectively.
         /// </summary>
-        public static ICollection<Type> Flatten(ICollection<Type> nodes)
+        public static IReadOnlyList<Type> Flatten(IEnumerable<Type> nodes)
         {
-            //
-            // Ne "Type[nodesArray.Length]" legyen mert tartalmazhat kevesebb elemet ha "nodesAr"-ben
-            // ismetlodes van.
-            //
+            List<Type> result = new();
 
-            var result = new List<Type>(nodes.Count);
-
-            //
-            // Utvonal maximum annyi hosszu lehet amennyi a csomopontok szama
-            //
-
-            var currentPath = new Stack<Type>(nodes.Count);
+            Stack<Type> currentPath = new();
 
             FlattenCore(nodes);
 
@@ -55,7 +46,10 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                     {
                         CheckNotCircular();
 
-                        FlattenCore(GetChildren(node));
+                        FlattenCore
+                        (
+                            GetChildren(node)
+                        );
 
                         result.Add(node);
                     }
@@ -87,7 +81,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
             {
                 foreach (Type? reference in node.GetProperties().Select(prop => prop.GetCustomAttribute<ReferencesAttribute>()?.Type))
                 {
-                    if (reference == null)
+                    if (reference is null)
                         continue;
 
                     if (!nodes.Contains(reference))
