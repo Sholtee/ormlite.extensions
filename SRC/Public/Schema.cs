@@ -36,7 +36,7 @@ namespace Solti.Utils.OrmLite.Extensions
             [Required, Index(Unique = true)]
             public long CreatedAtUtc { get; set; }
 
-            [Required]
+            [Required, StringLength(StringLengthAttribute.MaxText)]
             #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
             public string Sql { get; set; }
 
