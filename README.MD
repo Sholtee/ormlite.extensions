@@ -42,8 +42,8 @@ if (!schema.IsInitialized)
   schema.Initialze();
 else
 {
-  schema.Migrate("step_1", "sql...");
-  schema.Migrate("step_2", "sql...");
+  schema.Migrate(step_1_timestamp, "sql...", "step_1");
+  schema.Migrate(step_2_timestamp, "sql...", "step_2");
 }
 ...
 schema.Drop();
