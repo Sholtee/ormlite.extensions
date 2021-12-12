@@ -143,19 +143,19 @@ references:
   isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.Drop
   nameWithType: Schema.Drop
-- uid: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigration
-  name: GetLastMigration()
-  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_GetLastMigration
-  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.GetLastMigration
-  fullName: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigration()
-  nameWithType: Schema.GetLastMigration()
-- uid: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigration*
-  name: GetLastMigration
-  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_GetLastMigration_
-  commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.GetLastMigration
+- uid: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigrationUtc
+  name: GetLastMigrationUtc()
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_GetLastMigrationUtc
+  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.GetLastMigrationUtc
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigrationUtc()
+  nameWithType: Schema.GetLastMigrationUtc()
+- uid: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigrationUtc*
+  name: GetLastMigrationUtc
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_GetLastMigrationUtc_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.GetLastMigrationUtc
   isSpec: "True"
-  fullName: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigration
-  nameWithType: Schema.GetLastMigration
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigrationUtc
+  nameWithType: Schema.GetLastMigrationUtc
 - uid: Solti.Utils.OrmLite.Extensions.Schema.Initialize
   name: Initialize()
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Initialize
@@ -182,12 +182,12 @@ references:
   isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.IsInitialized
   nameWithType: Schema.IsInitialized
-- uid: Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.String,System.String)
-  name: Migrate(String, String)
-  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Migrate_System_String_System_String_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.String,System.String)
-  fullName: Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.String, System.String)
-  nameWithType: Schema.Migrate(String, String)
+- uid: Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.DateTime,System.String,System.String)
+  name: Migrate(DateTime, String, String)
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Migrate_System_DateTime_System_String_System_String_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.DateTime,System.String,System.String)
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.DateTime, System.String, System.String)
+  nameWithType: Schema.Migrate(DateTime, String, String)
 - uid: Solti.Utils.OrmLite.Extensions.Schema.Migrate*
   name: Migrate
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Migrate_
