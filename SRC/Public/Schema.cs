@@ -33,16 +33,14 @@ namespace Solti.Utils.OrmLite.Extensions
             [PrimaryKey, AutoIncrement]
             public int Id { get; set; }
 
-            [Required]
-            public DateTime InstalledAtUtc { get; set; }
+            [Required, Index(Unique = true)]
+            public long CreatedAtUtc { get; set; }
 
             [Required]
             #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
             public string Sql { get; set; }
 
-            [Index(Unique = true)]
-            public string Name { get; set; }
-            #pragma warning restore CS8618
+            public string? Comment { get; set; }
         }
 
         /// <summary>
@@ -94,7 +92,7 @@ namespace Solti.Utils.OrmLite.Extensions
                 bulk.ExecuteNonQuery(dialectProvider.ToCreateTableStatement(table));
 
                 ValuesAttribute[] initialValues = table.GetCustomAttributes<ValuesAttribute>().ToArray();
-                if (initialValues.Length == 0)
+                if (initialValues.Length is 0)
                     continue;
 
                 var setters = table
@@ -113,7 +111,7 @@ namespace Solti.Utils.OrmLite.Extensions
                     .MakeGenericMethod(table)
                     .ToStaticDelegate();
 
-                Func<object?[], object> factory = (table.GetConstructor(Type.EmptyTypes) ?? throw new MissingMemberException(table.Name, "ctor"))
+                Func<object?[], object> factory = (table.GetConstructor(Type.EmptyTypes) ?? throw new MissingMemberException(table.Name, ConstructorInfo.ConstructorName))
                     .ToStaticDelegate();
 
                 foreach (ValuesAttribute values in initialValues)
@@ -139,8 +137,8 @@ namespace Solti.Utils.OrmLite.Extensions
 
             bulk.Insert(new Migration
             {
-                Name = INITIAL_COMMIT,
-                InstalledAtUtc = DateTime.UtcNow,
+                Comment = INITIAL_COMMIT,
+                CreatedAtUtc = DateTime.UtcNow.Ticks,
                 Sql = bulk.ToString()
             });
 
@@ -155,29 +153,29 @@ namespace Solti.Utils.OrmLite.Extensions
         /// <summary>
         /// Returns true if the schema has already been initialized.
         /// </summary>
-        public bool IsInitialized => Connection.TableExists<Migration>() && Connection.Exists<Migration>(m => m.Name == INITIAL_COMMIT);
+        public bool IsInitialized => Connection.TableExists<Migration>() && Connection.Exists<Migration>(m => m.Comment == INITIAL_COMMIT);
 
         /// <summary>
         /// Executes a named migration script.
         /// </summary>
-        public bool Migrate(string name, string sql)
+        public bool Migrate(DateTime createdAtUtc, string sql, string? comment = null)
         {
-            if (name is null)
-                throw new ArgumentNullException(nameof(name));
-
             if (sql is null)
                 throw new ArgumentNullException(nameof(sql));
 
-            if (Connection.Exists<Migration>(mig => mig.Name == name))
+            if (createdAtUtc.Kind is not DateTimeKind.Utc)
+                createdAtUtc = createdAtUtc.ToUniversalTime();
+
+            if (GetLastMigrationUtc() >= createdAtUtc)
                 return false;
 
             Connection.ExecuteNonQuery(sql);
 
             Connection.Insert(new Migration
             {
-                Name = name,
-                InstalledAtUtc = DateTime.UtcNow,
-                Sql = sql
+                CreatedAtUtc = createdAtUtc.Ticks,
+                Sql = sql,
+                Comment = comment
             });
 
             return true;
@@ -186,14 +184,12 @@ namespace Solti.Utils.OrmLite.Extensions
         /// <summary>
         /// Gets the name of the last migration script.
         /// </summary>
-        public string GetLastMigration()
+        public DateTime GetLastMigrationUtc()
         {
             string sql = Connection.From<Migration>()
-                .Select(m => m.Name)
-                .OrderByDescending(m => m.InstalledAtUtc)
-                .Limit(1)
-                .ToMergedParamsSelectStatement();
-            return Connection.Scalar<string>(sql);
+                .Select(m => Sql.Max(m.CreatedAtUtc))
+                .ToSelectStatement();
+            return new DateTime(ticks: Connection.Scalar<long>(sql), DateTimeKind.Utc);
         }
 
         /// <summary>

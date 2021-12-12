@@ -132,7 +132,6 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
             Schema.Initialize();
 
             Assert.That(Schema.IsInitialized);
-            Assert.That(Schema.GetLastMigration(), Is.EqualTo(Schema.INITIAL_COMMIT));
         }
 
         [Test]
@@ -142,11 +141,11 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
 
             Connection.Insert(new Table1 { Id = Guid.NewGuid(), IntField = 10, StringField = "kutya" });
 
-            const string migrationName = nameof(migrationName);
+            DateTime now = DateTime.UtcNow;
 
-            Assert.That(Schema.Migrate(migrationName, "UPDATE \"Table1\" SET \"IntField\" = 0"));
-            Assert.That(Connection.Select<Table1>().All(t => t.IntField == 0));
-            Assert.That(Schema.GetLastMigration(), Is.EqualTo(migrationName));
+            Assert.That(Schema.Migrate(now, "UPDATE \"Table1\" SET \"IntField\" = 0"));
+            Assert.That(Connection.Select<Table1>().All(t => t.IntField is 0));
+            Assert.That(Schema.GetLastMigrationUtc(), Is.EqualTo(now));
         }
     }
 }
