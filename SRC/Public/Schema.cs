@@ -30,8 +30,8 @@ namespace Solti.Utils.OrmLite.Extensions
 
         private sealed class Migration 
         {
-            [PrimaryKey, AutoIncrement]
-            public int Id { get; set; }
+            [PrimaryKey, AutoId]
+            public Guid Id { get; set; }
 
             [Required, Index(Unique = true)]
             public long CreatedAtUtc { get; set; }
