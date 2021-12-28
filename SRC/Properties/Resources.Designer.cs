@@ -79,6 +79,15 @@ namespace Solti.Utils.OrmLite.Extensions.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unknown event type ({0})..
+        /// </summary>
+        internal static string UNKNOWN_EVENT {
+            get {
+                return ResourceManager.GetString("UNKNOWN_EVENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Referenced node ({0}) must be present in the nodes list..
         /// </summary>
         internal static string UNKNOWN_NODE {

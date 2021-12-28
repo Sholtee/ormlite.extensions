@@ -48,6 +48,7 @@
     <PackageReference Include="ServiceStack.OrmLite.Core" Version="5.*" />
     <PackageReference Include="ProxyGen.NET" Version="5.*" />
     <PackageReference Include="Solti.Utils.Primitives" Version="6.*" />
+    <PackageReference Include="System.Text.Json" Version="5.*" />
   </ItemGroup>
 
   <ItemGroup>
