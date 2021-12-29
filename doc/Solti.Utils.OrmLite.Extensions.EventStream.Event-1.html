@@ -78,7 +78,8 @@
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
   <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_Event_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Event&lt;TStreamId&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">[CompositeIndex(new string[]{&quot;StreamId&quot;, &quot;CreatedAtUtc&quot;}, Unique = true)]
+public abstract class Event&lt;TStreamId&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -180,8 +181,7 @@ public string Payload { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Index]
-[Required]
+    <pre><code class="lang-csharp hljs">[Required]
 public TStreamId StreamId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
