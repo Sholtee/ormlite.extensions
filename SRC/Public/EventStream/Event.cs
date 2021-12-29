@@ -18,7 +18,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// </summary>
     /// <typeparam name="TStreamId">The type of stream id. If you need human readable id (for e.g. in case of invoices) it should be <see cref="string"/>, in any other cases it should be <see cref="Guid"/>.</typeparam>
     [CompositeIndex(nameof(StreamId), nameof(CreatedAtUtc), Unique = true)]
-    public abstract class Event<TStreamId>
+    public abstract class Event<TStreamId> where TStreamId : IEquatable<TStreamId>
     {
         /// <summary>
         /// The unique id of the event

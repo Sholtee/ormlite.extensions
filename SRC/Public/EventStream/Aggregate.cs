@@ -3,12 +3,14 @@
 *                                                                               *
 * Author: Denes Solti                                                           *
 ********************************************************************************/
+using System;
+
 namespace Solti.Utils.OrmLite.Extensions.EventStream
 {
     /// <summary>
     /// The base class of materialized views.
     /// </summary>
-    public abstract class Aggregate<TStreamId, TEvent1>: IEntity<TStreamId> where TEvent1 : class
+    public abstract class Aggregate<TStreamId, TEvent1>: IEntity<TStreamId> where TStreamId : IEquatable<TStreamId> where TEvent1 : class
     {
         /// <summary>
         /// The id of stream that describes the current entity.
@@ -27,7 +29,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// The base class of materialized views.
     /// </summary>
-    public abstract class Aggregate<TStreamId, TEvent1, TEvent2>: Aggregate<TStreamId, TEvent1> where TEvent1: class where TEvent2 : class
+    public abstract class Aggregate<TStreamId, TEvent1, TEvent2>: Aggregate<TStreamId, TEvent1> where TStreamId : IEquatable<TStreamId> where TEvent1: class where TEvent2 : class
     {
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent2"/> specific mutations.
@@ -39,7 +41,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// The base class of materialized views.
     /// </summary>
-    public abstract class Aggregate<TStreamId, TEvent1, TEvent2, TEvent3> : Aggregate<TStreamId, TEvent1, TEvent2> where TEvent1 : class where TEvent2 : class where TEvent3 : class
+    public abstract class Aggregate<TStreamId, TEvent1, TEvent2, TEvent3> : Aggregate<TStreamId, TEvent1, TEvent2> where TStreamId : IEquatable<TStreamId> where TEvent1 : class where TEvent2 : class where TEvent3 : class
     {
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent3"/> specific mutations.
@@ -51,7 +53,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// The base class of materialized views.
     /// </summary>
-    public abstract class Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4> : Aggregate<TStreamId, TEvent1, TEvent2, TEvent3> where TEvent1 : class where TEvent2 : class where TEvent3 : class where TEvent4: class
+    public abstract class Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4> : Aggregate<TStreamId, TEvent1, TEvent2, TEvent3> where TStreamId : IEquatable<TStreamId> where TEvent1 : class where TEvent2 : class where TEvent3 : class where TEvent4: class
     {
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent4"/> specific mutations.
@@ -63,7 +65,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// The base class of materialized views.
     /// </summary>
-    public abstract class Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5> : Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4> where TEvent1 : class where TEvent2 : class where TEvent3 : class where TEvent4 : class where TEvent5: class
+    public abstract class Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5> : Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4> where TStreamId : IEquatable<TStreamId> where TEvent1 : class where TEvent2 : class where TEvent3 : class where TEvent4 : class where TEvent5: class
     {
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent5"/> specific mutations.

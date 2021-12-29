@@ -123,6 +123,9 @@
   <data name="CIRCULAR_REFERENCE" xml:space="preserve">
     <value>Circular reference found: {0}</value>
   </data>
+  <data name="NULL_EVENT" xml:space="preserve">
+    <value>The event cannot be null.</value>
+  </data>
   <data name="UNKNOWN_EVENT" xml:space="preserve">
     <value>Unknown event type ({0}).</value>
   </data>

@@ -22,18 +22,25 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// Represents the base class of event repositories.
     /// </summary>
-    public class EventRepository<TStreamId, TEvent, TView> where TEvent: Event<TStreamId> where TStreamId: class where TView : IEntity<TStreamId>, new()
+    public class EventRepository<TStreamId, TEvent, TView> where TEvent: Event<TStreamId> where TStreamId: IEquatable<TStreamId> where TView : IEntity<TStreamId>, new()
     {
         #region Private
         private static readonly object FLock = new();
 
         private static Action<TView, object>? FCallApply;
 
+        private static InvalidOperationException GetUnknownEventError(string evtType) => new(string.Format(Resources.Culture, Resources.UNKNOWN_EVENT, evtType));
+
         internal static void Apply(TView view, TEvent evt)
         {
-            Type eventType = Type.GetType(evt.Type, throwOnError: true);
+            Type? eventType = Type.GetType(evt.Type, throwOnError: false);
+            if (eventType is null)
+                throw GetUnknownEventError(evt.Type);
 
-            object realEvent = JsonSerializer.Deserialize(evt.Payload, eventType)!;
+            object? realEvent = JsonSerializer.Deserialize(evt.Payload, eventType);
+            if (realEvent is null)
+                throw new InvalidOperationException(Resources.NULL_EVENT);
+
             CallApply(view, realEvent);
         }
 
@@ -74,20 +81,23 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
                 view = Expression.Parameter(typeof(TView), nameof(view)),
                 evt  = Expression.Parameter(typeof(object), nameof(evt));
 
+            MethodCallExpression
+                getType = Expression.Call(evt, nameof(GetType), Array.Empty<Type>());
+
             return Expression.Lambda<Action<TView, object>>
             (
                 Expression.Switch
                 (
-                    Expression.Call(evt, nameof(GetType), Array.Empty<Type>()),
+                    getType,
                     Expression.Throw
                     (
                         Expression.Invoke
                         (
                             Expression.Constant
                             (
-                                (Func<object, InvalidOperationException>) GetUnknownEventError
+                                (Func<string, InvalidOperationException>) GetUnknownEventError
                             ),
-                            evt
+                            Expression.Property(getType, nameof(Type.AssemblyQualifiedName))
                         )
                     ),
                     typeof(TView)
@@ -99,8 +109,6 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
                 view,
                 evt
             ).Compile();
-
-            static InvalidOperationException GetUnknownEventError(object evt) => new(string.Format(Resources.Culture, Resources.UNKNOWN_EVENT, evt.GetType()));
 
             SwitchCase CreateCase(MethodInfo apply)
             {

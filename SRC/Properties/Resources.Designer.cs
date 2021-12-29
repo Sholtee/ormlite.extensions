@@ -79,6 +79,15 @@ namespace Solti.Utils.OrmLite.Extensions.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The event cannot be null..
+        /// </summary>
+        internal static string NULL_EVENT {
+            get {
+                return ResourceManager.GetString("NULL_EVENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unknown event type ({0})..
         /// </summary>
         internal static string UNKNOWN_EVENT {
