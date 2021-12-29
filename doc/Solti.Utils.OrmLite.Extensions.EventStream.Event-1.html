@@ -158,6 +158,7 @@ public Guid Id { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required]
+[StringLength(2147483647)]
 public string Payload { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -208,6 +209,7 @@ public TStreamId StreamId { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required]
+[StringLength(512)]
 public string Type { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>

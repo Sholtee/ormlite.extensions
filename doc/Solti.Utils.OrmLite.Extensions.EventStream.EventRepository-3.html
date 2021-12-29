@@ -50,6 +50,10 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">EventRepository&lt;TStreamId, TEvent, TView&gt;</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.IEventRepository-2.html">IEventRepository</a>&lt;TStreamId, TView&gt;</div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -78,8 +82,7 @@
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
   <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EventRepository&lt;TStreamId, TEvent, TView&gt;
-    where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt;, new()
+    <pre><code class="lang-csharp hljs">public class EventRepository&lt;TStreamId, TEvent, TView&gt; : IEventRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt;, new()
     where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
@@ -208,7 +211,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TView&gt;</td>
-        <td><p>The modified entity.</p>
+        <td><p>The modified materialized view.</p>
 </td>
       </tr>
     </tbody>
@@ -346,6 +349,10 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.IEventRepository-2.html">IEventRepository&lt;TStreamId, TView&gt;</a>
+  </div>
 </article>
           </div>
           
