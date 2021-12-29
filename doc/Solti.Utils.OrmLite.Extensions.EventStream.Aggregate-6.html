@@ -101,7 +101,7 @@
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
   <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_Aggregate_6_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Aggregate&lt;TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5&gt; : Aggregate&lt;TStreamId, TEvent1, TEvent2, TEvent3, TEvent4&gt;, IEntity&lt;TStreamId&gt; where TEvent1 : class where TEvent2 : class where TEvent3 : class where TEvent4 : class where TEvent5 : class</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Aggregate&lt;TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5&gt; : Aggregate&lt;TStreamId, TEvent1, TEvent2, TEvent3, TEvent4&gt;, IEntity&lt;TStreamId&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent1 : class where TEvent2 : class where TEvent3 : class where TEvent4 : class where TEvent5 : class</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

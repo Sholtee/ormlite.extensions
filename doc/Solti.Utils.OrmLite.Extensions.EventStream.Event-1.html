@@ -79,7 +79,8 @@
   <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_Event_1_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CompositeIndex(new string[]{&quot;StreamId&quot;, &quot;CreatedAtUtc&quot;}, Unique = true)]
-public abstract class Event&lt;TStreamId&gt;</code></pre>
+public abstract class Event&lt;TStreamId&gt;
+    where TStreamId : IEquatable&lt;TStreamId&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

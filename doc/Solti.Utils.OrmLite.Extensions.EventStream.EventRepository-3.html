@@ -79,7 +79,7 @@
   <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class EventRepository&lt;TStreamId, TEvent, TView&gt;
-    where TStreamId : class where TEvent : Event&lt;TStreamId&gt; where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
+    where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt; where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
