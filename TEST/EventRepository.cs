@@ -167,9 +167,9 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
                 Payload = JsonSerializer.Serialize(new MyEvent1 { Prop1 = "kutya" })
             });
 
-            EventRepository<string, EventTable, MyView> repo = new(conn);
+            IEventRepository<string, MyView> repo = new EventRepository<string, EventTable, MyView>(conn);
 
-            IList<MyView> views = await repo.QueryViews(default);
+            IList<MyView> views = await repo.QueryViews();
 
             Assert.That(views.Count, Is.EqualTo(2));
             Assert.That(views.Any(view => view.StreamId == "stream_1" && view.Prop1 == "cica" && view.Prop2 == 1986));
@@ -182,16 +182,16 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
             using IDbConnection conn = ConnectionFactory.OpenDbConnection();
             conn.CreateTable<EventTable2>();
 
-            EventRepository<Guid, EventTable2, MyView2> repo = new(conn);
+            IEventRepository<Guid, MyView2> repo = new EventRepository<Guid, EventTable2, MyView2>(conn);
 
             Guid streamId = Guid.NewGuid();
 
-            MyView2 state = await repo.CreateEvent(streamId, new MyEvent1 { Prop1 = "cica" }, default);
+            MyView2 state = await repo.CreateEvent(streamId, new MyEvent1 { Prop1 = "cica" });
             Assert.That(state.StreamId, Is.EqualTo(streamId));
             Assert.That(state.Prop1, Is.EqualTo("cica"));
             Assert.That(state.Prop2, Is.Null);
 
-            state = await repo.CreateEvent(streamId, new MyEvent2 { Prop2 = 1986 }, default);
+            state = await repo.CreateEvent(streamId, new MyEvent2 { Prop2 = 1986 });
             Assert.That(state.StreamId, Is.EqualTo(streamId));
             Assert.That(state.Prop1, Is.EqualTo("cica"));
             Assert.That(state.Prop2, Is.EqualTo(1986));

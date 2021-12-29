@@ -62,3 +62,51 @@ connection.Delte(...);
 ...
 connection.Flush(); // or FlushAsync()
 ```
+
+## EventRepository
+```csharp
+using Solti.Utils.OrmLite.Extension;
+using Solti.Utils.OrmLite.Extension.EventStream;
+...
+// data table
+[DataTable]
+public class EventTable : Event<string>
+{
+}
+
+// custom event
+public class MyEvent1 
+{
+  public string Prop1 { get; set; }
+}
+
+// custom event
+public class MyEvent2
+{
+  public int Prop2 { get; set; }
+}
+
+// materialized view
+public class MyView : Aggregate<string, MyEvent1, MyEvent2>
+{
+  public string Prop1 { get; set; }
+  public int? Prop2 { get; set; }
+  public override void Apply(MyEvent1 evt) => Prop1 = evt.Prop1;
+  public override void Apply(MyEvent2 evt) => Prop2 = evt.Prop2;
+}
+
+...
+
+using IDbConnection conn = ConnectionFactory.OpenDbConnection();
+conn.CreateTable<EventTable>();
+
+IEventRepository<string, MyView> repo = new EventRepository<string, EventTable, MyView>(conn);
+
+string streamId = "stream_1";
+
+MyView state = await repo.CreateEvent(streamId, new MyEvent1 { Prop1 = "cica" });
+state = await repo.CreateEvent(streamId, new MyEvent1 { Prop2 = 1986 });
+
+MyView view = repo.QueryViewsByStreamId(default, "stream_1");
+...
+```

@@ -22,7 +22,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// Represents the base class of event repositories.
     /// </summary>
-    public class EventRepository<TStreamId, TEvent, TView> where TEvent: Event<TStreamId>, new() where TStreamId: IEquatable<TStreamId> where TView : IEntity<TStreamId>, new()
+    public class EventRepository<TStreamId, TEvent, TView>: IEventRepository<TStreamId, TView> where TEvent: Event<TStreamId>, new() where TStreamId: IEquatable<TStreamId> where TView : IEntity<TStreamId>, new()
     {
         #region Private
         private static readonly object FLock = new();
@@ -131,22 +131,25 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// Materializes views.
         /// </summary>
-        protected virtual IList<TView> MaterializeViews(IEnumerable<TEvent> events, CancellationToken cancellation) => events.GroupBy(evt => evt.StreamId).Select(evtGrp =>
-        {
-            cancellation.ThrowIfCancellationRequested();
-
-            TView view = new()
+        protected virtual IList<TView> MaterializeViews(IEnumerable<TEvent> events, CancellationToken cancellation) => events
+            .GroupBy(evt => evt.StreamId)
+            .Select(evtGrp =>
             {
-                StreamId = evtGrp.Key
-            };
+                cancellation.ThrowIfCancellationRequested();
 
-            foreach (TEvent evt in evtGrp.OrderBy(evt => evt.CreatedAtUtc))
-            {
-                Apply(view, evt);
-            }
+                TView view = new()
+                {
+                    StreamId = evtGrp.Key
+                };
 
-            return view;
-        }).ToList();
+                foreach (TEvent evt in evtGrp.OrderBy(evt => evt.CreatedAtUtc))
+                {
+                    Apply(view, evt);
+                }
+
+                return view;
+            })
+            .ToList();
 
         /// <summary>
         /// The database connection.
@@ -171,7 +174,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// Inserts a new event into the repository.
         /// </summary>
-        /// <returns>The modified entity.</returns>
+        /// <returns>The modified materialized view.</returns>
         public async Task<TView> CreateEvent(TStreamId streamId, object evt, CancellationToken cancellation)
         {
             if (evt is null)

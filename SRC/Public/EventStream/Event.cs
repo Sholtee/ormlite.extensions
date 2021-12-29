@@ -40,13 +40,13 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// The type of the payload.
         /// </summary>
-        [Required]
+        [Required, StringLength(512)]
         public string Type { get; set; }
 
         /// <summary>
         /// The serialized payload.
         /// </summary>
-        [Required]
+        [Required, StringLength(StringLengthAttribute.MaxText)]
         public string Payload { get; set; }
     }
 }
