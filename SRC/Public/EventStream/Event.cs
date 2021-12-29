@@ -9,14 +9,16 @@ using ServiceStack.DataAnnotations;
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 #pragma warning disable CA1716 // Identifiers should not match keywords
+#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
 
 namespace Solti.Utils.OrmLite.Extensions.EventStream
 {
     /// <summary>
     /// Describes a generic event
     /// </summary>
-    /// <typeparam name="TStreamId">The type of stream id. If you need human readable id (for e.g. in case of invoices) it should be <see cref="String"/>, in any other cases it should be <see cref="Guid"/>.</typeparam>
-    public class Event<TStreamId>
+    /// <typeparam name="TStreamId">The type of stream id. If you need human readable id (for e.g. in case of invoices) it should be <see cref="string"/>, in any other cases it should be <see cref="Guid"/>.</typeparam>
+    [CompositeIndex(nameof(StreamId), nameof(CreatedAtUtc), Unique = true)]
+    public abstract class Event<TStreamId>
     {
         /// <summary>
         /// The unique id of the event
@@ -27,7 +29,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// The unique id of the underlying stream.
         /// </summary>
-        [Index, Required]    
+        [Required]    
         public TStreamId StreamId { get; set; }
 
         /// <summary>

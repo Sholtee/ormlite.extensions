@@ -4,10 +4,16 @@
 * Author: Denes Solti                                                           *
 ********************************************************************************/
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
+
+using ServiceStack.OrmLite;
 
 namespace Solti.Utils.OrmLite.Extensions.EventStream
 {
@@ -16,36 +22,43 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// Represents the base class of event repositories.
     /// </summary>
-    #pragma warning disable CA1052 // Static holder types should be Static or NotInheritable
-    public class EventRepository<TStreamId, TView> where TView : IAggregate<TStreamId>
-    #pragma warning restore CA1052 // Static holder types should be Static or NotInheritable
+    public class EventRepository<TStreamId, TEvent, TView> where TEvent: Event<TStreamId> where TStreamId: class where TView : IEntity<TStreamId>, new()
     {
+        #region Private
         private static readonly object FLock = new();
 
-        private static Action<TView, Event<TStreamId>>? FApplyFn;
+        private static Action<TView, object>? FCallApply;
 
-        internal static Action<TView, Event<TStreamId>> ApplyFn
+        internal static void Apply(TView view, TEvent evt)
+        {
+            Type eventType = Type.GetType(evt.Type, throwOnError: true);
+
+            object realEvent = JsonSerializer.Deserialize(evt.Payload, eventType)!;
+            CallApply(view, realEvent);
+        }
+
+        internal static Action<TView, object> CallApply
         {
             get
             {
-                if (FApplyFn is null)
+                if (FCallApply is null)
                     lock (FLock)
-                        #pragma warning disable CA1508 // Avoid dead conditional code
-                        if (FApplyFn is null)
-                        #pragma warning restore CA1508
-                            FApplyFn = GenerateApplyFn();
-                return FApplyFn;
+#pragma warning disable CA1508 // Avoid dead conditional code
+                        if (FCallApply is null)
+#pragma warning restore CA1508
+                            FCallApply = GenerateApplyFn();
+                return FCallApply;
             }
         }
 
         //
         // (view, evt) =>
         // {
-        //   switch (evt.Type)
+        //   switch (evt.GetType())
         //   {
-        //     case "xXx":
+        //     case typeof(TxXx):
         //     {
-        //       view.Apply(JsonSerializer.Deserialize<TxXx>(evt.Payload));
+        //       view.Apply(evt);
         //       break;
         //     }
         //     ...
@@ -55,25 +68,25 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         // }
         //
 
-        private static Action<TView, Event<TStreamId>> GenerateApplyFn()
+        private static Action<TView, object> GenerateApplyFn()
         {
             ParameterExpression
                 view = Expression.Parameter(typeof(TView), nameof(view)),
-                evt  = Expression.Parameter(typeof(Event<TStreamId>), nameof(evt));
+                evt  = Expression.Parameter(typeof(object), nameof(evt));
 
-            return Expression.Lambda<Action<TView, Event<TStreamId>>>
+            return Expression.Lambda<Action<TView, object>>
             (
                 Expression.Switch
                 (
-                    Expression.Property(evt, nameof(Event<TStreamId>.Type)),
+                    Expression.Call(evt, nameof(GetType), Array.Empty<Type>()),
                     Expression.Throw
                     (
                         Expression.Invoke
                         (
                             Expression.Constant
                             (
-                                (Func<Event<TStreamId>, InvalidOperationException>) GetUnknownEventError
-                            ), 
+                                (Func<object, InvalidOperationException>) GetUnknownEventError
+                            ),
                             evt
                         )
                     ),
@@ -87,7 +100,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
                 evt
             ).Compile();
 
-            static InvalidOperationException GetUnknownEventError(Event<TStreamId> evt) => new(string.Format(Resources.Culture, Resources.UNKNOWN_EVENT, evt.Type));
+            static InvalidOperationException GetUnknownEventError(object evt) => new(string.Format(Resources.Culture, Resources.UNKNOWN_EVENT, evt.GetType()));
 
             SwitchCase CreateCase(MethodInfo apply)
             {
@@ -102,21 +115,52 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
                     (
                         view,
                         apply,
-                        Expression.Convert
-                        (
-                            Expression.Invoke
-                            (
-                                Expression.Constant((Func<string, Type, JsonSerializerOptions, object?>) JsonSerializer.Deserialize),
-                                Expression.Property(evt, nameof(Event<TStreamId>.Payload)),
-                                Expression.Constant(parameterType),
-                                Expression.Constant(null, typeof(JsonSerializerOptions))
-                            ),
-                            parameterType
-                        )
+                        Expression.Convert(evt, parameterType)
                     ),
-                    Expression.Constant(parameterType.FullName)
+                    Expression.Constant(parameterType)
                 );
             }
         }
+        #endregion
+
+        /// <summary>
+        /// Materializes views.
+        /// </summary>
+        protected IList<TView> MaterializeViews(IEnumerable<TEvent> events, CancellationToken cancellation) => events.GroupBy(evt => evt.StreamId).Select(evtGrp =>
+        {
+            cancellation.ThrowIfCancellationRequested();
+
+            TView view = new()
+            {
+                StreamId = evtGrp.Key
+            };
+
+            foreach (TEvent evt in evtGrp.OrderBy(evt => evt.CreatedAtUtc))
+            {
+                Apply(view, evt);
+            }
+
+            return view;
+        }).ToList();
+
+        /// <summary>
+        /// The database connection.
+        /// </summary>
+        public IDbConnection Connection { get; }
+
+        /// <summary>
+        /// Creates a new <see cref="EventRepository{TStreamId, TEvent, TView}"/> instance.
+        /// </summary>
+        public EventRepository(IDbConnection connection) => Connection = connection ?? throw new ArgumentNullException(nameof(connection));
+
+        /// <summary>
+        /// Returns the materialized views identified by their primary keys.
+        /// </summary>
+        public virtual async Task<IList<TView>> QueryViewsByStreamId(CancellationToken cancellation, params TStreamId[] ids) => MaterializeViews(await Connection.SelectAsync<TEvent>(evt => Sql.In(evt.StreamId, ids), cancellation), cancellation);
+
+        /// <summary>
+        /// Returns the materialized views.
+        /// </summary>
+        public virtual async Task<IList<TView>> QueryViews(CancellationToken cancellation) => MaterializeViews(await Connection.SelectAsync<TEvent>(cancellation), cancellation);
     }
 }
