@@ -127,7 +127,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
                 Payload = JsonSerializer.Serialize(new MyEvent1 { Prop1 = "kutya" })
             });
 
-            EventRepository<string, EventTable, MyView> repo = new(conn);
+            IEventRepository<string, MyView> repo = new EventRepository<string, EventTable, MyView>(conn);
 
             IList<MyView> views = await repo.QueryViewsByStreamId(default, "stream_1");
 
