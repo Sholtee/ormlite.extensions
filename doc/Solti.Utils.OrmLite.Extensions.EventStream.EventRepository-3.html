@@ -79,7 +79,8 @@
   <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class EventRepository&lt;TStreamId, TEvent, TView&gt;
-    where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt; where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
+    where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt;, new()
+    where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -160,6 +161,58 @@
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent__0_System_Object_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)">CreateEvent(TStreamId, Object, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Inserts a new event into the repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;TView&gt; CreateEvent(TStreamId streamId, object evt, CancellationToken cancellation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TStreamId</span></td>
+        <td><span class="parametername">streamId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">evt</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TView&gt;</td>
+        <td><p>The modified entity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_MaterializeViews_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.MaterializeViews*"></a>
   <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_MaterializeViews_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.MaterializeViews(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">MaterializeViews(IEnumerable&lt;TEvent&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Materializes views.</p>
@@ -167,7 +220,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IList&lt;TView&gt; MaterializeViews(IEnumerable&lt;TEvent&gt; events, CancellationToken cancellation)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual IList&lt;TView&gt; MaterializeViews(IEnumerable&lt;TEvent&gt; events, CancellationToken cancellation)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -213,7 +266,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IList&lt;TView&gt;&gt; QueryViews(CancellationToken cancellation)</code></pre>
+    <pre><code class="lang-csharp hljs">public async Task&lt;IList&lt;TView&gt;&gt; QueryViews(CancellationToken cancellation)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -254,7 +307,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IList&lt;TView&gt;&gt; QueryViewsByStreamId(CancellationToken cancellation, params TStreamId[] ids)</code></pre>
+    <pre><code class="lang-csharp hljs">public async Task&lt;IList&lt;TView&gt;&gt; QueryViewsByStreamId(CancellationToken cancellation, params TStreamId[] ids)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

@@ -325,6 +325,23 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).Connection
   nameWithType: EventRepository<TStreamId, TEvent, TView>.Connection
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).Connection
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)
+  name: CreateEvent(TStreamId, Object, CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent__0_System_Object_System_Threading_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId, System.Object, System.Threading.CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).CreateEvent(TStreamId, System.Object, System.Threading.CancellationToken)
+  nameWithType: EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId, Object, CancellationToken)
+  nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).CreateEvent(TStreamId, Object, CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent*
+  name: CreateEvent
+  href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository<TStreamId, TEvent, TView>.CreateEvent
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).CreateEvent
+  nameWithType: EventRepository<TStreamId, TEvent, TView>.CreateEvent
+  nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).CreateEvent
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.MaterializeViews(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
   name: MaterializeViews(IEnumerable<TEvent>, CancellationToken)
   href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_MaterializeViews_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_
