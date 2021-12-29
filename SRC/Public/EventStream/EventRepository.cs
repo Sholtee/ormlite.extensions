@@ -22,7 +22,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// Represents the base class of event repositories.
     /// </summary>
-    public class EventRepository<TStreamId, TEvent, TView> where TEvent: Event<TStreamId> where TStreamId: IEquatable<TStreamId> where TView : IEntity<TStreamId>, new()
+    public class EventRepository<TStreamId, TEvent, TView> where TEvent: Event<TStreamId>, new() where TStreamId: IEquatable<TStreamId> where TView : IEntity<TStreamId>, new()
     {
         #region Private
         private static readonly object FLock = new();
@@ -41,21 +41,18 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
             if (realEvent is null)
                 throw new InvalidOperationException(Resources.NULL_EVENT);
 
-            CallApply(view, realEvent);
+            Apply(view, realEvent);
         }
 
-        internal static Action<TView, object> CallApply
+        internal static void Apply(TView view, object evt)
         {
-            get
-            {
-                if (FCallApply is null)
-                    lock (FLock)
+            if (FCallApply is null)
+                lock (FLock)
 #pragma warning disable CA1508 // Avoid dead conditional code
-                        if (FCallApply is null)
+                    if (FCallApply is null)
 #pragma warning restore CA1508
-                            FCallApply = GenerateApplyFn();
-                return FCallApply;
-            }
+                        FCallApply = GenerateApplyFn();
+            FCallApply(view, evt);
         }
 
         //
@@ -134,7 +131,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// Materializes views.
         /// </summary>
-        protected IList<TView> MaterializeViews(IEnumerable<TEvent> events, CancellationToken cancellation) => events.GroupBy(evt => evt.StreamId).Select(evtGrp =>
+        protected virtual IList<TView> MaterializeViews(IEnumerable<TEvent> events, CancellationToken cancellation) => events.GroupBy(evt => evt.StreamId).Select(evtGrp =>
         {
             cancellation.ThrowIfCancellationRequested();
 
@@ -164,11 +161,34 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// Returns the materialized views identified by their primary keys.
         /// </summary>
-        public virtual async Task<IList<TView>> QueryViewsByStreamId(CancellationToken cancellation, params TStreamId[] ids) => MaterializeViews(await Connection.SelectAsync<TEvent>(evt => Sql.In(evt.StreamId, ids), cancellation), cancellation);
+        public async Task<IList<TView>> QueryViewsByStreamId(CancellationToken cancellation, params TStreamId[] ids) => MaterializeViews(await Connection.SelectAsync<TEvent>(evt => Sql.In(evt.StreamId, ids), cancellation), cancellation);
 
         /// <summary>
         /// Returns the materialized views.
         /// </summary>
-        public virtual async Task<IList<TView>> QueryViews(CancellationToken cancellation) => MaterializeViews(await Connection.SelectAsync<TEvent>(cancellation), cancellation);
+        public async Task<IList<TView>> QueryViews(CancellationToken cancellation) => MaterializeViews(await Connection.SelectAsync<TEvent>(cancellation), cancellation);
+
+        /// <summary>
+        /// Inserts a new event into the repository.
+        /// </summary>
+        /// <returns>The modified entity.</returns>
+        public async Task<TView> CreateEvent(TStreamId streamId, object evt, CancellationToken cancellation)
+        {
+            if (evt is null)
+                throw new ArgumentNullException(nameof(evt));
+
+            TView view = (await QueryViewsByStreamId(cancellation, streamId)).SingleOrDefault() ?? new TView { StreamId = streamId };
+            Apply(view, evt); // may throw
+
+            await Connection.InsertAsync(new TEvent 
+            {
+                CreatedAtUtc = DateTime.UtcNow.Ticks,
+                StreamId     = streamId,
+                Type         = evt.GetType().AssemblyQualifiedName,
+                Payload      = JsonSerializer.Serialize(evt)
+            }, token: cancellation);
+
+            return view;
+        }
     }
 }

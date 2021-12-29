@@ -22,7 +22,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent1"/> specific mutations.
         /// </summary>
-        /// <returns>The new state of the entity.</returns>
+        /// <remarks>This method should throw if applying the event is not allowed.</remarks>
         public abstract void Apply(TEvent1 evt);
     }
 
@@ -34,7 +34,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent2"/> specific mutations.
         /// </summary>
-        /// <returns>The new state of the entity.</returns>
+        /// <remarks>This method should throw if applying the event is not allowed.</remarks>
         public abstract void Apply(TEvent2 evt);
     }
 
@@ -46,7 +46,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent3"/> specific mutations.
         /// </summary>
-        /// <returns>The new state of the entity.</returns>
+        /// <remarks>This method should throw if applying the event is not allowed.</remarks>
         public abstract void Apply(TEvent3 evt);
     }
 
@@ -58,7 +58,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent4"/> specific mutations.
         /// </summary>
-        /// <returns>The new state of the entity.</returns>
+        /// <remarks>This method should throw if applying the event is not allowed.</remarks>
         public abstract void Apply(TEvent4 evt);
     }
 
@@ -70,7 +70,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent5"/> specific mutations.
         /// </summary>
-        /// <returns>The new state of the entity.</returns>
+        /// <remarks>This method should throw if applying the event is not allowed.</remarks>
         public abstract void Apply(TEvent5 evt);
     }
 }
