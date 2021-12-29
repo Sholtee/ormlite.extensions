@@ -96,11 +96,12 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
             }
         }
 
-        public IDbCommand CreateCommand() => (IDbCommand) ProxyGenerator<IDbCommand, IDbCommandInterceptor>
+        private static Func<object?[], object> DbCommandFactory { get; } = ProxyGenerator<IDbCommand, IDbCommandInterceptor>
             .GetGeneratedType()
             .GetConstructor(new[] { typeof(BulkedDbConnection) })
-            .ToStaticDelegate()
-            .Invoke(new object[] { this });
+            .ToStaticDelegate();
+
+        public IDbCommand CreateCommand() => (IDbCommand) DbCommandFactory.Invoke(new object[] { this });
 
         public void Open() => throw new NotSupportedException();
 
