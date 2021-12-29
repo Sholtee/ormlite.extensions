@@ -77,7 +77,7 @@
     <Description>OrmLite extensions</Description>
     <PackageId>Solti.Utils.OrmLite.Extensions</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>OrmLite</PackageTags>
+    <PackageTags>OrmLite;SchemaApi;EventStream</PackageTags>
     <PackageReleaseNotes>See https://github.com/Sholtee/ormlite.extensions/blob/master/history.md </PackageReleaseNotes>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.MD</PackageReadmeFile>
