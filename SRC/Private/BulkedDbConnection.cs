@@ -68,20 +68,23 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                 switch (context.Method.Name)
                 {
                     case nameof(Target.ExecuteNonQuery):
-                        string command = OrmLiteConfig.DialectProvider.MergeParamsIntoSql(Target!.CommandText, Target
-                            .Parameters
-                            .Cast<IDbDataParameter>()
-                            .Select(para => 
-                            {
-                                //
-                                // MergeParamsIntoSql() baszik rendesen lekezeni a DBNull-t
-                                //
+                        string command = Parent
+                            .Connection
+                            .GetDialectProvider()
+                            .MergeParamsIntoSql(Target!.CommandText, Target
+                                .Parameters
+                                .Cast<IDbDataParameter>()
+                                .Select(para => 
+                                {
+                                    //
+                                    // MergeParamsIntoSql() baszik rendesen lekezeni a DBNull-t
+                                    //
 
-                                if (para.Value == DBNull.Value)
-                                    para.Value = null;
+                                    if (para.Value == DBNull.Value)
+                                        para.Value = null;
 
-                                return para;
-                            }));
+                                    return para;
+                                }));
 
                         if (!FCommandTerminated.IsMatch(command)) command += ";";
                         Parent.Buffer.AppendLine(command);
