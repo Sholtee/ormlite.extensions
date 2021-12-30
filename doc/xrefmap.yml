@@ -308,6 +308,31 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).EventRepository
   nameWithType: EventRepository<TStreamId, TEvent, TView>.EventRepository
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).EventRepository
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply(`2,`1)
+  name: Apply(TView, TEvent)
+  href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply__2__1_
+  commentId: M:Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply(`2,`1)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository<TStreamId, TEvent, TView>.Apply(TView, TEvent)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).Apply(TView, TEvent)
+  nameWithType: EventRepository<TStreamId, TEvent, TView>.Apply(TView, TEvent)
+  nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).Apply(TView, TEvent)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply(`2,System.Object)
+  name: Apply(TView, Object)
+  href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply__2_System_Object_
+  commentId: M:Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply(`2,System.Object)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository<TStreamId, TEvent, TView>.Apply(TView, System.Object)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).Apply(TView, System.Object)
+  nameWithType: EventRepository<TStreamId, TEvent, TView>.Apply(TView, Object)
+  nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).Apply(TView, Object)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply*
+  name: Apply
+  href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository<TStreamId, TEvent, TView>.Apply
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).Apply
+  nameWithType: EventRepository<TStreamId, TEvent, TView>.Apply
+  nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).Apply
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Connection
   name: Connection
   href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Connection
@@ -325,6 +350,14 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).Connection
   nameWithType: EventRepository<TStreamId, TEvent, TView>.Connection
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).Connection
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object)
+  name: CreateEvent(TStreamId, Object)
+  href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent__0_System_Object_
+  commentId: M:Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId, System.Object)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).CreateEvent(TStreamId, System.Object)
+  nameWithType: EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId, Object)
+  nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).CreateEvent(TStreamId, Object)
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)
   name: CreateEvent(TStreamId, Object, CancellationToken)
   href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent__0_System_Object_System_Threading_CancellationToken_

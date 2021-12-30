@@ -164,6 +164,114 @@
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply__2__1_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply(`2,`1)">Apply(TView, TEvent)</h4>
+  <div class="markdown level1 summary"><p>Extracts the real event from a <code data-dev-comment-type="typeparamref" class="typeparamref">TEvent</code> instance, then applies it against a view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Apply(TView view, TEvent evt)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TView</span></td>
+        <td><span class="parametername">view</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TEvent</span></td>
+        <td><span class="parametername">evt</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply__2_System_Object_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply(`2,System.Object)">Apply(TView, Object)</h4>
+  <div class="markdown level1 summary"><p>Applies an event against a view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void Apply(TView view, object evt)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TView</span></td>
+        <td><span class="parametername">view</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">evt</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent__0_System_Object_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object)">CreateEvent(TStreamId, Object)</h4>
+  <div class="markdown level1 summary"><p>Creates a new <code data-dev-comment-type="typeparamref" class="typeparamref">TEvent</code> instance to be inserted into the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TEvent CreateEvent(TStreamId streamId, object evt)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TStreamId</span></td>
+        <td><span class="parametername">streamId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">evt</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent*"></a>
   <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent__0_System_Object_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)">CreateEvent(TStreamId, Object, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Inserts a new event into the repository.</p>
