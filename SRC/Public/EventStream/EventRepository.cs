@@ -31,30 +31,6 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
 
         private static InvalidOperationException GetUnknownEventError(string evtType) => new(string.Format(Resources.Culture, Resources.UNKNOWN_EVENT, evtType));
 
-        internal static void Apply(TView view, TEvent evt)
-        {
-            Type? eventType = Type.GetType(evt.Type, throwOnError: false);
-            if (eventType is null)
-                throw GetUnknownEventError(evt.Type);
-
-            object? realEvent = JsonSerializer.Deserialize(evt.Payload, eventType);
-            if (realEvent is null)
-                throw new InvalidOperationException(Resources.NULL_EVENT);
-
-            Apply(view, realEvent);
-        }
-
-        internal static void Apply(TView view, object evt)
-        {
-            if (FCallApply is null)
-                lock (FLock)
-#pragma warning disable CA1508 // Avoid dead conditional code
-                    if (FCallApply is null)
-#pragma warning restore CA1508
-                        FCallApply = GenerateApplyFn();
-            FCallApply(view, evt);
-        }
-
         //
         // (view, evt) =>
         // {
@@ -152,6 +128,59 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
             .ToList();
 
         /// <summary>
+        /// Extracts the real event from a <typeparamref name="TEvent"/> instance, then applies it against a view.
+        /// </summary>
+        #if DEBUG
+        internal
+        #endif
+        protected virtual void Apply(TView view, TEvent evt)
+        {
+            if (view is null)
+                throw new ArgumentNullException(nameof(view));
+
+            if (evt is null)
+                throw new ArgumentNullException(nameof(evt));
+
+            Type? eventType = Type.GetType(evt.Type, throwOnError: false);
+            if (eventType is null)
+                throw GetUnknownEventError(evt.Type);
+
+            object? realEvent = JsonSerializer.Deserialize(evt.Payload, eventType);
+            if (realEvent is null)
+                throw new InvalidOperationException(Resources.NULL_EVENT);
+
+            Apply(view, realEvent);
+        }
+
+        /// <summary>
+        /// Applies an event against a view.
+        /// </summary>
+        #if DEBUG
+        internal
+        #endif
+        protected static void Apply(TView view, object evt)
+        {
+            if (FCallApply is null)
+                lock (FLock)
+#pragma warning disable CA1508 // Avoid dead conditional code
+                    if (FCallApply is null)
+#pragma warning restore CA1508
+                        FCallApply = GenerateApplyFn();
+            FCallApply(view, evt);
+        }
+
+        /// <summary>
+        /// Creates a new <typeparamref name="TEvent"/> instance to be inserted into the database.
+        /// </summary>
+        protected virtual TEvent CreateEvent(TStreamId streamId, object evt) => new TEvent
+        {
+            CreatedAtUtc = DateTime.UtcNow.Ticks,
+            StreamId = streamId ?? throw new ArgumentNullException(nameof(streamId)),
+            Type = (evt ?? throw new ArgumentNullException(nameof(evt))).GetType().AssemblyQualifiedName,
+            Payload = JsonSerializer.Serialize(evt)
+        };
+
+        /// <summary>
         /// The database connection.
         /// </summary>
         public IDbConnection Connection { get; }
@@ -183,13 +212,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
             TView view = (await QueryViewsByStreamId(cancellation, streamId)).SingleOrDefault() ?? new TView { StreamId = streamId };
             Apply(view, evt); // may throw
 
-            await Connection.InsertAsync(new TEvent 
-            {
-                CreatedAtUtc = DateTime.UtcNow.Ticks,
-                StreamId     = streamId,
-                Type         = evt.GetType().AssemblyQualifiedName,
-                Payload      = JsonSerializer.Serialize(evt)
-            }, token: cancellation);
+            await Connection.InsertAsync(CreateEvent(streamId, evt), token: cancellation);
 
             return view;
         }

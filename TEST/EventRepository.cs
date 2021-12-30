@@ -74,11 +74,11 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
 
         [Test]
         public void Apply_ShoudThrowOnUnknownEvent([ValueSource(nameof(UnknownEvents))] string unknownEvt) =>
-            Assert.Throws<InvalidOperationException>(() => EventRepository<string, EventTable, MyView >.Apply(new MyView(), new EventTable { Type = unknownEvt, Payload = "{}"}));
+            Assert.Throws<InvalidOperationException>(() => new EventRepository<string, EventTable, MyView>(new Mock<IDbConnection>(MockBehavior.Strict).Object).Apply(new MyView(), new EventTable { Type = unknownEvt, Payload = "{}"}));
 
         [Test]
         public void Apply_ShoudThrowOnNullEvent() =>
-            Assert.Throws<InvalidOperationException>(() => EventRepository<string, EventTable, MyView>.Apply(new MyView(), new EventTable { Type = typeof(object).AssemblyQualifiedName, Payload = "null" }));
+            Assert.Throws<InvalidOperationException>(() => new EventRepository<string, EventTable, MyView>(new Mock<IDbConnection>(MockBehavior.Strict).Object).Apply(new MyView(), new EventTable { Type = typeof(object).AssemblyQualifiedName, Payload = "null" }));
 
         [Test]
         public void Apply_ShouldCallTheProperApplyFunction()
@@ -86,7 +86,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
             Mock<MyView> mockView = new(MockBehavior.Strict);
             mockView.Setup(v => v.Apply(It.Is<MyEvent2>(evt => evt.Prop2 == 1986)));
 
-            Assert.DoesNotThrow(() => EventRepository<string, EventTable, MyView>.Apply(mockView.Object, new EventTable
+            Assert.DoesNotThrow(() => new EventRepository<string, EventTable, MyView>(new Mock<IDbConnection>(MockBehavior.Strict).Object).Apply(mockView.Object, new EventTable
             {
                 Type = typeof(MyEvent2).AssemblyQualifiedName,
                 Payload = JsonSerializer.Serialize(new MyEvent2 
@@ -195,6 +195,27 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
             Assert.That(state.StreamId, Is.EqualTo(streamId));
             Assert.That(state.Prop1, Is.EqualTo("cica"));
             Assert.That(state.Prop2, Is.EqualTo(1986));
+        }
+
+        [Test]
+        public async Task QueryViews_ShouldWorkWithEventsCreateByCreateEvent()
+        {
+            using IDbConnection conn = ConnectionFactory.OpenDbConnection();
+            conn.CreateTable<EventTable2>();
+
+            IEventRepository<Guid, MyView2> repo = new EventRepository<Guid, EventTable2, MyView2>(conn);
+
+            Guid streamId = Guid.NewGuid();
+
+            await repo.CreateEvent(streamId, new MyEvent1 { Prop1 = "cica" });
+            await repo.CreateEvent(streamId, new MyEvent2 { Prop2 = 1986 });
+
+            IList<MyView2> views = await repo.QueryViewsByStreamId(default, streamId);
+
+            Assert.That(views.Count, Is.EqualTo(1));
+            Assert.That(views[0].StreamId, Is.EqualTo(streamId));
+            Assert.That(views[0].Prop1, Is.EqualTo("cica"));
+            Assert.That(views[0].Prop2, Is.EqualTo(1986));
         }
     }
 }
