@@ -29,7 +29,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// The unique id of the underlying stream.
         /// </summary>
-        [Required]    
+        [Required, Index]    
         public TStreamId StreamId { get; set; }
 
         /// <summary>
