@@ -214,23 +214,6 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).Data
   nameWithType: Document<TStreamId, TView>.Data
   nameWithType.vb: Document(Of TStreamId, TView).Data
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.SerializedData
-  name: SerializedData
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_SerializedData
-  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.SerializedData
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.SerializedData
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).SerializedData
-  nameWithType: Document<TStreamId, TView>.SerializedData
-  nameWithType.vb: Document(Of TStreamId, TView).SerializedData
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.SerializedData*
-  name: SerializedData
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_SerializedData_
-  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.SerializedData
-  isSpec: "True"
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.SerializedData
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).SerializedData
-  nameWithType: Document<TStreamId, TView>.SerializedData
-  nameWithType.vb: Document(Of TStreamId, TView).SerializedData
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.StreamId
   name: StreamId
   href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_StreamId
@@ -352,57 +335,6 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Event(Of TStreamId).Id
   nameWithType: Event<TStreamId>.Id
   nameWithType.vb: Event(Of TStreamId).Id
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Payload
-  name: Payload
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Event-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Event_1_Payload
-  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Payload
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Event<TStreamId>.Payload
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Event(Of TStreamId).Payload
-  nameWithType: Event<TStreamId>.Payload
-  nameWithType.vb: Event(Of TStreamId).Payload
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Payload*
-  name: Payload
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Event-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Event_1_Payload_
-  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Payload
-  isSpec: "True"
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Event<TStreamId>.Payload
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Event(Of TStreamId).Payload
-  nameWithType: Event<TStreamId>.Payload
-  nameWithType.vb: Event(Of TStreamId).Payload
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Event`1.StreamId
-  name: StreamId
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Event-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Event_1_StreamId
-  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Event`1.StreamId
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Event<TStreamId>.StreamId
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Event(Of TStreamId).StreamId
-  nameWithType: Event<TStreamId>.StreamId
-  nameWithType.vb: Event(Of TStreamId).StreamId
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Event`1.StreamId*
-  name: StreamId
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Event-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Event_1_StreamId_
-  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Event`1.StreamId
-  isSpec: "True"
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Event<TStreamId>.StreamId
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Event(Of TStreamId).StreamId
-  nameWithType: Event<TStreamId>.StreamId
-  nameWithType.vb: Event(Of TStreamId).StreamId
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Type
-  name: Type
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Event-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Event_1_Type
-  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Type
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Event<TStreamId>.Type
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Event(Of TStreamId).Type
-  nameWithType: Event<TStreamId>.Type
-  nameWithType.vb: Event(Of TStreamId).Type
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Type*
-  name: Type
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Event-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Event_1_Type_
-  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Type
-  isSpec: "True"
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Event<TStreamId>.Type
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Event(Of TStreamId).Type
-  nameWithType: Event<TStreamId>.Type
-  nameWithType.vb: Event(Of TStreamId).Type
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3
   name: EventRepository<TStreamId, TEvent, TView>
   href: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html
@@ -636,6 +568,66 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.IEventRepository(Of TStreamId, TView).QueryViewsByStreamId
   nameWithType: IEventRepository<TStreamId, TView>.QueryViewsByStreamId
   nameWithType.vb: IEventRepository(Of TStreamId, TView).QueryViewsByStreamId
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1
+  name: SerializedData<TStreamId>
+  href: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1
+  name.vb: SerializedData(Of TStreamId)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData<TStreamId>
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData(Of TStreamId)
+  nameWithType: SerializedData<TStreamId>
+  nameWithType.vb: SerializedData(Of TStreamId)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.Payload
+  name: Payload
+  href: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_Payload
+  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.Payload
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData<TStreamId>.Payload
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData(Of TStreamId).Payload
+  nameWithType: SerializedData<TStreamId>.Payload
+  nameWithType.vb: SerializedData(Of TStreamId).Payload
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.Payload*
+  name: Payload
+  href: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_Payload_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.Payload
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData<TStreamId>.Payload
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData(Of TStreamId).Payload
+  nameWithType: SerializedData<TStreamId>.Payload
+  nameWithType.vb: SerializedData(Of TStreamId).Payload
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.StreamId
+  name: StreamId
+  href: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_StreamId
+  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.StreamId
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData<TStreamId>.StreamId
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData(Of TStreamId).StreamId
+  nameWithType: SerializedData<TStreamId>.StreamId
+  nameWithType.vb: SerializedData(Of TStreamId).StreamId
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.StreamId*
+  name: StreamId
+  href: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_StreamId_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.StreamId
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData<TStreamId>.StreamId
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData(Of TStreamId).StreamId
+  nameWithType: SerializedData<TStreamId>.StreamId
+  nameWithType.vb: SerializedData(Of TStreamId).StreamId
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.Type
+  name: Type
+  href: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_Type
+  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.Type
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData<TStreamId>.Type
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData(Of TStreamId).Type
+  nameWithType: SerializedData<TStreamId>.Type
+  nameWithType.vb: SerializedData(Of TStreamId).Type
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.Type*
+  name: Type
+  href: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_Type_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.SerializedData`1.Type
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData<TStreamId>.Type
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.SerializedData(Of TStreamId).Type
+  nameWithType: SerializedData<TStreamId>.Type
+  nameWithType.vb: SerializedData(Of TStreamId).Type
 - uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection
   name: IBulkedDbConnection
   href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html

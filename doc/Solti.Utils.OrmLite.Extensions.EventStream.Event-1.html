@@ -48,10 +48,20 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">Event&lt;TStreamId&gt;</span></div>
+    <div class="level1"><a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html">SerializedData</a>&lt;TStreamId&gt;</div>
+    <div class="level2"><span class="xref">Event&lt;TStreamId&gt;</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_StreamId">SerializedData&lt;TStreamId&gt;.StreamId</a>
+    </div>
+    <div>
+      <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_Type">SerializedData&lt;TStreamId&gt;.Type</a>
+    </div>
+    <div>
+      <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_Payload">SerializedData&lt;TStreamId&gt;.Payload</a>
+    </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
     </div>
@@ -78,9 +88,7 @@
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
   <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_Event_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CompositeIndex(new string[]{&quot;StreamId&quot;, &quot;CreatedAtUtc&quot;}, Unique = true)]
-public abstract class Event&lt;TStreamId&gt;
-    where TStreamId : IEquatable&lt;TStreamId&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Event&lt;TStreamId&gt; : SerializedData&lt;TStreamId&gt; where TStreamId : IEquatable&lt;TStreamId&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -107,7 +115,8 @@ public abstract class Event&lt;TStreamId&gt;
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long CreatedAtUtc { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required]
+public long CreatedAtUtc { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -146,84 +155,6 @@ public Guid Id { get; set; }</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_Event_1_Payload_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Payload*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_Event_1_Payload" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Payload">Payload</h4>
-  <div class="markdown level1 summary"><p>The serialized payload.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[StringLength(2147483647)]
-public string Payload { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_Event_1_StreamId_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Event`1.StreamId*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_Event_1_StreamId" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Event`1.StreamId">StreamId</h4>
-  <div class="markdown level1 summary"><p>The unique id of the underlying stream.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[Index]
-public TStreamId StreamId { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TStreamId</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_Event_1_Type_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Type*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_Event_1_Type" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Event`1.Type">Type</h4>
-  <div class="markdown level1 summary"><p>The type of the payload.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[StringLength(512)]
-public string Type { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
