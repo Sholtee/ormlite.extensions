@@ -197,23 +197,23 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView)
   nameWithType: Document<TStreamId, TView>
   nameWithType.vb: Document(Of TStreamId, TView)
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.Data
-  name: Data
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_Data
-  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.Data
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.Data
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).Data
-  nameWithType: Document<TStreamId, TView>.Data
-  nameWithType.vb: Document(Of TStreamId, TView).Data
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.Data*
-  name: Data
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_Data_
-  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.Data
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.LastModifiedUtc
+  name: LastModifiedUtc
+  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_LastModifiedUtc
+  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.LastModifiedUtc
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.LastModifiedUtc
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).LastModifiedUtc
+  nameWithType: Document<TStreamId, TView>.LastModifiedUtc
+  nameWithType.vb: Document(Of TStreamId, TView).LastModifiedUtc
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.LastModifiedUtc*
+  name: LastModifiedUtc
+  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_LastModifiedUtc_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.LastModifiedUtc
   isSpec: "True"
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.Data
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).Data
-  nameWithType: Document<TStreamId, TView>.Data
-  nameWithType.vb: Document(Of TStreamId, TView).Data
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.LastModifiedUtc
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).LastModifiedUtc
+  nameWithType: Document<TStreamId, TView>.LastModifiedUtc
+  nameWithType.vb: Document(Of TStreamId, TView).LastModifiedUtc
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.StreamId
   name: StreamId
   href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_StreamId
@@ -274,6 +274,23 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository(Of TStreamId, TDocument, TView).Connection
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.Connection
   nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).Connection
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)
+  name: InsertOrUpdate(TView, CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_InsertOrUpdate__2_System_Threading_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate(TView, System.Threading.CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate(TView, System.Threading.CancellationToken)
+  nameWithType: DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate(TView, CancellationToken)
+  nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate(TView, CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate*
+  name: InsertOrUpdate
+  href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_InsertOrUpdate_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate
+  nameWithType: DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate
+  nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.QueryBySimpleCondition*
   name: QueryBySimpleCondition
   href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_QueryBySimpleCondition_
