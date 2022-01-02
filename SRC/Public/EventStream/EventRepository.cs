@@ -193,11 +193,13 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// Returns the materialized views identified by their primary keys.
         /// </summary>
+        /// <remarks>This method replays all the related events to build the result, therefore it's considered inefficient. To query views use the <see cref="Document{TStreamId, TView}"/> class.</remarks>
         public async Task<IList<TView>> QueryViewsByStreamId(CancellationToken cancellation, params TStreamId[] ids) => MaterializeViews(await Connection.SelectAsync<TEvent>(evt => Sql.In(evt.StreamId, ids), cancellation), cancellation);
 
         /// <summary>
         /// Returns the materialized views.
         /// </summary>
+        /// <remarks>This method replays all the related events to build the result, therefore it's considered inefficient. To query views use the <see cref="Document{TStreamId, TView}"/> class.</remarks>
         public async Task<IList<TView>> QueryViews(CancellationToken cancellation) => MaterializeViews(await Connection.SelectAsync<TEvent>(cancellation), cancellation);
 
         /// <summary>
