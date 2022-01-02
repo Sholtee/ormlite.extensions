@@ -6,6 +6,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 using NUnit.Framework;
@@ -43,9 +44,10 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
         [TearDown]
         public void TearDown() => Connection?.Dispose();
 
-        public class MyView
+        public class MyView: IEntity<string>
         {
             public int Prop { get; set; }
+            public string StreamId { get; init; }
         }
 
         public class MyDocument : Document<string, MyView>
@@ -55,8 +57,8 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
         [Test]
         public async Task QueryBySimpleCondition_ShouldReturnTheProperViews()
         {
-            Connection.Insert(new MyDocument { StreamId = "cica", Type = typeof(MyView).AssemblyQualifiedName, Data = new MyView { Prop = 1986 } });
-            Connection.Insert(new MyDocument { StreamId = "kutya", Type = typeof(MyView).AssemblyQualifiedName, Data = new MyView { Prop = 2000 } });
+            Connection.Insert(new MyDocument { StreamId = "cica", Type = typeof(MyView).AssemblyQualifiedName, Payload = JsonSerializer.Serialize(new MyView { Prop = 1986 }) });
+            Connection.Insert(new MyDocument { StreamId = "kutya", Type = typeof(MyView).AssemblyQualifiedName, Payload = JsonSerializer.Serialize(new MyView { Prop = 2000 }) });
 
             IList<MyView> result = await Repository.QueryBySimpleCondition<int>("$.Prop", prop => prop == 1986);
             Assert.That(result.Count, Is.EqualTo(1));

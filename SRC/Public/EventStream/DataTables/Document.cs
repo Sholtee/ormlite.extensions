@@ -4,7 +4,6 @@
 * Author: Denes Solti                                                           *
 ********************************************************************************/
 using System;
-using System.Text.Json;
 
 using ServiceStack.DataAnnotations;
 
@@ -22,13 +21,9 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         public override TStreamId StreamId { get; set; }
 
         /// <summary>
-        /// The actual data to store.
+        /// Last modification.
         /// </summary>
-        [Ignore]
-        public virtual TView? Data
-        { 
-            get => JsonSerializer.Deserialize<TView>(Payload); 
-            set => Payload = JsonSerializer.Serialize(value); 
-        } 
+        [Required]
+        public long LastModifiedUtc { get; set; }
     }
 }

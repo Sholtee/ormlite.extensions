@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,7 +19,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// Represents the base class of document repositories.
     /// </summary>
-    public class DocumentRepository<TStreamId, TDocument, TView> where TStreamId : IEquatable<TStreamId> where TView : new() where TDocument: Document<TStreamId, TView>, new()
+    public class DocumentRepository<TStreamId, TDocument, TView> where TStreamId : IEquatable<TStreamId> where TView : IEntity<TStreamId>, new() where TDocument: Document<TStreamId, TView>, new()
     {
         /// <summary>
         /// The database connection.
@@ -37,6 +38,23 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
             public ParameterReplacerVisitor(Expression substitute) => FSubstitute = substitute;
 
             protected override Expression VisitParameter(ParameterExpression node) => FSubstitute;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual async Task InsertOrUpdate(TView view, CancellationToken cancellation = default)
+        {
+            TDocument entity = new()
+            {
+                StreamId = view.StreamId,
+                Payload = JsonSerializer.Serialize(view),
+                Type = typeof(TView).AssemblyQualifiedName,
+                LastModifiedUtc = DateTime.UtcNow.Ticks
+            };
+
+            if (await Connection.UpdateAsync(entity, token: cancellation) is 0)
+                await Connection.InsertAsync(entity, token: cancellation);
         }
 
         /// <summary>
@@ -65,13 +83,17 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
             Expression<Func<TDocument, bool>> where = Expression.Lambda<Func<TDocument, bool>>(new ParameterReplacerVisitor(extract.Body).Visit(predicate.Body), Expression.Parameter(typeof(TDocument), "_"));
 
             string sql = Connection.From<TDocument>()
-                .Select()
+                //
+                // A lentinek mukodnie kene (https://github.com/ServiceStack/ServiceStack.OrmLite#querying-with-select) gyakorlatilag hibas kimenet a vege
+                //
+
+                //.Select(doc => "[ " + Sql.Custom($"GROUP_CONCAT({dataColumn}, {dialectProvider.GetQuotedValue(",")})") + " ]")
+                .Select(doc => Sql.Custom($"GROUP_CONCAT({dataColumn}, {dialectProvider.GetQuotedValue(",")})"))
                 .Where(where)
                 .ToMergedParamsSelectStatement();
 
-            return (await Connection.SelectAsync<TDocument>(sql, cancellation))
-                .Select(doc => doc.Data!)
-                .ToList();
+            string payload = await Connection.ScalarAsync<string>(sql, token: cancellation);
+            return JsonSerializer.Deserialize<TView[]>($"[{payload}]")!;
         }
     }
 }
