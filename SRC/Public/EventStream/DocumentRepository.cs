@@ -30,6 +30,15 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// </summary>
         public DocumentRepository(IDbConnection connection) => Connection = connection ?? throw new ArgumentNullException(nameof(connection));
 
+        private sealed class ParameterReplacerVisitor: ExpressionVisitor
+        {
+            private readonly Expression FSubstitute;
+
+            public ParameterReplacerVisitor(Expression substitute) => FSubstitute = substitute;
+
+            protected override Expression VisitParameter(ParameterExpression node) => FSubstitute;
+        }
+
         /// <summary>
         /// Queries views.
         /// </summary>
@@ -49,16 +58,15 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
                 .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId, TView>.SerializedData))
                 .GetQuotedName(dialectProvider);
 
-            // (BinaryExpression) ((Expression<Func<bool>>) (() => Sql.JsonValue(dataColumn, jsonPath) == "")).Body,
-            Expression<Action> extract = () => Sql.Custom<TProperty>($"JSON_EXTRACT({dataColumn}, {dialectProvider.GetQuotedValue(jsonPath)})");
+            jsonPath = dialectProvider.GetQuotedValue(jsonPath);
 
-            BinaryExpression        
-                original = (BinaryExpression) predicate.Body,
-                updated  = original.Update(extract.Body, original.Conversion, original.Right);
+            Expression<Action> extract = () => Sql.Custom<TProperty>($"JSON_EXTRACT({dataColumn}, {jsonPath})");
+
+            Expression<Func<TDocument, bool>> where = Expression.Lambda<Func<TDocument, bool>>(new ParameterReplacerVisitor(extract.Body).Visit(predicate.Body), Expression.Parameter(typeof(TDocument), "_"));
 
             string sql = Connection.From<TDocument>()
                 .Select()
-                .Where(Expression.Lambda<Func<TDocument, bool>>(updated, Expression.Parameter(typeof(TDocument), "_")))
+                .Where(where)
                 .ToMergedParamsSelectStatement();
 
             return (await Connection.SelectAsync<TDocument>(sql, cancellation))
