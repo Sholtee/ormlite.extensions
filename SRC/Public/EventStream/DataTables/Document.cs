@@ -15,20 +15,11 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// Base class for stored views
     /// </summary>
-    public abstract class Document<TStreamId, TView> where TStreamId : IEquatable<TStreamId>
+    public abstract class Document<TStreamId, TView>: SerializedData<TStreamId> where TStreamId : IEquatable<TStreamId>
     {
-        /// <summary>
-        /// The id of stream.
-        /// </summary>
-        [Required, Index(Unique = true)]
-        public TStreamId StreamId { get; set; }
-
-        /// <summary>
-        /// The serialized data.
-        /// </summary>
-        /// <remarks>Since this property is virtual you can apply your own <see cref="CustomFieldAttribute"/> if necessary.</remarks>
-        [Required, CustomField("json")]
-        public virtual string SerializedData { get; set; } = "null";
+        /// <inheritdoc/>
+        [PrimaryKey]
+        public override TStreamId StreamId { get; set; }
 
         /// <summary>
         /// The actual data to store.
@@ -36,8 +27,8 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         [Ignore]
         public virtual TView? Data
         { 
-            get => JsonSerializer.Deserialize<TView>(SerializedData); 
-            set => SerializedData = JsonSerializer.Serialize(value); 
+            get => JsonSerializer.Deserialize<TView>(Payload); 
+            set => Payload = JsonSerializer.Serialize(value); 
         } 
     }
 }

@@ -55,7 +55,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
             string dataColumn = typeof(TDocument)
                 .GetModelMetadata()
                 .FieldDefinitions
-                .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId, TView>.SerializedData))
+                .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId, TView>.Payload))
                 .GetQuotedName(dialectProvider);
 
             jsonPath = dialectProvider.GetQuotedValue(jsonPath);

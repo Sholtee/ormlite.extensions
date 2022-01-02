@@ -55,8 +55,8 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
         [Test]
         public async Task QueryBySimpleCondition_ShouldReturnTheProperViews()
         {
-            Connection.Insert(new MyDocument { StreamId = "cica", Data = new MyView { Prop = 1986 } });
-            Connection.Insert(new MyDocument { StreamId = "kutya", Data = new MyView { Prop = 2000 } });
+            Connection.Insert(new MyDocument { StreamId = "cica", Type = typeof(MyView).AssemblyQualifiedName, Data = new MyView { Prop = 1986 } });
+            Connection.Insert(new MyDocument { StreamId = "kutya", Type = typeof(MyView).AssemblyQualifiedName, Data = new MyView { Prop = 2000 } });
 
             IList<MyView> result = await Repository.QueryBySimpleCondition<int>("$.Prop", prop => prop == 1986);
             Assert.That(result.Count, Is.EqualTo(1));
