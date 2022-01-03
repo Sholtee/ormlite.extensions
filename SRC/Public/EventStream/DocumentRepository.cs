@@ -70,30 +70,48 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
 
             IOrmLiteDialectProvider dialectProvider = Connection.GetDialectProvider();
 
-            string dataColumn = typeof(TDocument)
-                .GetModelMetadata()
-                .FieldDefinitions
-                .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId, TView>.Payload))
-                .GetQuotedName(dialectProvider);
+            string 
+                dataColumn = typeof(TDocument)
+                    .GetModelMetadata()
+                    .FieldDefinitions
+                    .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId, TView>.Payload))
+                    .GetQuotedName(dialectProvider),
+                select = dialectProvider.SqlConcat(new[] 
+                { 
+                    dialectProvider.GetQuotedValue("["),
+                    $"GROUP_CONCAT({dataColumn}, {dialectProvider.GetQuotedValue(",")})",
+                    dialectProvider.GetQuotedValue("]")
+                });
 
             jsonPath = dialectProvider.GetQuotedValue(jsonPath);
 
-            Expression<Action> extract = () => Sql.Custom<TProperty>($"JSON_EXTRACT({dataColumn}, {jsonPath})");
+            Expression<Func<TDocument, bool>> where = Expression.Lambda<Func<TDocument, bool>>
+            (
+                new ParameterReplacerVisitor
+                (
+                    ((Expression<Action>) (() => Sql.Custom<TProperty>($"JSON_EXTRACT({dataColumn}, {jsonPath})"))).Body
+                ).Visit(predicate.Body), 
+                Expression.Parameter(typeof(TDocument), "_")
+            );
 
-            Expression<Func<TDocument, bool>> where = Expression.Lambda<Func<TDocument, bool>>(new ParameterReplacerVisitor(extract.Body).Visit(predicate.Body), Expression.Parameter(typeof(TDocument), "_"));
+            string 
+                sql = Connection
+                    .From<TDocument>()
+                    //
+                    // 1) Ide elmeletileg jo lenne a "SELECT JSON_ARRAY(Payload)" is viszont az SQLite alatt rossz
+                    //    eredmenyt ad (Payload-ot JSON karakterlanckent adja vissza), MySQL alatt megy.
+                    // 2) Ezert kiszolgalo oldalon "kezzel" rakjuk ossze a JSON string-et, viszont itt meg megszopat az
+                    //    OrmLite mivel a ".Select(doc => '[' + Sql.Custom('...') + ']')" rossz kifejezest eredmenyez
+                    //    (https://github.com/ServiceStack/ServiceStack.OrmLite#querying-with-select), ezert a kezzel
+                    //    osszetakolt kifejezes.
+                    //
 
-            string sql = Connection.From<TDocument>()
-                //
-                // A lentinek mukodnie kene (https://github.com/ServiceStack/ServiceStack.OrmLite#querying-with-select) gyakorlatilag hibas kimenet a vege
-                //
+                    .Select(select)
+                    .Where(where)
+                    .ToMergedParamsSelectStatement(),
+                payload = await Connection.ScalarAsync<string>(sql, token: cancellation);
 
-                //.Select(doc => "[ " + Sql.Custom($"GROUP_CONCAT({dataColumn}, {dialectProvider.GetQuotedValue(",")})") + " ]")
-                .Select(doc => Sql.Custom($"GROUP_CONCAT({dataColumn}, {dialectProvider.GetQuotedValue(",")})"))
-                .Where(where)
-                .ToMergedParamsSelectStatement();
-
-            string payload = await Connection.ScalarAsync<string>(sql, token: cancellation);
-            return JsonSerializer.Deserialize<TView[]>($"[{payload}]")!;
+            return JsonSerializer.Deserialize<TView[]>(payload)!;
         }
     }
 }

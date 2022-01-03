@@ -6,6 +6,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -63,6 +64,18 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
             IList<MyView> result = await Repository.QueryBySimpleCondition<int>("$.Prop", prop => prop == 1986);
             Assert.That(result.Count, Is.EqualTo(1));
             Assert.That(result[0].Prop, Is.EqualTo(1986));
+        }
+
+        [Test]
+        public async Task QueryBySimpleCondition_ShouldReturnTheProperViews2()
+        {
+            Connection.Insert(new MyDocument { StreamId = "cica", Type = typeof(MyView).AssemblyQualifiedName, Payload = JsonSerializer.Serialize(new MyView { Prop = 1986 }) });
+            Connection.Insert(new MyDocument { StreamId = "kutya", Type = typeof(MyView).AssemblyQualifiedName, Payload = JsonSerializer.Serialize(new MyView { Prop = 2000 }) });
+
+            IList<MyView> result = await Repository.QueryBySimpleCondition<int>("$.Prop", prop => prop >= 1986);
+            Assert.That(result.Count, Is.EqualTo(2));
+            Assert.That(result.Any(view => view.Prop == 1986));
+            Assert.That(result.Any(view => view.Prop == 2000));
         }
     }
 }
