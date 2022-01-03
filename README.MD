@@ -110,3 +110,35 @@ state = await repo.CreateEvent(streamId, new MyEvent1 { Prop2 = 1986 });
 MyView view = repo.QueryViewsByStreamId(default, "stream_1");
 ...
 ```
+
+## DocumentRepository
+```csharp
+using Solti.Utils.OrmLite.Extension;
+using Solti.Utils.OrmLite.Extension.EventStream;
+...
+// data table
+[DataTable]
+public class DocumentTable : Document<string>
+{
+}
+
+// materialized view
+public class MyView: IEntity<string>
+{
+  public int Prop { get; set; }
+  public string StreamId { get; init; }
+}
+
+...
+
+using IDbConnection conn = ConnectionFactory.OpenDbConnection();
+conn.CreateTable<DocumentTable>();
+
+IDocumentRepository<string, MyView> repo = new DocumentRepository<string, MyDocument, MyView>(conn);
+
+await repo.InsertOrUpdate(new MyView { StreamId = "cica", Prop = 1986 });
+
+...
+
+IList<MyView> result = await repo.QueryBySimpleCondition<int>("$.Prop", prop => prop == 1986);
+```
