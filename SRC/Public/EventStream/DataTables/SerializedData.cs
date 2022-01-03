@@ -25,7 +25,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// <summary>
         /// The type of the payload.
         /// </summary>
-        [Required, StringLength(512)]
+        [Required, Index, StringLength(512)]
         public string Type { get; set; }
 
         /// <summary>
