@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Document&lt;TStreamId&gt;
+    <title>Class SerializedData&lt;TStreamId&gt;
    | OrmLite.Extensions </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Document&lt;TStreamId&gt;
+    <meta name="title" content="Class SerializedData&lt;TStreamId&gt;
    | OrmLite.Extensions ">
     <meta name="generator" content="docfx 2.58.0.0">
     
@@ -37,28 +37,23 @@
       <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Document`1">
+            <article class="content wrap" id="_content" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1">
   
   
-  <h1 id="Solti_Utils_OrmLite_Extensions_EventStream_Document_1" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Document`1" class="text-break">Class Document&lt;TStreamId&gt;
+  <h1 id="Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1" class="text-break">Class SerializedData&lt;TStreamId&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Base class for stored views</p>
+  <div class="markdown level0 summary"><p>Defines the base class of data-tables that contain serialized data.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html">SerializedData</a>&lt;TStreamId&gt;</div>
-    <div class="level2"><span class="xref">Document&lt;TStreamId&gt;</span></div>
+    <div class="level1"><span class="xref">SerializedData&lt;TStreamId&gt;</span></div>
+      <div class="level2"><a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html">Document&lt;TStreamId&gt;</a></div>
+      <div class="level2"><a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.Event-1.html">Event&lt;TStreamId&gt;</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_Type">SerializedData&lt;TStreamId&gt;.Type</a>
-    </div>
-    <div>
-      <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_EventStream_SerializedData_1_Payload">SerializedData&lt;TStreamId&gt;.Payload</a>
-    </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
     </div>
@@ -81,11 +76,12 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.html">Solti.Utils.OrmLite.Extensions.EventStream</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.html">Solti.Utils.OrmLite.Extensions.Eventing</a></h6>
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
-  <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_Document_1_syntax">Syntax</h5>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Document&lt;TStreamId&gt; : SerializedData&lt;TStreamId&gt; where TStreamId : IEquatable&lt;TStreamId&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class SerializedData&lt;TStreamId&gt;
+    where TStreamId : IEquatable&lt;TStreamId&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -104,15 +100,16 @@
   </table>
   <h3 id="properties">Properties
   </h3>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_Document_1_LastModifiedUtc_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Document`1.LastModifiedUtc*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_Document_1_LastModifiedUtc" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Document`1.LastModifiedUtc">LastModifiedUtc</h4>
-  <div class="markdown level1 summary"><p>Last modification.</p>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_Payload_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.Payload*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_Payload" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.Payload">Payload</h4>
+  <div class="markdown level1 summary"><p>The serialized payload.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Required]
-public long LastModifiedUtc { get; set; }</code></pre>
+[CustomField(&quot;json&quot;)]
+public virtual string Payload { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -124,20 +121,24 @@ public long LastModifiedUtc { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_Document_1_StreamId_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Document`1.StreamId*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_Document_1_StreamId" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.Document`1.StreamId">StreamId</h4>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_Payload_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since this property is virtual you can apply your own <span class="xref">ServiceStack.DataAnnotations.CustomFieldAttribute</span> if necessary.</p>
+</div>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_StreamId_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.StreamId*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_StreamId" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.StreamId">StreamId</h4>
   <div class="markdown level1 summary"><p>The unique id of the underlying stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[PrimaryKey]
-public override TStreamId StreamId { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required]
+[Index]
+public virtual TStreamId StreamId { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -154,8 +155,33 @@ public override TStreamId StreamId { get; set; }</code></pre>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Solti.Utils.OrmLite.Extensions.EventStream.SerializedData&lt;TStreamId&gt;.StreamId</span></div>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_Type_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.Type*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_Type" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.Type">Type</h4>
+  <div class="markdown level1 summary"><p>The type of the payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[Index]
+[StringLength(512)]
+public string Type { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

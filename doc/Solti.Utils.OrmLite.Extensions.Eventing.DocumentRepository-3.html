@@ -37,10 +37,10 @@
       <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3">
+            <article class="content wrap" id="_content" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3">
   
   
-  <h1 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3" class="text-break">Class DocumentRepository&lt;TStreamId, TDocument, TView&gt;
+  <h1 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3" class="text-break">Class DocumentRepository&lt;TStreamId, TDocument, TView&gt;
   </h1>
   <div class="markdown level0 summary"><p>Represents the base class of document repositories.</p>
 </div>
@@ -52,7 +52,7 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository-2.html">IDocumentRepository</a>&lt;TStreamId, TView&gt;</div>
+    <div><a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository-2.html">IDocumentRepository</a>&lt;TStreamId, TView&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -78,9 +78,9 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.html">Solti.Utils.OrmLite.Extensions.EventStream</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.html">Solti.Utils.OrmLite.Extensions.Eventing</a></h6>
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
-  <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_syntax">Syntax</h5>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class DocumentRepository&lt;TStreamId, TDocument, TView&gt; : IDocumentRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TDocument : Document&lt;TStreamId&gt;, new()
     where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
@@ -110,9 +110,9 @@
   </table>
   <h3 id="constructors">Constructors
   </h3>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3__ctor_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.#ctor*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3__ctor_System_Data_IDbConnection_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.#ctor(System.Data.IDbConnection)">DocumentRepository(IDbConnection)</h4>
-  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html">DocumentRepository&lt;TStreamId, TDocument, TView&gt;</a> instance.</p>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3__ctor_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3__ctor_System_Data_IDbConnection_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor(System.Data.IDbConnection)">DocumentRepository(IDbConnection)</h4>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html">DocumentRepository&lt;TStreamId, TDocument, TView&gt;</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -138,8 +138,8 @@
   </table>
   <h3 id="properties">Properties
   </h3>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_Connection_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.Connection*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_Connection" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.Connection">Connection</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_Connection_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.Connection*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_Connection" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.Connection">Connection</h4>
   <div class="markdown level1 summary"><p>The database connection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -164,8 +164,8 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_GroupConcat_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.GroupConcat*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_GroupConcat_System_String_System_String_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.GroupConcat(System.String,System.String)">GroupConcat(String, String)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_GroupConcat_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.GroupConcat*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_GroupConcat_System_String_System_String_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.GroupConcat(System.String,System.String)">GroupConcat(String, String)</h4>
   <div class="markdown level1 summary"><p>SQL function that concatenates a string group [GROUP_CONCAT() || STRING_AGG()]</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -210,8 +210,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_InsertOrUpdate_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_InsertOrUpdate__2_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)">InsertOrUpdate(TView, CancellationToken)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_InsertOrUpdate_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_InsertOrUpdate__2_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)">InsertOrUpdate(TView, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Inserts or updates a view.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -256,8 +256,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_JsonExtract_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.JsonExtract*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_JsonExtract_System_String_System_String_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.JsonExtract(System.String,System.String)">JsonExtract(String, String)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_JsonExtract_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.JsonExtract*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_JsonExtract_System_String_System_String_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.JsonExtract(System.String,System.String)">JsonExtract(String, String)</h4>
   <div class="markdown level1 summary"><p>SQL function that extracts a value from a JSON.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -302,8 +302,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_QueryBySimpleCondition_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.QueryBySimpleCondition*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">QueryBySimpleCondition&lt;TProperty&gt;(String, Expression&lt;Func&lt;TProperty, Boolean&gt;&gt;, CancellationToken)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">QueryBySimpleCondition&lt;TProperty&gt;(String, Expression&lt;Func&lt;TProperty, Boolean&gt;&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Returns a list of <code data-dev-comment-type="typeparamref" class="typeparamref">TView</code>s based on a <code data-dev-comment-type="paramref" class="paramref">predicate</code>. The <code data-dev-comment-type="paramref" class="paramref">predicate</code> is called against a property pointed by a <code data-dev-comment-type="paramref" class="paramref">jsonPath</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -369,12 +369,12 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__remarks">Remarks</h5>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The <code data-dev-comment-type="paramref" class="paramref">jsonPath</code> must point to a simple [Number, String, Enum] property.</p>
 </div>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository-2.html">IDocumentRepository&lt;TStreamId, TView&gt;</a>
+      <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository-2.html">IDocumentRepository&lt;TStreamId, TView&gt;</a>
   </div>
 </article>
           </div>

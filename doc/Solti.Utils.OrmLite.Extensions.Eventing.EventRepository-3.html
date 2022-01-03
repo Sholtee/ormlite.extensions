@@ -37,10 +37,10 @@
       <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3">
+            <article class="content wrap" id="_content" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3">
   
   
-  <h1 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3" class="text-break">Class EventRepository&lt;TStreamId, TEvent, TView&gt;
+  <h1 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3" class="text-break">Class EventRepository&lt;TStreamId, TEvent, TView&gt;
   </h1>
   <div class="markdown level0 summary"><p>Represents the base class of event repositories.</p>
 </div>
@@ -52,7 +52,7 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.IEventRepository-2.html">IEventRepository</a>&lt;TStreamId, TView&gt;</div>
+    <div><a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html">IEventRepository</a>&lt;TStreamId, TView&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -78,9 +78,9 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.html">Solti.Utils.OrmLite.Extensions.EventStream</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.html">Solti.Utils.OrmLite.Extensions.Eventing</a></h6>
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
-  <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_syntax">Syntax</h5>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class EventRepository&lt;TStreamId, TEvent, TView&gt; : IEventRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt;, new()
     where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
@@ -110,9 +110,9 @@
   </table>
   <h3 id="constructors">Constructors
   </h3>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3__ctor_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.#ctor*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3__ctor_System_Data_IDbConnection_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.#ctor(System.Data.IDbConnection)">EventRepository(IDbConnection)</h4>
-  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository-3.html">EventRepository&lt;TStreamId, TEvent, TView&gt;</a> instance.</p>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3__ctor_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3__ctor_System_Data_IDbConnection_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor(System.Data.IDbConnection)">EventRepository(IDbConnection)</h4>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html">EventRepository&lt;TStreamId, TEvent, TView&gt;</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -138,8 +138,8 @@
   </table>
   <h3 id="properties">Properties
   </h3>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Connection_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Connection*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Connection" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Connection">Connection</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_Connection_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.Connection*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_Connection" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.Connection">Connection</h4>
   <div class="markdown level1 summary"><p>The database connection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -164,8 +164,8 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply__2__1_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply(`2,`1)">Apply(TView, TEvent)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_Apply_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.Apply*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_Apply__2__1_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.Apply(`2,`1)">Apply(TView, TEvent)</h4>
   <div class="markdown level1 summary"><p>Extracts the real event from a <code data-dev-comment-type="typeparamref" class="typeparamref">TEvent</code> instance, then applies it against a view.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -195,8 +195,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_Apply__2_System_Object_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.Apply(`2,System.Object)">Apply(TView, Object)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_Apply_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.Apply*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_Apply__2_System_Object_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.Apply(`2,System.Object)">Apply(TView, Object)</h4>
   <div class="markdown level1 summary"><p>Applies an event against a view.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -226,8 +226,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent__0_System_Object_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object)">CreateEvent(TStreamId, Object)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent__0_System_Object_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent(`0,System.Object)">CreateEvent(TStreamId, Object)</h4>
   <div class="markdown level1 summary"><p>Creates a new <code data-dev-comment-type="typeparamref" class="typeparamref">TEvent</code> instance to be inserted into the database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -272,8 +272,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_CreateEvent__0_System_Object_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)">CreateEvent(TStreamId, Object, CancellationToken)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent__0_System_Object_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)">CreateEvent(TStreamId, Object, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Inserts a new event into the repository.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -324,8 +324,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_MaterializeViews_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.MaterializeViews*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_MaterializeViews_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.MaterializeViews(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">MaterializeViews(IEnumerable&lt;TEvent&gt;, CancellationToken)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_MaterializeViews_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_MaterializeViews_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">MaterializeViews(IEnumerable&lt;TEvent&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Materializes views.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -370,8 +370,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_QueryViews_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.QueryViews*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_QueryViews_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.QueryViews(System.Threading.CancellationToken)">QueryViews(CancellationToken)</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews(System.Threading.CancellationToken)">QueryViews(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Returns all the materialized views.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -411,11 +411,11 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_QueryViews_System_Threading_CancellationToken__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This method replays all the related events to build the result, therefore it&apos;s considered inefficient. To query views use the <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.Document-1.html">Document&lt;TStreamId&gt;</a> class.</p>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method replays all the related events to build the result, therefore it&apos;s considered inefficient. To query views use the <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html">Document&lt;TStreamId&gt;</a> class.</p>
 </div>
-  <a id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_QueryViewsByStreamId_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.QueryViewsByStreamId*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_QueryViewsByStreamId_System_Threading_CancellationToken__0___" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.EventRepository`3.QueryViewsByStreamId(System.Threading.CancellationToken,`0[])">QueryViewsByStreamId(CancellationToken, TStreamId[])</h4>
+  <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_System_Threading_CancellationToken__0___" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId(System.Threading.CancellationToken,`0[])">QueryViewsByStreamId(CancellationToken, TStreamId[])</h4>
   <div class="markdown level1 summary"><p>Returns the materialized views identified by their primary keys.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -460,12 +460,12 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_EventRepository_3_QueryViewsByStreamId_System_Threading_CancellationToken__0____remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This method replays all the related events to build the result, therefore it&apos;s considered inefficient. To query views use the <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.Document-1.html">Document&lt;TStreamId&gt;</a> class.</p>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_System_Threading_CancellationToken__0____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method replays all the related events to build the result, therefore it&apos;s considered inefficient. To query views use the <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html">Document&lt;TStreamId&gt;</a> class.</p>
 </div>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.IEventRepository-2.html">IEventRepository&lt;TStreamId, TView&gt;</a>
+      <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html">IEventRepository&lt;TStreamId, TView&gt;</a>
   </div>
 </article>
           </div>
