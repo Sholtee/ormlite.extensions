@@ -107,8 +107,9 @@ string streamId = "stream_1";
 MyView state = await repo.CreateEvent(streamId, new MyEvent1 { Prop1 = "cica" });
 state = await repo.CreateEvent(streamId, new MyEvent1 { Prop2 = 1986 });
 
-MyView view = repo.QueryViewsByStreamId(default, "stream_1");
 ...
+
+IList<MyView> views = repo.QueryViewsByStreamId(default, "stream_1");
 ```
 
 ## DocumentRepository
@@ -140,5 +141,5 @@ await repo.InsertOrUpdate(new MyView { StreamId = "cica", Prop = 1986 });
 
 ...
 
-IList<MyView> result = await repo.QueryBySimpleCondition<int>("$.Prop", prop => prop == 1986);
+IList<MyView> views = await repo.QueryBySimpleCondition<int>("$.Prop", prop => prop == 1986);
 ```
