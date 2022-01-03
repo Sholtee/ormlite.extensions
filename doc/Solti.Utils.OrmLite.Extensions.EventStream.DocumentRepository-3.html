@@ -79,7 +79,7 @@
   <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class DocumentRepository&lt;TStreamId, TDocument, TView&gt;
-    where TStreamId : IEquatable&lt;TStreamId&gt; where TDocument : Document&lt;TStreamId, TView&gt;, new()
+    where TStreamId : IEquatable&lt;TStreamId&gt; where TDocument : Document&lt;TStreamId&gt;, new()
     where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
@@ -163,7 +163,8 @@
   </h3>
   <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_InsertOrUpdate_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate*"></a>
   <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_InsertOrUpdate__2_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)">InsertOrUpdate(TView, CancellationToken)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Inserts or updates a view.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">

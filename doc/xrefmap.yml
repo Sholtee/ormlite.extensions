@@ -188,49 +188,49 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5).Apply
   nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>.Apply
   nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5).Apply
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2
-  name: Document<TStreamId, TView>
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html
-  commentId: T:Solti.Utils.OrmLite.Extensions.EventStream.Document`2
-  name.vb: Document(Of TStreamId, TView)
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView)
-  nameWithType: Document<TStreamId, TView>
-  nameWithType.vb: Document(Of TStreamId, TView)
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.LastModifiedUtc
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`1
+  name: Document<TStreamId>
+  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-1.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.EventStream.Document`1
+  name.vb: Document(Of TStreamId)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId>
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId)
+  nameWithType: Document<TStreamId>
+  nameWithType.vb: Document(Of TStreamId)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`1.LastModifiedUtc
   name: LastModifiedUtc
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_LastModifiedUtc
-  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.LastModifiedUtc
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.LastModifiedUtc
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).LastModifiedUtc
-  nameWithType: Document<TStreamId, TView>.LastModifiedUtc
-  nameWithType.vb: Document(Of TStreamId, TView).LastModifiedUtc
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.LastModifiedUtc*
+  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_1_LastModifiedUtc
+  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Document`1.LastModifiedUtc
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId>.LastModifiedUtc
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId).LastModifiedUtc
+  nameWithType: Document<TStreamId>.LastModifiedUtc
+  nameWithType.vb: Document(Of TStreamId).LastModifiedUtc
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`1.LastModifiedUtc*
   name: LastModifiedUtc
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_LastModifiedUtc_
-  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.LastModifiedUtc
+  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_1_LastModifiedUtc_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Document`1.LastModifiedUtc
   isSpec: "True"
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.LastModifiedUtc
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).LastModifiedUtc
-  nameWithType: Document<TStreamId, TView>.LastModifiedUtc
-  nameWithType.vb: Document(Of TStreamId, TView).LastModifiedUtc
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.StreamId
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId>.LastModifiedUtc
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId).LastModifiedUtc
+  nameWithType: Document<TStreamId>.LastModifiedUtc
+  nameWithType.vb: Document(Of TStreamId).LastModifiedUtc
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`1.StreamId
   name: StreamId
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_StreamId
-  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.StreamId
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.StreamId
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).StreamId
-  nameWithType: Document<TStreamId, TView>.StreamId
-  nameWithType.vb: Document(Of TStreamId, TView).StreamId
-- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`2.StreamId*
+  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_1_StreamId
+  commentId: P:Solti.Utils.OrmLite.Extensions.EventStream.Document`1.StreamId
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId>.StreamId
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId).StreamId
+  nameWithType: Document<TStreamId>.StreamId
+  nameWithType.vb: Document(Of TStreamId).StreamId
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.Document`1.StreamId*
   name: StreamId
-  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-2.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_2_StreamId_
-  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Document`2.StreamId
+  href: Solti.Utils.OrmLite.Extensions.EventStream.Document-1.html#Solti_Utils_OrmLite_Extensions_EventStream_Document_1_StreamId_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.Document`1.StreamId
   isSpec: "True"
-  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId, TView>.StreamId
-  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId, TView).StreamId
-  nameWithType: Document<TStreamId, TView>.StreamId
-  nameWithType.vb: Document(Of TStreamId, TView).StreamId
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.Document<TStreamId>.StreamId
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.Document(Of TStreamId).StreamId
+  nameWithType: Document<TStreamId>.StreamId
+  nameWithType.vb: Document(Of TStreamId).StreamId
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3
   name: DocumentRepository<TStreamId, TDocument, TView>
   href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html
