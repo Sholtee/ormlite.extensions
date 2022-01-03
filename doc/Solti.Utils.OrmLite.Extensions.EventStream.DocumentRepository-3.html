@@ -161,6 +161,52 @@
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_GroupConcat_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.GroupConcat*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_GroupConcat_System_String_System_String_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.GroupConcat(System.String,System.String)">GroupConcat(String, String)</h4>
+  <div class="markdown level1 summary"><p>SQL function that concatenates a string group [GROUP_CONCAT() || STRING_AGG()]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string GroupConcat(string quotedColumn, string quotedSeparator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">quotedColumn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">quotedSeparator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_InsertOrUpdate_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate*"></a>
   <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_InsertOrUpdate__2_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)">InsertOrUpdate(TView, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Inserts or updates a view.</p>
@@ -203,6 +249,52 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_JsonExtract_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.JsonExtract*"></a>
+  <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_JsonExtract_System_String_System_String_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.JsonExtract(System.String,System.String)">JsonExtract(String, String)</h4>
+  <div class="markdown level1 summary"><p>SQL function that extracts a value from a JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string JsonExtract(string quotedColumn, string quotedJsonPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">quotedColumn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">quotedJsonPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>

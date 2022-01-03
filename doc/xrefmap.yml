@@ -274,6 +274,23 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository(Of TStreamId, TDocument, TView).Connection
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.Connection
   nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).Connection
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.GroupConcat(System.String,System.String)
+  name: GroupConcat(String, String)
+  href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_GroupConcat_System_String_System_String_
+  commentId: M:Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.GroupConcat(System.String,System.String)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository<TStreamId, TDocument, TView>.GroupConcat(System.String, System.String)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository(Of TStreamId, TDocument, TView).GroupConcat(System.String, System.String)
+  nameWithType: DocumentRepository<TStreamId, TDocument, TView>.GroupConcat(String, String)
+  nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).GroupConcat(String, String)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.GroupConcat*
+  name: GroupConcat
+  href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_GroupConcat_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.GroupConcat
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository<TStreamId, TDocument, TView>.GroupConcat
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository(Of TStreamId, TDocument, TView).GroupConcat
+  nameWithType: DocumentRepository<TStreamId, TDocument, TView>.GroupConcat
+  nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).GroupConcat
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)
   name: InsertOrUpdate(TView, CancellationToken)
   href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_InsertOrUpdate__2_System_Threading_CancellationToken_
@@ -291,6 +308,23 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate
   nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.JsonExtract(System.String,System.String)
+  name: JsonExtract(String, String)
+  href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_JsonExtract_System_String_System_String_
+  commentId: M:Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.JsonExtract(System.String,System.String)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository<TStreamId, TDocument, TView>.JsonExtract(System.String, System.String)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository(Of TStreamId, TDocument, TView).JsonExtract(System.String, System.String)
+  nameWithType: DocumentRepository<TStreamId, TDocument, TView>.JsonExtract(String, String)
+  nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).JsonExtract(String, String)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.JsonExtract*
+  name: JsonExtract
+  href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_JsonExtract_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.JsonExtract
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository<TStreamId, TDocument, TView>.JsonExtract
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository(Of TStreamId, TDocument, TView).JsonExtract
+  nameWithType: DocumentRepository<TStreamId, TDocument, TView>.JsonExtract
+  nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).JsonExtract
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.QueryBySimpleCondition*
   name: QueryBySimpleCondition
   href: Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_QueryBySimpleCondition_
