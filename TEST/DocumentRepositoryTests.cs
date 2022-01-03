@@ -43,7 +43,14 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
         }
 
         [TearDown]
-        public void TearDown() => Connection?.Dispose();
+        public void TearDown()
+        {
+            if (Connection is not null)
+            {
+                Connection.DropTable<MyDocument>();
+                Connection.Dispose();
+            }
+        }
 
         public class MyView: IEntity<string>
         {
@@ -51,7 +58,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
             public string StreamId { get; init; }
         }
 
-        public class MyDocument : Document<string, MyView>
+        public class MyDocument : Document<string>
         {
         }
 

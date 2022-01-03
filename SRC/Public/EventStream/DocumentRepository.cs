@@ -19,7 +19,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// Represents the base class of document repositories.
     /// </summary>
-    public class DocumentRepository<TStreamId, TDocument, TView> where TStreamId : IEquatable<TStreamId> where TView : IEntity<TStreamId>, new() where TDocument: Document<TStreamId, TView>, new()
+    public class DocumentRepository<TStreamId, TDocument, TView> where TStreamId : IEquatable<TStreamId> where TView : IEntity<TStreamId>, new() where TDocument: Document<TStreamId>, new()
     {
         /// <summary>
         /// The database connection.
@@ -41,7 +41,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         }
 
         /// <summary>
-        /// 
+        /// Inserts or updates a view.
         /// </summary>
         public virtual async Task InsertOrUpdate(TView view, CancellationToken cancellation = default)
         {
@@ -74,7 +74,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
                 dataColumn = typeof(TDocument)
                     .GetModelMetadata()
                     .FieldDefinitions
-                    .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId, TView>.Payload))
+                    .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId>.Payload))
                     .GetQuotedName(dialectProvider),
                 select = dialectProvider.SqlConcat(new[] 
                 { 

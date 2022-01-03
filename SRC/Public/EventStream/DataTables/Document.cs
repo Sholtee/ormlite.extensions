@@ -14,7 +14,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// Base class for stored views
     /// </summary>
-    public abstract class Document<TStreamId, TView>: SerializedData<TStreamId> where TStreamId : IEquatable<TStreamId>
+    public abstract class Document<TStreamId>: SerializedData<TStreamId> where TStreamId : IEquatable<TStreamId>
     {
         /// <inheritdoc/>
         [PrimaryKey]
