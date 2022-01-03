@@ -24,7 +24,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
 
         public IDbConnection Connection { get; set; }
 
-        public DocumentRepository<string, MyDocument, MyView> Repository { get; set; }
+        public IDocumentRepository<string, MyView> Repository { get; set; }
 
         [SetUp]
         public void Setup()

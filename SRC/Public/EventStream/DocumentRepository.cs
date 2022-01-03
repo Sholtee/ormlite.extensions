@@ -19,7 +19,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     /// <summary>
     /// Represents the base class of document repositories.
     /// </summary>
-    public class DocumentRepository<TStreamId, TDocument, TView> where TStreamId : IEquatable<TStreamId> where TView : IEntity<TStreamId>, new() where TDocument: Document<TStreamId>, new()
+    public class DocumentRepository<TStreamId, TDocument, TView>: IDocumentRepository<TStreamId, TView> where TStreamId : IEquatable<TStreamId> where TView : IEntity<TStreamId>, new() where TDocument: Document<TStreamId>, new()
     {
         /// <summary>
         /// SQL function that concatenates a string group [GROUP_CONCAT() || STRING_AGG()]
@@ -50,10 +50,8 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
             protected override Expression VisitParameter(ParameterExpression node) => FSubstitute;
         }
 
-        /// <summary>
-        /// Inserts or updates a view.
-        /// </summary>
-        public virtual async Task InsertOrUpdate(TView view, CancellationToken cancellation = default)
+        /// <inheritdoc/>
+        public virtual async Task InsertOrUpdate(TView view, CancellationToken cancellation)
         {
             if (view is null)
                 throw new ArgumentNullException(nameof(view));
@@ -70,10 +68,8 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
                 await Connection.InsertAsync(entity, token: cancellation);
         }
 
-        /// <summary>
-        /// Queries views.
-        /// </summary>
-        public virtual async Task<IList<TView>> QueryBySimpleCondition<TProperty>(string jsonPath, Expression<Func<TProperty, bool>> predicate, CancellationToken cancellation = default) where TProperty : IEquatable<TProperty>
+        /// <inheritdoc/>
+        public virtual async Task<IList<TView>> QueryBySimpleCondition<TProperty>(string jsonPath, Expression<Func<TProperty, bool>> predicate, CancellationToken cancellation) where TProperty : IEquatable<TProperty>
         {
             if (jsonPath is null)
                 throw new ArgumentNullException(nameof(jsonPath));

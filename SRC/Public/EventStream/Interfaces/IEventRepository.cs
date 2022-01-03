@@ -22,13 +22,15 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         Task<TView> CreateEvent(TStreamId streamId, object evt, CancellationToken cancellation = default);
 
         /// <summary>
-        /// Returns the materialized views.
+        /// Returns all the materialized views.
         /// </summary>
+        /// <remarks>This method replays all the related events to build the result, therefore it's considered inefficient. To query views use the <see cref="Document{TStreamId}"/> class.</remarks>
         Task<IList<TView>> QueryViews(CancellationToken cancellation = default);
 
         /// <summary>
         /// Returns the materialized views identified by their primary keys.
         /// </summary>
+        /// <remarks>This method replays all the related events to build the result, therefore it's considered inefficient. To query views use the <see cref="Document{TStreamId}"/> class.</remarks>
         Task<IList<TView>> QueryViewsByStreamId(CancellationToken cancellation = default, params TStreamId[] ids);
     }
 }
