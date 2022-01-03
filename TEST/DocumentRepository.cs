@@ -15,7 +15,7 @@ using NUnit.Framework;
 using ServiceStack.Data;
 using ServiceStack.OrmLite;
 
-namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
+namespace Solti.Utils.OrmLite.Extensions.Eventing.Tests
 {
     [TestFixture]
     public class DocumentRepositoryTests

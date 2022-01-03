@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 using ServiceStack.OrmLite;
 
-namespace Solti.Utils.OrmLite.Extensions.EventStream
+namespace Solti.Utils.OrmLite.Extensions.Eventing
 {
     using Properties;
 

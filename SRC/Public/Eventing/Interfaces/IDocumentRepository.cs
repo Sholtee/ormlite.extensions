@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Solti.Utils.OrmLite.Extensions.EventStream
+namespace Solti.Utils.OrmLite.Extensions.Eventing
 {
     /// <summary>
     /// Represents an abstract document repository.

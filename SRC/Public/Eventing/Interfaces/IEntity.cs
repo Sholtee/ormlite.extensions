@@ -5,7 +5,7 @@
 ********************************************************************************/
 using System;
 
-namespace Solti.Utils.OrmLite.Extensions.EventStream
+namespace Solti.Utils.OrmLite.Extensions.Eventing
 {
     /// <summary>
     /// The base interface of complex entities.

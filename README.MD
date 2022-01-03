@@ -66,7 +66,7 @@ connection.Flush(); // or FlushAsync()
 ## EventRepository
 ```csharp
 using Solti.Utils.OrmLite.Extension;
-using Solti.Utils.OrmLite.Extension.EventStream;
+using Solti.Utils.OrmLite.Extension.Eventing;
 ...
 // data table
 [DataTable]
@@ -114,7 +114,7 @@ MyView view = repo.QueryViewsByStreamId(default, "stream_1");
 ## DocumentRepository
 ```csharp
 using Solti.Utils.OrmLite.Extension;
-using Solti.Utils.OrmLite.Extension.EventStream;
+using Solti.Utils.OrmLite.Extension.Eventing;
 ...
 // data table
 [DataTable]

@@ -9,7 +9,7 @@ using ServiceStack.DataAnnotations;
 
 #pragma warning disable CA1716 // Identifiers should not match keywords
 
-namespace Solti.Utils.OrmLite.Extensions.EventStream
+namespace Solti.Utils.OrmLite.Extensions.Eventing
 {
     /// <summary>
     /// Describes a generic event

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Solti.Utils.OrmLite.Extensions.EventStream
+namespace Solti.Utils.OrmLite.Extensions.Eventing
 {
     /// <summary>
     /// Describes an abstract event repository.
