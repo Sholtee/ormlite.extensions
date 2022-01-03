@@ -50,6 +50,10 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">DocumentRepository&lt;TStreamId, TDocument, TView&gt;</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository-2.html">IDocumentRepository</a>&lt;TStreamId, TView&gt;</div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -78,8 +82,7 @@
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
   <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DocumentRepository&lt;TStreamId, TDocument, TView&gt;
-    where TStreamId : IEquatable&lt;TStreamId&gt; where TDocument : Document&lt;TStreamId&gt;, new()
+    <pre><code class="lang-csharp hljs">public class DocumentRepository&lt;TStreamId, TDocument, TView&gt; : IDocumentRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TDocument : Document&lt;TStreamId&gt;, new()
     where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
@@ -214,7 +217,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task InsertOrUpdate(TView view, CancellationToken cancellation = default(CancellationToken))</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual async Task InsertOrUpdate(TView view, CancellationToken cancellation)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -301,12 +304,12 @@
   </table>
   <a id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_QueryBySimpleCondition_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.QueryBySimpleCondition*"></a>
   <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.DocumentRepository`3.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">QueryBySimpleCondition&lt;TProperty&gt;(String, Expression&lt;Func&lt;TProperty, Boolean&gt;&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Queries views.</p>
+  <div class="markdown level1 summary"><p>Returns a list of <code data-dev-comment-type="typeparamref" class="typeparamref">TView</code>s based on a <code data-dev-comment-type="paramref" class="paramref">predicate</code>. The <code data-dev-comment-type="paramref" class="paramref">predicate</code> is called against a property pointed by a <code data-dev-comment-type="paramref" class="paramref">jsonPath</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IList&lt;TView&gt;&gt; QueryBySimpleCondition&lt;TProperty&gt;(string jsonPath, Expression&lt;Func&lt;TProperty, bool&gt;&gt; predicate, CancellationToken cancellation = default(CancellationToken))
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;IList&lt;TView&gt;&gt; QueryBySimpleCondition&lt;TProperty&gt;(string jsonPath, Expression&lt;Func&lt;TProperty, bool&gt;&gt; predicate, CancellationToken cancellation)
     where TProperty : IEquatable&lt;TProperty&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -366,6 +369,13 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_DocumentRepository_3_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <code data-dev-comment-type="paramref" class="paramref">jsonPath</code> must point to a simple [Number, String, Enum] property.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository-2.html">IDocumentRepository&lt;TStreamId, TView&gt;</a>
+  </div>
 </article>
           </div>
           

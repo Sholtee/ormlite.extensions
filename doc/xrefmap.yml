@@ -532,6 +532,50 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.EventRepository(Of TStreamId, TEvent, TView).QueryViewsByStreamId
   nameWithType: EventRepository<TStreamId, TEvent, TView>.QueryViewsByStreamId
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).QueryViewsByStreamId
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2
+  name: IDocumentRepository<TStreamId, TView>
+  href: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository-2.html
+  commentId: T:Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2
+  name.vb: IDocumentRepository(Of TStreamId, TView)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository<TStreamId, TView>
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository(Of TStreamId, TView)
+  nameWithType: IDocumentRepository<TStreamId, TView>
+  nameWithType.vb: IDocumentRepository(Of TStreamId, TView)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2.InsertOrUpdate(`1,System.Threading.CancellationToken)
+  name: InsertOrUpdate(TView, CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_EventStream_IDocumentRepository_2_InsertOrUpdate__1_System_Threading_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2.InsertOrUpdate(`1,System.Threading.CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository<TStreamId, TView>.InsertOrUpdate(TView, System.Threading.CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository(Of TStreamId, TView).InsertOrUpdate(TView, System.Threading.CancellationToken)
+  nameWithType: IDocumentRepository<TStreamId, TView>.InsertOrUpdate(TView, CancellationToken)
+  nameWithType.vb: IDocumentRepository(Of TStreamId, TView).InsertOrUpdate(TView, CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2.InsertOrUpdate*
+  name: InsertOrUpdate
+  href: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_EventStream_IDocumentRepository_2_InsertOrUpdate_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2.InsertOrUpdate
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository<TStreamId, TView>.InsertOrUpdate
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository(Of TStreamId, TView).InsertOrUpdate
+  nameWithType: IDocumentRepository<TStreamId, TView>.InsertOrUpdate
+  nameWithType.vb: IDocumentRepository(Of TStreamId, TView).InsertOrUpdate
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2.QueryBySimpleCondition*
+  name: QueryBySimpleCondition
+  href: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_EventStream_IDocumentRepository_2_QueryBySimpleCondition_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2.QueryBySimpleCondition
+  isSpec: "True"
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition
+  nameWithType: IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition
+  nameWithType.vb: IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition
+- uid: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  name: QueryBySimpleCondition<TProperty>(String, Expression<Func<TProperty, Boolean>>, CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_EventStream_IDocumentRepository_2_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository`2.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  name.vb: QueryBySimpleCondition(Of TProperty)(String, Expression(Of Func(Of TProperty, Boolean)), CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition<TProperty>(System.String, System.Linq.Expressions.Expression<System.Func<TProperty, System.Boolean>>, System.Threading.CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.EventStream.IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition(Of TProperty)(System.String, System.Linq.Expressions.Expression(Of System.Func(Of TProperty, System.Boolean)), System.Threading.CancellationToken)
+  nameWithType: IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition<TProperty>(String, Expression<Func<TProperty, Boolean>>, CancellationToken)
+  nameWithType.vb: IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition(Of TProperty)(String, Expression(Of Func(Of TProperty, Boolean)), CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.EventStream.IEntity`1
   name: IEntity<TStreamId>
   href: Solti.Utils.OrmLite.Extensions.EventStream.IEntity-1.html

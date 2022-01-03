@@ -127,7 +127,7 @@
   </table>
   <a id="Solti_Utils_OrmLite_Extensions_EventStream_IEventRepository_2_QueryViews_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.IEventRepository`2.QueryViews*"></a>
   <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_IEventRepository_2_QueryViews_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.IEventRepository`2.QueryViews(System.Threading.CancellationToken)">QueryViews(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Returns the materialized views.</p>
+  <div class="markdown level1 summary"><p>Returns all the materialized views.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -166,6 +166,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_IEventRepository_2_QueryViews_System_Threading_CancellationToken__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method replays all the related events to build the result, therefore it&apos;s considered inefficient. To query views use the <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.Document-1.html">Document&lt;TStreamId&gt;</a> class.</p>
+</div>
   <a id="Solti_Utils_OrmLite_Extensions_EventStream_IEventRepository_2_QueryViewsByStreamId_" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.IEventRepository`2.QueryViewsByStreamId*"></a>
   <h4 id="Solti_Utils_OrmLite_Extensions_EventStream_IEventRepository_2_QueryViewsByStreamId_System_Threading_CancellationToken__0___" data-uid="Solti.Utils.OrmLite.Extensions.EventStream.IEventRepository`2.QueryViewsByStreamId(System.Threading.CancellationToken,`0[])">QueryViewsByStreamId(CancellationToken, TStreamId[])</h4>
   <div class="markdown level1 summary"><p>Returns the materialized views identified by their primary keys.</p>
@@ -212,6 +215,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Solti_Utils_OrmLite_Extensions_EventStream_IEventRepository_2_QueryViewsByStreamId_System_Threading_CancellationToken__0____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method replays all the related events to build the result, therefore it&apos;s considered inefficient. To query views use the <a class="xref" href="Solti.Utils.OrmLite.Extensions.EventStream.Document-1.html">Document&lt;TStreamId&gt;</a> class.</p>
+</div>
 </article>
           </div>
           
