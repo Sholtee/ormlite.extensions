@@ -84,5 +84,15 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
             Assert.That(result.Any(view => view.Prop == 1986));
             Assert.That(result.Any(view => view.Prop == 2000));
         }
+
+        [Test]
+        public async Task QueryBySimpleCondition_ShouldReturnAnEmptyListIfThereIsNoResult()
+        {
+            Connection.Insert(new MyDocument { StreamId = "cica", Type = typeof(MyView).AssemblyQualifiedName, Payload = JsonSerializer.Serialize(new MyView { Prop = 1986 }) });
+            Connection.Insert(new MyDocument { StreamId = "kutya", Type = typeof(MyView).AssemblyQualifiedName, Payload = JsonSerializer.Serialize(new MyView { Prop = 2000 }) });
+
+            IList<MyView> result = await Repository.QueryBySimpleCondition<int>("$.Prop", prop => prop > 2000);
+            Assert.That(result, Is.Empty);
+        }
     }
 }

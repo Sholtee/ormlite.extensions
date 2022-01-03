@@ -70,26 +70,17 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
 
             IOrmLiteDialectProvider dialectProvider = Connection.GetDialectProvider();
 
-            string 
-                dataColumn = typeof(TDocument)
-                    .GetModelMetadata()
-                    .FieldDefinitions
-                    .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId>.Payload))
-                    .GetQuotedName(dialectProvider),
-                select = dialectProvider.SqlConcat(new[] 
-                { 
-                    dialectProvider.GetQuotedValue("["),
-                    $"GROUP_CONCAT({dataColumn}, {dialectProvider.GetQuotedValue(",")})",
-                    dialectProvider.GetQuotedValue("]")
-                });
-
-            jsonPath = dialectProvider.GetQuotedValue(jsonPath);
+            string dataColumn = typeof(TDocument)
+                .GetModelMetadata()
+                .FieldDefinitions
+                .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId>.Payload))
+                .GetQuotedName(dialectProvider);
 
             Expression<Func<TDocument, bool>> where = Expression.Lambda<Func<TDocument, bool>>
             (
                 new ParameterReplacerVisitor
                 (
-                    ((Expression<Action>) (() => Sql.Custom<TProperty>($"JSON_EXTRACT({dataColumn}, {jsonPath})"))).Body
+                    ((Expression<Action>) (() => Sql.Custom<TProperty>($"JSON_EXTRACT({dataColumn}, {dialectProvider.GetQuotedValue(jsonPath)})"))).Body
                 ).Visit(predicate.Body), 
                 Expression.Parameter(typeof(TDocument), "_")
             );
@@ -102,12 +93,12 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
                     //    eredmenyt ad (Payload-ot JSON karakterlanckent adja vissza), MySQL alatt megy.
                     // 2) Ezert kiszolgalo oldalon "kezzel" rakjuk ossze a JSON string-et, viszont itt meg megszopat az
                     //    OrmLite mivel a ".Select(doc => '[' + Sql.Custom('...') + ']')" rossz kifejezest eredmenyez
-                    //    (https://github.com/ServiceStack/ServiceStack.OrmLite#querying-with-select), ezert a kezzel
-                    //    osszetakolt kifejezes.
+                    //    (https://github.com/ServiceStack/ServiceStack.OrmLite#querying-with-select)
                     //
 
-                    .Select(select)
-                    .Where(where)
+                    .Select(doc => Sql.Custom(dialectProvider.GetQuotedValue("[")) + (Sql.Custom($"GROUP_CONCAT({dataColumn}, {dialectProvider.GetQuotedValue(",")})") ?? "") + Sql.Custom(dialectProvider.GetQuotedValue("]")))
+                    .Where(doc => doc.Type.StartsWith(typeof(TView).FullName))
+                    .And(where)
                     .ToMergedParamsSelectStatement(),
                 payload = await Connection.ScalarAsync<string>(sql, token: cancellation);
 
