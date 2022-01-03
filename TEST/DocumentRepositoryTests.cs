@@ -94,5 +94,23 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream.Tests
             IList<MyView> result = await Repository.QueryBySimpleCondition<int>("$.Prop", prop => prop > 2000);
             Assert.That(result, Is.Empty);
         }
+
+        [Test]
+        public async Task InsertOrUpdate_ShouldInsertANewRowIfThereIsNoEntityToUpdate()
+        {
+            await Repository.InsertOrUpdate(new MyView { StreamId = "cica", Prop = 1986 });
+            Assert.That(Connection.Count<MyDocument>(doc => doc.StreamId == "cica"), Is.EqualTo(1));
+        }
+
+        [Test]
+        public async Task InsertOrUpdate_ShouldUpdateTheEntity()
+        {
+            await Repository.InsertOrUpdate(new MyView { StreamId = "cica", Prop = 1986 });
+
+            Assert.That(Connection.Count<MyDocument>(doc => doc.StreamId == "cica"), Is.EqualTo(1));
+            Assert.DoesNotThrowAsync(() => Repository.InsertOrUpdate(new MyView { StreamId = "cica", Prop = 2000 }));
+            Assert.That(Connection.Count<MyDocument>(), Is.EqualTo(1));
+            Assert.That(await Repository.QueryBySimpleCondition<int>("$.Prop", prop => prop == 2000), Has.Length.EqualTo(1));
+        }
     }
 }
