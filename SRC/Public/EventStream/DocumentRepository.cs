@@ -22,6 +22,16 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
     public class DocumentRepository<TStreamId, TDocument, TView> where TStreamId : IEquatable<TStreamId> where TView : IEntity<TStreamId>, new() where TDocument: Document<TStreamId>, new()
     {
         /// <summary>
+        /// SQL function that concatenates a string group [GROUP_CONCAT() || STRING_AGG()]
+        /// </summary>
+        protected virtual string GroupConcat(string quotedColumn, string quotedSeparator) => $"GROUP_CONCAT({quotedColumn}, {quotedSeparator})";
+
+        /// <summary>
+        /// SQL function that extracts a value from a JSON.
+        /// </summary>
+        protected virtual string JsonExtract(string quotedColumn, string quotedJsonPath) => $"JSON_EXTRACT({quotedColumn}, {quotedJsonPath})";
+
+        /// <summary>
         /// The database connection.
         /// </summary>
         public IDbConnection Connection { get; }
@@ -45,6 +55,9 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
         /// </summary>
         public virtual async Task InsertOrUpdate(TView view, CancellationToken cancellation = default)
         {
+            if (view is null)
+                throw new ArgumentNullException(nameof(view));
+
             TDocument entity = new()
             {
                 StreamId = view.StreamId,
@@ -80,7 +93,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
             (
                 new ParameterReplacerVisitor
                 (
-                    ((Expression<Action>) (() => Sql.Custom<TProperty>($"JSON_EXTRACT({dataColumn}, {dialectProvider.GetQuotedValue(jsonPath)})"))).Body
+                    ((Expression<Action>) (() => Sql.Custom<TProperty>(JsonExtract(dataColumn, dialectProvider.GetQuotedValue(jsonPath))))).Body
                 ).Visit(predicate.Body), 
                 Expression.Parameter(typeof(TDocument), "_")
             );
@@ -96,7 +109,7 @@ namespace Solti.Utils.OrmLite.Extensions.EventStream
                     //    (https://github.com/ServiceStack/ServiceStack.OrmLite#querying-with-select)
                     //
 
-                    .Select(doc => Sql.Custom(dialectProvider.GetQuotedValue("[")) + (Sql.Custom($"GROUP_CONCAT({dataColumn}, {dialectProvider.GetQuotedValue(",")})") ?? "") + Sql.Custom(dialectProvider.GetQuotedValue("]")))
+                    .Select(doc => Sql.Custom(dialectProvider.GetQuotedValue("[")) + (Sql.Custom(GroupConcat(dataColumn, dialectProvider.GetQuotedValue(","))) ?? "") + Sql.Custom(dialectProvider.GetQuotedValue("]")))
                     .Where(doc => doc.Type.StartsWith(typeof(TView).FullName))
                     .And(where)
                     .ToMergedParamsSelectStatement(),
