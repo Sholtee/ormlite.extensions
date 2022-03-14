@@ -25,12 +25,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Solti.Utils.Proxy\**" />
-    <EmbeddedResource Remove="Solti.Utils.Proxy\**" />
-    <None Remove="Solti.Utils.Proxy\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="docfx.json" />
     <None Remove="index.md" />
   </ItemGroup>
