@@ -13,13 +13,13 @@ references:
   commentId: T:Solti.Utils.OrmLite.Extensions.CommandText
   fullName: Solti.Utils.OrmLite.Extensions.CommandText
   nameWithType: CommandText
-- uid: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String,System.Data.IDataParameter[])
+- uid: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String,IDataParameter[])
   name: Format(String, IDataParameter[])
-  href: Solti.Utils.OrmLite.Extensions.CommandText.html#Solti_Utils_OrmLite_Extensions_CommandText_Format_System_String_System_Data_IDataParameter___
-  commentId: M:Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String,System.Data.IDataParameter[])
+  href: Solti.Utils.OrmLite.Extensions.CommandText.html#Solti_Utils_OrmLite_Extensions_CommandText_Format_System_String_IDataParameter___
+  commentId: M:Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String,IDataParameter[])
   name.vb: Format(String, IDataParameter())
-  fullName: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String, System.Data.IDataParameter[])
-  fullName.vb: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String, System.Data.IDataParameter())
+  fullName: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String, IDataParameter[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.CommandText.Format(System.String, IDataParameter())
   nameWithType: CommandText.Format(String, IDataParameter[])
   nameWithType.vb: CommandText.Format(String, IDataParameter())
 - uid: Solti.Utils.OrmLite.Extensions.CommandText.Format*
@@ -240,12 +240,12 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView)
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>
   nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView)
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor(System.Data.IDbConnection)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor(IDbConnection)
   name: DocumentRepository(IDbConnection)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3__ctor_System_Data_IDbConnection_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor(System.Data.IDbConnection)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.DocumentRepository(System.Data.IDbConnection)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).DocumentRepository(System.Data.IDbConnection)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3__ctor_IDbConnection_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor(IDbConnection)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.DocumentRepository(IDbConnection)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).DocumentRepository(IDbConnection)
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.DocumentRepository(IDbConnection)
   nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).DocumentRepository(IDbConnection)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor*
@@ -291,12 +291,12 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).GroupConcat
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.GroupConcat
   nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).GroupConcat
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate(`2,CancellationToken)
   name: InsertOrUpdate(TView, CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_InsertOrUpdate__2_System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate(TView, System.Threading.CancellationToken)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate(TView, System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_InsertOrUpdate__2_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate(`2,CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate(TView, CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate(TView, CancellationToken)
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate(TView, CancellationToken)
   nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate(TView, CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate*
@@ -334,13 +334,13 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).QueryBySimpleCondition
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.QueryBySimpleCondition
   nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).QueryBySimpleCondition
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition``1(System.String,Expression{Func{``0,System.Boolean}},CancellationToken)
   name: QueryBySimpleCondition<TProperty>(String, Expression<Func<TProperty, Boolean>>, CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition__1_System_String_Expression_Func___0_System_Boolean___CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition``1(System.String,Expression{Func{``0,System.Boolean}},CancellationToken)
   name.vb: QueryBySimpleCondition(Of TProperty)(String, Expression(Of Func(Of TProperty, Boolean)), CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.QueryBySimpleCondition<TProperty>(System.String, System.Linq.Expressions.Expression<System.Func<TProperty, System.Boolean>>, System.Threading.CancellationToken)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).QueryBySimpleCondition(Of TProperty)(System.String, System.Linq.Expressions.Expression(Of System.Func(Of TProperty, System.Boolean)), System.Threading.CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.QueryBySimpleCondition<TProperty>(System.String, Expression<Func<TProperty, System.Boolean>>, CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).QueryBySimpleCondition(Of TProperty)(System.String, Expression(Of Func(Of TProperty, System.Boolean)), CancellationToken)
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.QueryBySimpleCondition<TProperty>(String, Expression<Func<TProperty, Boolean>>, CancellationToken)
   nameWithType.vb: DocumentRepository(Of TStreamId, TDocument, TView).QueryBySimpleCondition(Of TProperty)(String, Expression(Of Func(Of TProperty, Boolean)), CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.Event`1
@@ -395,12 +395,12 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView)
   nameWithType: EventRepository<TStreamId, TEvent, TView>
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView)
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor(System.Data.IDbConnection)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor(IDbConnection)
   name: EventRepository(IDbConnection)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3__ctor_System_Data_IDbConnection_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor(System.Data.IDbConnection)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.EventRepository(System.Data.IDbConnection)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).EventRepository(System.Data.IDbConnection)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3__ctor_IDbConnection_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor(IDbConnection)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.EventRepository(IDbConnection)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).EventRepository(IDbConnection)
   nameWithType: EventRepository<TStreamId, TEvent, TView>.EventRepository(IDbConnection)
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).EventRepository(IDbConnection)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor*
@@ -462,12 +462,12 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).CreateEvent(TStreamId, System.Object)
   nameWithType: EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId, Object)
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).CreateEvent(TStreamId, Object)
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent(`0,System.Object,CancellationToken)
   name: CreateEvent(TStreamId, Object, CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent__0_System_Object_System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId, System.Object, System.Threading.CancellationToken)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).CreateEvent(TStreamId, System.Object, System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent__0_System_Object_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent(`0,System.Object,CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId, System.Object, CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).CreateEvent(TStreamId, System.Object, CancellationToken)
   nameWithType: EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId, Object, CancellationToken)
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).CreateEvent(TStreamId, Object, CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent*
@@ -479,13 +479,13 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).CreateEvent
   nameWithType: EventRepository<TStreamId, TEvent, TView>.CreateEvent
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).CreateEvent
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews(IEnumerable{`1},CancellationToken)
   name: MaterializeViews(IEnumerable<TEvent>, CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_MaterializeViews_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_MaterializeViews_IEnumerable__1__CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews(IEnumerable{`1},CancellationToken)
   name.vb: MaterializeViews(IEnumerable(Of TEvent), CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.MaterializeViews(System.Collections.Generic.IEnumerable<TEvent>, System.Threading.CancellationToken)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).MaterializeViews(System.Collections.Generic.IEnumerable(Of TEvent), System.Threading.CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.MaterializeViews(IEnumerable<TEvent>, CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).MaterializeViews(IEnumerable(Of TEvent), CancellationToken)
   nameWithType: EventRepository<TStreamId, TEvent, TView>.MaterializeViews(IEnumerable<TEvent>, CancellationToken)
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).MaterializeViews(IEnumerable(Of TEvent), CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews*
@@ -497,12 +497,12 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).MaterializeViews
   nameWithType: EventRepository<TStreamId, TEvent, TView>.MaterializeViews
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).MaterializeViews
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews(System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews(CancellationToken)
   name: QueryViews(CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews(System.Threading.CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.QueryViews(System.Threading.CancellationToken)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).QueryViews(System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews(CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.QueryViews(CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).QueryViews(CancellationToken)
   nameWithType: EventRepository<TStreamId, TEvent, TView>.QueryViews(CancellationToken)
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).QueryViews(CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews*
@@ -514,13 +514,13 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).QueryViews
   nameWithType: EventRepository<TStreamId, TEvent, TView>.QueryViews
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).QueryViews
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId(System.Threading.CancellationToken,`0[])
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId(CancellationToken,`0[])
   name: QueryViewsByStreamId(CancellationToken, TStreamId[])
-  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_System_Threading_CancellationToken__0___
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId(System.Threading.CancellationToken,`0[])
+  href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_CancellationToken__0___
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId(CancellationToken,`0[])
   name.vb: QueryViewsByStreamId(CancellationToken, TStreamId())
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.QueryViewsByStreamId(System.Threading.CancellationToken, TStreamId[])
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).QueryViewsByStreamId(System.Threading.CancellationToken, TStreamId())
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.QueryViewsByStreamId(CancellationToken, TStreamId[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).QueryViewsByStreamId(CancellationToken, TStreamId())
   nameWithType: EventRepository<TStreamId, TEvent, TView>.QueryViewsByStreamId(CancellationToken, TStreamId[])
   nameWithType.vb: EventRepository(Of TStreamId, TEvent, TView).QueryViewsByStreamId(CancellationToken, TStreamId())
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId*
@@ -541,12 +541,12 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository(Of TStreamId, TView)
   nameWithType: IDocumentRepository<TStreamId, TView>
   nameWithType.vb: IDocumentRepository(Of TStreamId, TView)
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.InsertOrUpdate(`1,System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.InsertOrUpdate(`1,CancellationToken)
   name: InsertOrUpdate(TView, CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IDocumentRepository_2_InsertOrUpdate__1_System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.InsertOrUpdate(`1,System.Threading.CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository<TStreamId, TView>.InsertOrUpdate(TView, System.Threading.CancellationToken)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository(Of TStreamId, TView).InsertOrUpdate(TView, System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IDocumentRepository_2_InsertOrUpdate__1_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.InsertOrUpdate(`1,CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository<TStreamId, TView>.InsertOrUpdate(TView, CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository(Of TStreamId, TView).InsertOrUpdate(TView, CancellationToken)
   nameWithType: IDocumentRepository<TStreamId, TView>.InsertOrUpdate(TView, CancellationToken)
   nameWithType.vb: IDocumentRepository(Of TStreamId, TView).InsertOrUpdate(TView, CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.InsertOrUpdate*
@@ -567,13 +567,13 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition
   nameWithType: IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition
   nameWithType.vb: IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.QueryBySimpleCondition``1(System.String,Expression{Func{``0,System.Boolean}},CancellationToken)
   name: QueryBySimpleCondition<TProperty>(String, Expression<Func<TProperty, Boolean>>, CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IDocumentRepository_2_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IDocumentRepository_2_QueryBySimpleCondition__1_System_String_Expression_Func___0_System_Boolean___CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.QueryBySimpleCondition``1(System.String,Expression{Func{``0,System.Boolean}},CancellationToken)
   name.vb: QueryBySimpleCondition(Of TProperty)(String, Expression(Of Func(Of TProperty, Boolean)), CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition<TProperty>(System.String, System.Linq.Expressions.Expression<System.Func<TProperty, System.Boolean>>, System.Threading.CancellationToken)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition(Of TProperty)(System.String, System.Linq.Expressions.Expression(Of System.Func(Of TProperty, System.Boolean)), System.Threading.CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition<TProperty>(System.String, Expression<Func<TProperty, System.Boolean>>, CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition(Of TProperty)(System.String, Expression(Of Func(Of TProperty, System.Boolean)), CancellationToken)
   nameWithType: IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition<TProperty>(String, Expression<Func<TProperty, Boolean>>, CancellationToken)
   nameWithType.vb: IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition(Of TProperty)(String, Expression(Of Func(Of TProperty, Boolean)), CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.IEntity`1
@@ -611,12 +611,12 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView)
   nameWithType: IEventRepository<TStreamId, TView>
   nameWithType.vb: IEventRepository(Of TStreamId, TView)
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.CreateEvent(`0,System.Object,System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.CreateEvent(`0,System.Object,CancellationToken)
   name: CreateEvent(TStreamId, Object, CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IEventRepository_2_CreateEvent__0_System_Object_System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.CreateEvent(`0,System.Object,System.Threading.CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.CreateEvent(TStreamId, System.Object, System.Threading.CancellationToken)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).CreateEvent(TStreamId, System.Object, System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IEventRepository_2_CreateEvent__0_System_Object_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.CreateEvent(`0,System.Object,CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.CreateEvent(TStreamId, System.Object, CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).CreateEvent(TStreamId, System.Object, CancellationToken)
   nameWithType: IEventRepository<TStreamId, TView>.CreateEvent(TStreamId, Object, CancellationToken)
   nameWithType.vb: IEventRepository(Of TStreamId, TView).CreateEvent(TStreamId, Object, CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.CreateEvent*
@@ -628,12 +628,12 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).CreateEvent
   nameWithType: IEventRepository<TStreamId, TView>.CreateEvent
   nameWithType.vb: IEventRepository(Of TStreamId, TView).CreateEvent
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViews(System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViews(CancellationToken)
   name: QueryViews(CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IEventRepository_2_QueryViews_System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViews(System.Threading.CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.QueryViews(System.Threading.CancellationToken)
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).QueryViews(System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IEventRepository_2_QueryViews_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViews(CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.QueryViews(CancellationToken)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).QueryViews(CancellationToken)
   nameWithType: IEventRepository<TStreamId, TView>.QueryViews(CancellationToken)
   nameWithType.vb: IEventRepository(Of TStreamId, TView).QueryViews(CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViews*
@@ -645,13 +645,13 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).QueryViews
   nameWithType: IEventRepository<TStreamId, TView>.QueryViews
   nameWithType.vb: IEventRepository(Of TStreamId, TView).QueryViews
-- uid: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViewsByStreamId(System.Threading.CancellationToken,`0[])
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViewsByStreamId(CancellationToken,`0[])
   name: QueryViewsByStreamId(CancellationToken, TStreamId[])
-  href: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IEventRepository_2_QueryViewsByStreamId_System_Threading_CancellationToken__0___
-  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViewsByStreamId(System.Threading.CancellationToken,`0[])
+  href: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IEventRepository_2_QueryViewsByStreamId_CancellationToken__0___
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViewsByStreamId(CancellationToken,`0[])
   name.vb: QueryViewsByStreamId(CancellationToken, TStreamId())
-  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.QueryViewsByStreamId(System.Threading.CancellationToken, TStreamId[])
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).QueryViewsByStreamId(System.Threading.CancellationToken, TStreamId())
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.QueryViewsByStreamId(CancellationToken, TStreamId[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).QueryViewsByStreamId(CancellationToken, TStreamId())
   nameWithType: IEventRepository<TStreamId, TView>.QueryViewsByStreamId(CancellationToken, TStreamId[])
   nameWithType.vb: IEventRepository(Of TStreamId, TView).QueryViewsByStreamId(CancellationToken, TStreamId())
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViewsByStreamId*
@@ -742,11 +742,11 @@ references:
   isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
   nameWithType: IBulkedDbConnection.Flush
-- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
+- uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(CancellationToken)
   name: FlushAsync(CancellationToken)
-  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync_System_Threading_CancellationToken_
-  commentId: M:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
-  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
+  href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync_CancellationToken_
+  commentId: M:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(CancellationToken)
+  fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(CancellationToken)
   nameWithType: IBulkedDbConnection.FlushAsync(CancellationToken)
 - uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync*
   name: FlushAsync
@@ -761,11 +761,11 @@ references:
   commentId: T:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
   fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
   nameWithType: IDbConnectionExtensions
-- uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(System.Data.IDbConnection)
+- uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(IDbConnection)
   name: CreateBulkedDbConnection(IDbConnection)
-  href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html#Solti_Utils_OrmLite_Extensions_IDbConnectionExtensions_CreateBulkedDbConnection_System_Data_IDbConnection_
-  commentId: M:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(System.Data.IDbConnection)
-  fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(System.Data.IDbConnection)
+  href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html#Solti_Utils_OrmLite_Extensions_IDbConnectionExtensions_CreateBulkedDbConnection_IDbConnection_
+  commentId: M:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(IDbConnection)
+  fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(IDbConnection)
   nameWithType: IDbConnectionExtensions.CreateBulkedDbConnection(IDbConnection)
 - uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection*
   name: CreateBulkedDbConnection
@@ -780,22 +780,22 @@ references:
   commentId: T:Solti.Utils.OrmLite.Extensions.Schema
   fullName: Solti.Utils.OrmLite.Extensions.Schema
   nameWithType: Schema
-- uid: Solti.Utils.OrmLite.Extensions.Schema.#ctor(System.Data.IDbConnection,System.Reflection.Assembly[])
+- uid: Solti.Utils.OrmLite.Extensions.Schema.#ctor(IDbConnection,Assembly[])
   name: Schema(IDbConnection, Assembly[])
-  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema__ctor_System_Data_IDbConnection_System_Reflection_Assembly___
-  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.#ctor(System.Data.IDbConnection,System.Reflection.Assembly[])
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema__ctor_IDbConnection_Assembly___
+  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.#ctor(IDbConnection,Assembly[])
   name.vb: Schema(IDbConnection, Assembly())
-  fullName: Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection, System.Reflection.Assembly[])
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection, System.Reflection.Assembly())
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Schema(IDbConnection, Assembly[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Schema.Schema(IDbConnection, Assembly())
   nameWithType: Schema.Schema(IDbConnection, Assembly[])
   nameWithType.vb: Schema.Schema(IDbConnection, Assembly())
-- uid: Solti.Utils.OrmLite.Extensions.Schema.#ctor(System.Data.IDbConnection,System.Type[])
+- uid: Solti.Utils.OrmLite.Extensions.Schema.#ctor(IDbConnection,Type[])
   name: Schema(IDbConnection, Type[])
-  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema__ctor_System_Data_IDbConnection_System_Type___
-  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.#ctor(System.Data.IDbConnection,System.Type[])
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema__ctor_IDbConnection_Type___
+  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.#ctor(IDbConnection,Type[])
   name.vb: Schema(IDbConnection, Type())
-  fullName: Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection, System.Type[])
-  fullName.vb: Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection, System.Type())
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Schema(IDbConnection, Type[])
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Schema.Schema(IDbConnection, Type())
   nameWithType: Schema.Schema(IDbConnection, Type[])
   nameWithType.vb: Schema.Schema(IDbConnection, Type())
 - uid: Solti.Utils.OrmLite.Extensions.Schema.#ctor*
@@ -870,12 +870,15 @@ references:
   isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.IsInitialized
   nameWithType: Schema.IsInitialized
-- uid: Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.DateTime,System.String,System.String)
-  name: Migrate(DateTime, String, String)
-  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Migrate_System_DateTime_System_String_System_String_
-  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.DateTime,System.String,System.String)
-  fullName: Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.DateTime, System.String, System.String)
-  nameWithType: Schema.Migrate(DateTime, String, String)
+- uid: Solti.Utils.OrmLite.Extensions.Schema.Migrate(DateTime,System.String,System.Nullable{System.String})
+  name: Migrate(DateTime, String, Nullable<String>)
+  href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Migrate_DateTime_System_String_System_Nullable_System_String__
+  commentId: M:Solti.Utils.OrmLite.Extensions.Schema.Migrate(DateTime,System.String,System.Nullable{System.String})
+  name.vb: Migrate(DateTime, String, Nullable(Of String))
+  fullName: Solti.Utils.OrmLite.Extensions.Schema.Migrate(DateTime, System.String, System.Nullable<System.String>)
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Schema.Migrate(DateTime, System.String, System.Nullable(Of System.String))
+  nameWithType: Schema.Migrate(DateTime, String, Nullable<String>)
+  nameWithType.vb: Schema.Migrate(DateTime, String, Nullable(Of String))
 - uid: Solti.Utils.OrmLite.Extensions.Schema.Migrate*
   name: Migrate
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Migrate_
