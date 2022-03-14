@@ -22,8 +22,6 @@ using Solti.Utils.Proxy.Generators;
 
 namespace Solti.Utils.OrmLite.Extensions.Internals
 {
-    using Primitives;
-
     internal sealed class BulkedDbConnection: IBulkedDbConnection
     {
         internal IDbConnection Connection { get; }
@@ -99,12 +97,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
             }
         }
 
-        private static Func<object?[], object> DbCommandFactory { get; } = ProxyGenerator<IDbCommand, IDbCommandInterceptor>
-            .GetGeneratedType()
-            .GetConstructor(new[] { typeof(BulkedDbConnection) })
-            .ToStaticDelegate();
-
-        public IDbCommand CreateCommand() => (IDbCommand) DbCommandFactory.Invoke(new object[] { this });
+        public IDbCommand CreateCommand() => ProxyGenerator<IDbCommand, IDbCommandInterceptor>.Activate(Tuple.Create(this));
 
         public void Open() => throw new NotSupportedException();
 
