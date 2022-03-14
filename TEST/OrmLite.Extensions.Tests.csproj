@@ -1,8 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.0;net5.0;net6.0</TargetFrameworks>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <IsPackable>false</IsPackable>
+    <LangVersion>9</LangVersion>
     <IsTestProject>true</IsTestProject>
     <AssemblyName>Solti.Utils.OrmLite.Extensions.Tests</AssemblyName>
     <RootNamespace>Solti.Utils.OrmLite.Extensions.Tests</RootNamespace>

@@ -83,7 +83,7 @@ namespace Solti.Utils.OrmLite.Extensions.Eventing.Tests
         [Test]
         public void Apply_ShouldCallTheProperApplyFunction()
         {
-            Mock<MyView> mockView = new(MockBehavior.Strict);
+            Mock<MyView> mockView = new Mock<MyView>(MockBehavior.Strict);
             mockView.Setup(v => v.Apply(It.Is<MyEvent2>(evt => evt.Prop2 == 1986)));
 
             Assert.DoesNotThrow(() => new EventRepository<string, EventTable, MyView>(new Mock<IDbConnection>(MockBehavior.Strict).Object).Apply(mockView.Object, new EventTable

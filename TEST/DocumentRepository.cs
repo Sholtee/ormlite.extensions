@@ -45,7 +45,7 @@ namespace Solti.Utils.OrmLite.Extensions.Eventing.Tests
         [TearDown]
         public void TearDown()
         {
-            if (Connection is not null)
+            if (Connection != null)
             {
                 Connection.DropTable<MyDocument>();
                 Connection.Dispose();
