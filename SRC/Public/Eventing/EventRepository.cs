@@ -162,9 +162,9 @@ namespace Solti.Utils.OrmLite.Extensions.Eventing
         {
             if (FCallApply is null)
                 lock (FLock)
-#pragma warning disable CA1508 // Avoid dead conditional code
+                    #pragma warning disable CA1508 // Avoid dead conditional code
                     if (FCallApply is null)
-#pragma warning restore CA1508
+                    #pragma warning restore CA1508
                         FCallApply = GenerateApplyFn();
             FCallApply(view, evt);
         }
