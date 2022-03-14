@@ -54,11 +54,35 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository-2.html">IDocumentRepository</a>&lt;TStreamId, TView&gt;</div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.html">Solti.Utils.OrmLite.Extensions.Eventing</a></h6>
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
   <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DocumentRepository&lt;TStreamId, TDocument, TView&gt; : object, IDocumentRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TDocument : Document&lt;TStreamId&gt;, new()
+    <pre><code class="lang-csharp hljs">public class DocumentRepository&lt;TStreamId, TDocument, TView&gt; : IDocumentRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TDocument : Document&lt;TStreamId&gt;, new()
     where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
@@ -87,7 +111,7 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3__ctor_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3__ctor_IDbConnection_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor(IDbConnection)">DocumentRepository(IDbConnection)</h4>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3__ctor_System_Data_IDbConnection_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor(System.Data.IDbConnection)">DocumentRepository(IDbConnection)</h4>
   <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html">DocumentRepository&lt;TStreamId, TDocument, TView&gt;</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -106,7 +130,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDbConnection</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.data.idbconnection">IDbConnection</a></td>
         <td><span class="parametername">connection</span></td>
         <td></td>
       </tr>
@@ -133,7 +157,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDbConnection</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.data.idbconnection">IDbConnection</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -187,7 +211,7 @@
     </tbody>
   </table>
   <a id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_InsertOrUpdate_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_InsertOrUpdate__2_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate(`2,CancellationToken)">InsertOrUpdate(TView, CancellationToken)</h4>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_InsertOrUpdate__2_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate(`2,System.Threading.CancellationToken)">InsertOrUpdate(TView, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Inserts or updates a view.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -211,7 +235,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellation</span></td>
         <td></td>
       </tr>
@@ -227,7 +251,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -279,7 +303,7 @@
     </tbody>
   </table>
   <a id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition__1_System_String_Expression_Func___0_System_Boolean___CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition``1(System.String,Expression{Func{``0,System.Boolean}},CancellationToken)">QueryBySimpleCondition&lt;TProperty&gt;(String, Expression&lt;Func&lt;TProperty, Boolean&gt;&gt;, CancellationToken)</h4>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">QueryBySimpleCondition&lt;TProperty&gt;(String, Expression&lt;Func&lt;TProperty, Boolean&gt;&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Returns a list of <code data-dev-comment-type="typeparamref" class="typeparamref">TView</code>s based on a <code data-dev-comment-type="paramref" class="paramref">predicate</code>. The <code data-dev-comment-type="paramref" class="paramref">predicate</code> is called against a property pointed by a <code data-dev-comment-type="paramref" class="paramref">jsonPath</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -304,12 +328,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;TProperty, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TProperty, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellation</span></td>
         <td></td>
       </tr>
@@ -325,7 +349,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;TView&gt;&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TView&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -345,7 +369,7 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition__1_System_String_Expression_Func___0_System_Boolean___CancellationToken__remarks">Remarks</h5>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition__1_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The <code data-dev-comment-type="paramref" class="paramref">jsonPath</code> must point to a simple [Number, String, Enum] property.</p>
 </div>
   <h3 id="implements">Implements</h3>

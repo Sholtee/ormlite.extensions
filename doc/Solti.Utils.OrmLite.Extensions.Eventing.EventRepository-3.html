@@ -54,11 +54,35 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html">IEventRepository</a>&lt;TStreamId, TView&gt;</div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.html">Solti.Utils.OrmLite.Extensions.Eventing</a></h6>
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
   <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EventRepository&lt;TStreamId, TEvent, TView&gt; : object, IEventRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt;, new()
+    <pre><code class="lang-csharp hljs">public class EventRepository&lt;TStreamId, TEvent, TView&gt; : IEventRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt;, new()
     where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
@@ -87,7 +111,7 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3__ctor_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3__ctor_IDbConnection_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor(IDbConnection)">EventRepository(IDbConnection)</h4>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3__ctor_System_Data_IDbConnection_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor(System.Data.IDbConnection)">EventRepository(IDbConnection)</h4>
   <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html">EventRepository&lt;TStreamId, TEvent, TView&gt;</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -106,7 +130,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDbConnection</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.data.idbconnection">IDbConnection</a></td>
         <td><span class="parametername">connection</span></td>
         <td></td>
       </tr>
@@ -133,7 +157,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDbConnection</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.data.idbconnection">IDbConnection</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -249,7 +273,7 @@
     </tbody>
   </table>
   <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent__0_System_Object_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent(`0,System.Object,CancellationToken)">CreateEvent(TStreamId, Object, CancellationToken)</h4>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent__0_System_Object_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent(`0,System.Object,System.Threading.CancellationToken)">CreateEvent(TStreamId, Object, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Inserts a new event into the repository.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -278,7 +302,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellation</span></td>
         <td></td>
       </tr>
@@ -294,14 +318,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;TView&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TView&gt;</td>
         <td><p>The modified materialized view.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_MaterializeViews_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_MaterializeViews_IEnumerable__1__CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews(IEnumerable{`1},CancellationToken)">MaterializeViews(IEnumerable&lt;TEvent&gt;, CancellationToken)</h4>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_MaterializeViews_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">MaterializeViews(IEnumerable&lt;TEvent&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Materializes views.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -320,12 +344,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerable</span>&lt;TEvent&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEvent&gt;</td>
         <td><span class="parametername">events</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellation</span></td>
         <td></td>
       </tr>
@@ -341,13 +365,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IList</span>&lt;TView&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TView&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews(CancellationToken)">QueryViews(CancellationToken)</h4>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_System_Threading_CancellationToken_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews(System.Threading.CancellationToken)">QueryViews(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Returns all the materialized views.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -366,7 +390,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellation</span></td>
         <td></td>
       </tr>
@@ -382,16 +406,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;TView&gt;&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TView&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_CancellationToken__remarks">Remarks</h5>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_System_Threading_CancellationToken__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This method replays all the related events to build the result, therefore it&apos;s considered inefficient. To query views use the <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html">Document&lt;TStreamId&gt;</a> class.</p>
 </div>
   <a id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId*"></a>
-  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_CancellationToken__0___" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId(CancellationToken,`0[])">QueryViewsByStreamId(CancellationToken, TStreamId[])</h4>
+  <h4 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_System_Threading_CancellationToken__0___" data-uid="Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId(System.Threading.CancellationToken,`0[])">QueryViewsByStreamId(CancellationToken, TStreamId[])</h4>
   <div class="markdown level1 summary"><p>Returns the materialized views identified by their primary keys.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -410,7 +434,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellation</span></td>
         <td></td>
       </tr>
@@ -431,12 +455,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;TView&gt;&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TView&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_CancellationToken__0____remarks">Remarks</h5>
+  <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_System_Threading_CancellationToken__0____remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This method replays all the related events to build the result, therefore it&apos;s considered inefficient. To query views use the <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html">Document&lt;TStreamId&gt;</a> class.</p>
 </div>
   <h3 id="implements">Implements</h3>

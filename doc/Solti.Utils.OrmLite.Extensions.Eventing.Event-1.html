@@ -62,6 +62,27 @@
     <div>
       <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_Payload">SerializedData&lt;TStreamId&gt;.Payload</a>
     </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.html">Solti.Utils.OrmLite.Extensions.Eventing</a></h6>
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
@@ -80,7 +101,7 @@
     <tbody>
       <tr>
         <td><span class="parametername">TStreamId</span></td>
-        <td><p>The type of stream id. If you need human readable id (for e.g. in case of invoices) it should be <see cref="!:System.String"></see>, in any other cases it should be <see cref="!:Guid"></see>.</p>
+        <td><p>The type of stream id. If you need human readable id (for e.g. in case of invoices) it should be <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, in any other cases it should be <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -94,7 +115,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long CreatedAtUtc { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Required]
+public long CreatedAtUtc { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -118,7 +140,9 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Guid Id { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[PrimaryKey]
+[AutoId]
+public Guid Id { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -130,7 +154,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Guid</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a></td>
         <td></td>
       </tr>
     </tbody>
