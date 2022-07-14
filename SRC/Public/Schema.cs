@@ -105,13 +105,13 @@ namespace Solti.Utils.OrmLite.Extensions
                     })
                     .ToArray();
 
-                Func<object?[], object> insert = ((Func<object, bool, bool, long>) bulk.Insert)
+                StaticMethod insert = ((Func<object, bool, bool, long>) bulk.Insert)
                     .Method
                     .GetGenericMethodDefinition()
                     .MakeGenericMethod(table)
                     .ToStaticDelegate();
 
-                Func<object?[], object> factory = (table.GetConstructor(Type.EmptyTypes) ?? throw new MissingMemberException(table.Name, ConstructorInfo.ConstructorName))
+                StaticMethod factory = (table.GetConstructor(Type.EmptyTypes) ?? throw new MissingMemberException(table.Name, ConstructorInfo.ConstructorName))
                     .ToStaticDelegate();
 
                 foreach (ValuesAttribute values in initialValues)
@@ -119,7 +119,7 @@ namespace Solti.Utils.OrmLite.Extensions
                     if (values.Items.Count != setters.Length)
                         throw new InvalidOperationException(Resources.VALUE_COUNT_NOT_MATCH);
 
-                    object inst = factory(Array.Empty<object?>());
+                    object inst = factory()!;
 
                     for (int i = 0; i < setters.Length; i++)
                     {
@@ -131,7 +131,7 @@ namespace Solti.Utils.OrmLite.Extensions
                             : TypeDescriptor.GetConverter(setter.FieldType).ConvertFrom(val));
                     }
 
-                    insert(new object?[] { bulk, inst, false, false });
+                    insert(bulk, inst, false, false);
                 }
             }
 
