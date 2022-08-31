@@ -82,7 +82,7 @@ namespace Solti.Utils.OrmLite.Extensions.Eventing
             string dataColumn = typeof(TDocument)
                 .GetModelMetadata()
                 .FieldDefinitions
-                .Single(f => f.PropertyInfo.Name == nameof(Document<TStreamId>.Payload))
+                .Single(static f => f.PropertyInfo.Name == nameof(Document<TStreamId>.Payload))
                 .GetQuotedName(dialectProvider);
 
             Expression<Func<TDocument, bool>> where = Expression.Lambda<Func<TDocument, bool>>

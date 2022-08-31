@@ -75,7 +75,7 @@ namespace Solti.Utils.OrmLite.Extensions.Eventing
                     ),
                     typeof(TView)
                         .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
-                        .Where(m => m.Name == "Apply" && m.GetParameters().Length == 1)
+                        .Where(static m => m.Name == "Apply" && m.GetParameters().Length == 1)
                         .Select(CreateCase)
                         .ToArray()
                 ),
@@ -118,7 +118,7 @@ namespace Solti.Utils.OrmLite.Extensions.Eventing
                     StreamId = evtGrp.Key
                 };
 
-                foreach (TEvent evt in evtGrp.OrderBy(evt => evt.CreatedAtUtc))
+                foreach (TEvent evt in evtGrp.OrderBy(static evt => evt.CreatedAtUtc))
                 {
                     Apply(view, evt);
                 }

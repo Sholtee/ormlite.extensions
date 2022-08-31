@@ -72,7 +72,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                             .MergeParamsIntoSql(Target!.CommandText, Target
                                 .Parameters
                                 .Cast<IDbDataParameter>()
-                                .Select(para => 
+                                .Select(static para => 
                                 {
                                     //
                                     // MergeParamsIntoSql() baszik rendesen lekezeni a DBNull-t

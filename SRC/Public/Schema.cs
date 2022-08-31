@@ -69,8 +69,8 @@ namespace Solti.Utils.OrmLite.Extensions
         /// Creates a new <see cref="Schema"/> instance.
         /// </summary>
         public Schema(IDbConnection connection, params Assembly[] asmsToSearch) : this(connection, asmsToSearch
-            .SelectMany(asm => asm.GetTypes())
-            .Where(type => type.GetCustomAttribute<DataTableAttribute>(inherit: false) is not null)
+            .SelectMany(static asm => asm.GetTypes())
+            .Where(static type => type.GetCustomAttribute<DataTableAttribute>(inherit: false) is not null)
             .ToArray()) 
         {
         } 
@@ -98,7 +98,7 @@ namespace Solti.Utils.OrmLite.Extensions
                 var setters = table
                     .GetModelMetadata()
                     .FieldDefinitions
-                    .Select(def => new
+                    .Select(static def => new
                     {
                         Fn = def.PropertyInfo.ToSetter(),
                         def.FieldType
@@ -187,7 +187,7 @@ namespace Solti.Utils.OrmLite.Extensions
         public DateTime GetLastMigrationUtc()
         {
             string sql = Connection.From<Migration>()
-                .Select(m => Sql.Max(m.CreatedAtUtc))
+                .Select(static m => Sql.Max(m.CreatedAtUtc))
                 .ToSelectStatement();
             return new DateTime(ticks: Connection.Scalar<long>(sql), DateTimeKind.Utc);
         }

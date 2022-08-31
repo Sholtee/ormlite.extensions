@@ -27,10 +27,10 @@ namespace Solti.Utils.OrmLite.Extensions
         [SuppressMessage("Usage", "CA2201:Do not raise reserved exception types")]
         public static string Format(string sql, params IDataParameter[] paramz)
         {
-            if (sql == null) 
+            if (sql is null) 
                 throw new ArgumentNullException(nameof(sql));
 
-            if (paramz == null)
+            if (paramz is null)
                 throw new ArgumentNullException(nameof(paramz));
 
             int index = 0;
@@ -54,11 +54,13 @@ namespace Solti.Utils.OrmLite.Extensions
                             if (!name.StartsWith("@", StringComparison.Ordinal)) name = $"@{name}";
                             return placeholder == name;
                         });
-                        if (matchingParameter == null) throw new KeyNotFoundException();
+                        if (matchingParameter is null)
+                            throw new KeyNotFoundException();
                         break;
                     case '{':
                         uint i = uint.Parse(placeholder.Trim('{', '}'), null);
-                        if (i >= paramz.Length) throw new IndexOutOfRangeException();
+                        if (i >= paramz.Length)
+                            throw new IndexOutOfRangeException();
                         matchingParameter = paramz[i];
                         break;
                     default:
@@ -67,7 +69,7 @@ namespace Solti.Utils.OrmLite.Extensions
 
                 object value = matchingParameter.Value;
 
-                return value != null
+                return value is not null
                     ? OrmLiteConfig.DialectProvider.GetQuotedValue(value, value.GetType())
                     : "NULL";
             });

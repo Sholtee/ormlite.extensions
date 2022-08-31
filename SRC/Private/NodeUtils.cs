@@ -65,7 +65,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                 IEnumerable<Type> path = currentPath.Reverse();
 
                 int firstIndex = path
-                    .Select((item, index) => new
+                    .Select(static (item, index) => new
                     {
                         Item  = item,
                         Index = index
@@ -79,7 +79,9 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
 
             IEnumerable<Type> GetChildren(Type node)
             {
-                foreach (Type? reference in node.GetProperties().Select(prop => prop.GetCustomAttribute<ReferencesAttribute>()?.Type))
+                foreach (Type? reference in node
+                    .GetProperties()
+                    .Select(static prop => prop.GetCustomAttribute<ReferencesAttribute>()?.Type))
                 {
                     if (reference is null)
                         continue;
