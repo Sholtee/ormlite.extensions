@@ -80,7 +80,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task InsertOrUpdate(TView view, CancellationToken cancellation = default(CancellationToken))</code></pre>
+    <pre><code class="lang-csharp hljs">Task InsertOrUpdate(TView view, CancellationToken cancellation = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -126,7 +126,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IList&lt;TView&gt;&gt; QueryBySimpleCondition&lt;TProperty&gt;(string jsonPath, Expression&lt;Func&lt;TProperty, bool&gt;&gt; predicate, CancellationToken cancellation = default(CancellationToken))
+    <pre><code class="lang-csharp hljs">Task&lt;IList&lt;TView&gt;&gt; QueryBySimpleCondition&lt;TProperty&gt;(string jsonPath, Expression&lt;Func&lt;TProperty, bool&gt;&gt; predicate, CancellationToken cancellation = null)
     where TProperty : IEquatable&lt;TProperty&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

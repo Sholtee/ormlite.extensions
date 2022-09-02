@@ -54,35 +54,11 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html">IEventRepository</a>&lt;TStreamId, TView&gt;</div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Solti.Utils.OrmLite.Extensions.Eventing.html">Solti.Utils.OrmLite.Extensions.Eventing</a></h6>
   <h6><strong>Assembly</strong>: Solti.Utils.OrmLite.Extensions.dll</h6>
   <h5 id="Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EventRepository&lt;TStreamId, TEvent, TView&gt; : IEventRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt;, new()
+    <pre><code class="lang-csharp hljs">public class EventRepository&lt;TStreamId, TEvent, TView&gt; : Object, IEventRepository&lt;TStreamId, TView&gt; where TStreamId : IEquatable&lt;TStreamId&gt; where TEvent : Event&lt;TStreamId&gt;, new()
     where TView : IEntity&lt;TStreamId&gt;, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
@@ -279,7 +255,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public async Task&lt;TView&gt; CreateEvent(TStreamId streamId, object evt, CancellationToken cancellation)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;TView&gt; CreateEvent(TStreamId streamId, object evt, CancellationToken cancellation)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -377,7 +353,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public async Task&lt;IList&lt;TView&gt;&gt; QueryViews(CancellationToken cancellation)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IList&lt;TView&gt;&gt; QueryViews(CancellationToken cancellation)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -421,7 +397,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public async Task&lt;IList&lt;TView&gt;&gt; QueryViewsByStreamId(CancellationToken cancellation, params TStreamId[] ids)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IList&lt;TView&gt;&gt; QueryViewsByStreamId(CancellationToken cancellation, params TStreamId[] ids)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

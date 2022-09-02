@@ -26,7 +26,6 @@ references:
   name: Format
   href: Solti.Utils.OrmLite.Extensions.CommandText.html#Solti_Utils_OrmLite_Extensions_CommandText_Format_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.CommandText.Format
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.CommandText.Format
   nameWithType: CommandText.Format
 - uid: Solti.Utils.OrmLite.Extensions.DataTableAttribute
@@ -35,6 +34,18 @@ references:
   commentId: T:Solti.Utils.OrmLite.Extensions.DataTableAttribute
   fullName: Solti.Utils.OrmLite.Extensions.DataTableAttribute
   nameWithType: DataTableAttribute
+- uid: Solti.Utils.OrmLite.Extensions.DataTableAttribute.#ctor
+  name: DataTableAttribute()
+  href: Solti.Utils.OrmLite.Extensions.DataTableAttribute.html#Solti_Utils_OrmLite_Extensions_DataTableAttribute__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.DataTableAttribute.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.DataTableAttribute.DataTableAttribute()
+  nameWithType: DataTableAttribute.DataTableAttribute()
+- uid: Solti.Utils.OrmLite.Extensions.DataTableAttribute.#ctor*
+  name: DataTableAttribute
+  href: Solti.Utils.OrmLite.Extensions.DataTableAttribute.html#Solti_Utils_OrmLite_Extensions_DataTableAttribute__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.DataTableAttribute.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.DataTableAttribute.DataTableAttribute
+  nameWithType: DataTableAttribute.DataTableAttribute
 - uid: Solti.Utils.OrmLite.Extensions.Eventing
   name: Solti.Utils.OrmLite.Extensions.Eventing
   href: Solti.Utils.OrmLite.Extensions.Eventing.html
@@ -50,6 +61,22 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1)
   nameWithType: Aggregate<TStreamId, TEvent1>
   nameWithType.vb: Aggregate(Of TStreamId, TEvent1)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`2.#ctor
+  name: Aggregate()
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-2.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_2__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`2.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1>.Aggregate()
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1).Aggregate()
+  nameWithType: Aggregate<TStreamId, TEvent1>.Aggregate()
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1).Aggregate()
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`2.#ctor*
+  name: Aggregate
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-2.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_2__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`2.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1>.Aggregate
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1).Aggregate
+  nameWithType: Aggregate<TStreamId, TEvent1>.Aggregate
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1).Aggregate
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`2.Apply(`1)
   name: Apply(TEvent1)
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-2.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_2_Apply__1_
@@ -62,7 +89,6 @@ references:
   name: Apply
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-2.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_2_Apply_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`2.Apply
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1>.Apply
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1).Apply
   nameWithType: Aggregate<TStreamId, TEvent1>.Apply
@@ -79,7 +105,6 @@ references:
   name: StreamId
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-2.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_2_StreamId_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`2.StreamId
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1>.StreamId
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1).StreamId
   nameWithType: Aggregate<TStreamId, TEvent1>.StreamId
@@ -93,6 +118,22 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2)
   nameWithType: Aggregate<TStreamId, TEvent1, TEvent2>
   nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`3.#ctor
+  name: Aggregate()
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-3.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_3__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`3.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2>.Aggregate()
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2).Aggregate()
+  nameWithType: Aggregate<TStreamId, TEvent1, TEvent2>.Aggregate()
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2).Aggregate()
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`3.#ctor*
+  name: Aggregate
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-3.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_3__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`3.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2>.Aggregate
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2).Aggregate
+  nameWithType: Aggregate<TStreamId, TEvent1, TEvent2>.Aggregate
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2).Aggregate
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`3.Apply(`2)
   name: Apply(TEvent2)
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-3.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_3_Apply__2_
@@ -105,7 +146,6 @@ references:
   name: Apply
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-3.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_3_Apply_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`3.Apply
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2>.Apply
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2).Apply
   nameWithType: Aggregate<TStreamId, TEvent1, TEvent2>.Apply
@@ -119,6 +159,22 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3)
   nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>
   nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`4.#ctor
+  name: Aggregate()
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-4.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_4__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`4.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>.Aggregate()
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3).Aggregate()
+  nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>.Aggregate()
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3).Aggregate()
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`4.#ctor*
+  name: Aggregate
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-4.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_4__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`4.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>.Aggregate
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3).Aggregate
+  nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>.Aggregate
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3).Aggregate
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`4.Apply(`3)
   name: Apply(TEvent3)
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-4.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_4_Apply__3_
@@ -131,7 +187,6 @@ references:
   name: Apply
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-4.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_4_Apply_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`4.Apply
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>.Apply
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3).Apply
   nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>.Apply
@@ -145,6 +200,22 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4)
   nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>
   nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`5.#ctor
+  name: Aggregate()
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-5.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_5__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`5.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>.Aggregate()
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4).Aggregate()
+  nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>.Aggregate()
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4).Aggregate()
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`5.#ctor*
+  name: Aggregate
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-5.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_5__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`5.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>.Aggregate
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4).Aggregate
+  nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>.Aggregate
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4).Aggregate
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`5.Apply(`4)
   name: Apply(TEvent4)
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-5.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_5_Apply__4_
@@ -157,7 +228,6 @@ references:
   name: Apply
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-5.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_5_Apply_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`5.Apply
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>.Apply
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4).Apply
   nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>.Apply
@@ -171,6 +241,22 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5)
   nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>
   nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`6.#ctor
+  name: Aggregate()
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-6.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_6__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`6.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>.Aggregate()
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5).Aggregate()
+  nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>.Aggregate()
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5).Aggregate()
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`6.#ctor*
+  name: Aggregate
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-6.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_6__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`6.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>.Aggregate
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5).Aggregate
+  nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>.Aggregate
+  nameWithType.vb: Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5).Aggregate
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`6.Apply(`5)
   name: Apply(TEvent5)
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-6.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_6_Apply__5_
@@ -183,7 +269,6 @@ references:
   name: Apply
   href: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate-6.html#Solti_Utils_OrmLite_Extensions_Eventing_Aggregate_6_Apply_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Aggregate`6.Apply
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>.Apply
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Aggregate(Of TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5).Apply
   nameWithType: Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>.Apply
@@ -197,6 +282,22 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Document(Of TStreamId)
   nameWithType: Document<TStreamId>
   nameWithType.vb: Document(Of TStreamId)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Document`1.#ctor
+  name: Document()
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Document_1__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.Document`1.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>.Document()
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Document(Of TStreamId).Document()
+  nameWithType: Document<TStreamId>.Document()
+  nameWithType.vb: Document(Of TStreamId).Document()
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Document`1.#ctor*
+  name: Document
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Document_1__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Document`1.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>.Document
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Document(Of TStreamId).Document
+  nameWithType: Document<TStreamId>.Document
+  nameWithType.vb: Document(Of TStreamId).Document
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.Document`1.LastModifiedUtc
   name: LastModifiedUtc
   href: Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Document_1_LastModifiedUtc
@@ -209,7 +310,6 @@ references:
   name: LastModifiedUtc
   href: Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Document_1_LastModifiedUtc_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Document`1.LastModifiedUtc
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>.LastModifiedUtc
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Document(Of TStreamId).LastModifiedUtc
   nameWithType: Document<TStreamId>.LastModifiedUtc
@@ -226,7 +326,6 @@ references:
   name: StreamId
   href: Solti.Utils.OrmLite.Extensions.Eventing.Document-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Document_1_StreamId_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Document`1.StreamId
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>.StreamId
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Document(Of TStreamId).StreamId
   nameWithType: Document<TStreamId>.StreamId
@@ -252,7 +351,6 @@ references:
   name: DocumentRepository
   href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3__ctor_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.#ctor
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.DocumentRepository
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).DocumentRepository
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.DocumentRepository
@@ -269,7 +367,6 @@ references:
   name: Connection
   href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_Connection_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.Connection
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.Connection
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).Connection
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.Connection
@@ -286,7 +383,6 @@ references:
   name: GroupConcat
   href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_GroupConcat_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.GroupConcat
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.GroupConcat
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).GroupConcat
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.GroupConcat
@@ -303,7 +399,6 @@ references:
   name: InsertOrUpdate
   href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_InsertOrUpdate_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.InsertOrUpdate
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).InsertOrUpdate
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate
@@ -320,7 +415,6 @@ references:
   name: JsonExtract
   href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_JsonExtract_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.JsonExtract
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.JsonExtract
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).JsonExtract
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.JsonExtract
@@ -329,7 +423,6 @@ references:
   name: QueryBySimpleCondition
   href: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_DocumentRepository_3_QueryBySimpleCondition_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository`3.QueryBySimpleCondition
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.QueryBySimpleCondition
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository(Of TStreamId, TDocument, TView).QueryBySimpleCondition
   nameWithType: DocumentRepository<TStreamId, TDocument, TView>.QueryBySimpleCondition
@@ -352,6 +445,22 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Event(Of TStreamId)
   nameWithType: Event<TStreamId>
   nameWithType.vb: Event(Of TStreamId)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Event`1.#ctor
+  name: Event()
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Event-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Event_1__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.Event`1.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>.Event()
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Event(Of TStreamId).Event()
+  nameWithType: Event<TStreamId>.Event()
+  nameWithType.vb: Event(Of TStreamId).Event()
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.Event`1.#ctor*
+  name: Event
+  href: Solti.Utils.OrmLite.Extensions.Eventing.Event-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Event_1__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Event`1.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>.Event
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Event(Of TStreamId).Event
+  nameWithType: Event<TStreamId>.Event
+  nameWithType.vb: Event(Of TStreamId).Event
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.Event`1.CreatedAtUtc
   name: CreatedAtUtc
   href: Solti.Utils.OrmLite.Extensions.Eventing.Event-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Event_1_CreatedAtUtc
@@ -364,7 +473,6 @@ references:
   name: CreatedAtUtc
   href: Solti.Utils.OrmLite.Extensions.Eventing.Event-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Event_1_CreatedAtUtc_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Event`1.CreatedAtUtc
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>.CreatedAtUtc
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Event(Of TStreamId).CreatedAtUtc
   nameWithType: Event<TStreamId>.CreatedAtUtc
@@ -381,7 +489,6 @@ references:
   name: Id
   href: Solti.Utils.OrmLite.Extensions.Eventing.Event-1.html#Solti_Utils_OrmLite_Extensions_Eventing_Event_1_Id_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.Event`1.Id
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>.Id
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.Event(Of TStreamId).Id
   nameWithType: Event<TStreamId>.Id
@@ -407,7 +514,6 @@ references:
   name: EventRepository
   href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3__ctor_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.#ctor
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.EventRepository
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).EventRepository
   nameWithType: EventRepository<TStreamId, TEvent, TView>.EventRepository
@@ -432,7 +538,6 @@ references:
   name: Apply
   href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_Apply_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.Apply
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.Apply
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).Apply
   nameWithType: EventRepository<TStreamId, TEvent, TView>.Apply
@@ -449,7 +554,6 @@ references:
   name: Connection
   href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_Connection_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.Connection
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.Connection
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).Connection
   nameWithType: EventRepository<TStreamId, TEvent, TView>.Connection
@@ -474,7 +578,6 @@ references:
   name: CreateEvent
   href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_CreateEvent_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.CreateEvent
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.CreateEvent
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).CreateEvent
   nameWithType: EventRepository<TStreamId, TEvent, TView>.CreateEvent
@@ -492,7 +595,6 @@ references:
   name: MaterializeViews
   href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_MaterializeViews_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.MaterializeViews
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.MaterializeViews
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).MaterializeViews
   nameWithType: EventRepository<TStreamId, TEvent, TView>.MaterializeViews
@@ -509,7 +611,6 @@ references:
   name: QueryViews
   href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViews_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViews
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.QueryViews
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).QueryViews
   nameWithType: EventRepository<TStreamId, TEvent, TView>.QueryViews
@@ -527,7 +628,6 @@ references:
   name: QueryViewsByStreamId
   href: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository-3.html#Solti_Utils_OrmLite_Extensions_Eventing_EventRepository_3_QueryViewsByStreamId_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.EventRepository`3.QueryViewsByStreamId
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.QueryViewsByStreamId
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.EventRepository(Of TStreamId, TEvent, TView).QueryViewsByStreamId
   nameWithType: EventRepository<TStreamId, TEvent, TView>.QueryViewsByStreamId
@@ -553,7 +653,6 @@ references:
   name: InsertOrUpdate
   href: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IDocumentRepository_2_InsertOrUpdate_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.InsertOrUpdate
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository<TStreamId, TView>.InsertOrUpdate
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository(Of TStreamId, TView).InsertOrUpdate
   nameWithType: IDocumentRepository<TStreamId, TView>.InsertOrUpdate
@@ -562,7 +661,6 @@ references:
   name: QueryBySimpleCondition
   href: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IDocumentRepository_2_QueryBySimpleCondition_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository`2.QueryBySimpleCondition
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository(Of TStreamId, TView).QueryBySimpleCondition
   nameWithType: IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition
@@ -597,7 +695,6 @@ references:
   name: StreamId
   href: Solti.Utils.OrmLite.Extensions.Eventing.IEntity-1.html#Solti_Utils_OrmLite_Extensions_Eventing_IEntity_1_StreamId_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.IEntity`1.StreamId
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEntity<TStreamId>.StreamId
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEntity(Of TStreamId).StreamId
   nameWithType: IEntity<TStreamId>.StreamId
@@ -623,7 +720,6 @@ references:
   name: CreateEvent
   href: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IEventRepository_2_CreateEvent_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.CreateEvent
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.CreateEvent
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).CreateEvent
   nameWithType: IEventRepository<TStreamId, TView>.CreateEvent
@@ -640,7 +736,6 @@ references:
   name: QueryViews
   href: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IEventRepository_2_QueryViews_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViews
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.QueryViews
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).QueryViews
   nameWithType: IEventRepository<TStreamId, TView>.QueryViews
@@ -658,7 +753,6 @@ references:
   name: QueryViewsByStreamId
   href: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository-2.html#Solti_Utils_OrmLite_Extensions_Eventing_IEventRepository_2_QueryViewsByStreamId_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository`2.QueryViewsByStreamId
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.QueryViewsByStreamId
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository(Of TStreamId, TView).QueryViewsByStreamId
   nameWithType: IEventRepository<TStreamId, TView>.QueryViewsByStreamId
@@ -672,6 +766,22 @@ references:
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData(Of TStreamId)
   nameWithType: SerializedData<TStreamId>
   nameWithType.vb: SerializedData(Of TStreamId)
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.#ctor
+  name: SerializedData()
+  href: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1__ctor
+  commentId: M:Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.SerializedData()
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData(Of TStreamId).SerializedData()
+  nameWithType: SerializedData<TStreamId>.SerializedData()
+  nameWithType.vb: SerializedData(Of TStreamId).SerializedData()
+- uid: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.#ctor*
+  name: SerializedData
+  href: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1__ctor_
+  commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.#ctor
+  fullName: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.SerializedData
+  fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData(Of TStreamId).SerializedData
+  nameWithType: SerializedData<TStreamId>.SerializedData
+  nameWithType.vb: SerializedData(Of TStreamId).SerializedData
 - uid: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.Payload
   name: Payload
   href: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_Payload
@@ -684,7 +794,6 @@ references:
   name: Payload
   href: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_Payload_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.Payload
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.Payload
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData(Of TStreamId).Payload
   nameWithType: SerializedData<TStreamId>.Payload
@@ -701,7 +810,6 @@ references:
   name: StreamId
   href: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_StreamId_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.StreamId
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.StreamId
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData(Of TStreamId).StreamId
   nameWithType: SerializedData<TStreamId>.StreamId
@@ -718,7 +826,6 @@ references:
   name: Type
   href: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData-1.html#Solti_Utils_OrmLite_Extensions_Eventing_SerializedData_1_Type_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Eventing.SerializedData`1.Type
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.Type
   fullName.vb: Solti.Utils.OrmLite.Extensions.Eventing.SerializedData(Of TStreamId).Type
   nameWithType: SerializedData<TStreamId>.Type
@@ -739,7 +846,6 @@ references:
   name: Flush
   href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_Flush_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush
   nameWithType: IBulkedDbConnection.Flush
 - uid: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken)
@@ -752,7 +858,6 @@ references:
   name: FlushAsync
   href: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.html#Solti_Utils_OrmLite_Extensions_IBulkedDbConnection_FlushAsync_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync
   nameWithType: IBulkedDbConnection.FlushAsync
 - uid: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
@@ -771,7 +876,6 @@ references:
   name: CreateBulkedDbConnection
   href: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.html#Solti_Utils_OrmLite_Extensions_IDbConnectionExtensions_CreateBulkedDbConnection_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection
   nameWithType: IDbConnectionExtensions.CreateBulkedDbConnection
 - uid: Solti.Utils.OrmLite.Extensions.Schema
@@ -802,7 +906,6 @@ references:
   name: Schema
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema__ctor_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.#ctor
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.Schema
   nameWithType: Schema.Schema
 - uid: Solti.Utils.OrmLite.Extensions.Schema.Connection
@@ -815,7 +918,6 @@ references:
   name: Connection
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Connection_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.Connection
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.Connection
   nameWithType: Schema.Connection
 - uid: Solti.Utils.OrmLite.Extensions.Schema.Drop
@@ -828,7 +930,6 @@ references:
   name: Drop
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Drop_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.Drop
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.Drop
   nameWithType: Schema.Drop
 - uid: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigrationUtc
@@ -841,7 +942,6 @@ references:
   name: GetLastMigrationUtc
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_GetLastMigrationUtc_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.GetLastMigrationUtc
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.GetLastMigrationUtc
   nameWithType: Schema.GetLastMigrationUtc
 - uid: Solti.Utils.OrmLite.Extensions.Schema.Initialize
@@ -854,7 +954,6 @@ references:
   name: Initialize
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Initialize_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.Initialize
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.Initialize
   nameWithType: Schema.Initialize
 - uid: Solti.Utils.OrmLite.Extensions.Schema.IsInitialized
@@ -867,7 +966,6 @@ references:
   name: IsInitialized
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_IsInitialized_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.IsInitialized
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.IsInitialized
   nameWithType: Schema.IsInitialized
 - uid: Solti.Utils.OrmLite.Extensions.Schema.Migrate(System.DateTime,System.String,System.String)
@@ -880,7 +978,6 @@ references:
   name: Migrate
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Migrate_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.Migrate
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.Migrate
   nameWithType: Schema.Migrate
 - uid: Solti.Utils.OrmLite.Extensions.Schema.Tables
@@ -893,7 +990,6 @@ references:
   name: Tables
   href: Solti.Utils.OrmLite.Extensions.Schema.html#Solti_Utils_OrmLite_Extensions_Schema_Tables_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.Schema.Tables
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.Schema.Tables
   nameWithType: Schema.Tables
 - uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute
@@ -921,7 +1017,6 @@ references:
   name: ValuesAttribute
   href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute__ctor_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.ValuesAttribute.#ctor
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute
   nameWithType: ValuesAttribute.ValuesAttribute
 - uid: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
@@ -934,6 +1029,5 @@ references:
   name: Items
   href: Solti.Utils.OrmLite.Extensions.ValuesAttribute.html#Solti_Utils_OrmLite_Extensions_ValuesAttribute_Items_
   commentId: Overload:Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
-  isSpec: "True"
   fullName: Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items
   nameWithType: ValuesAttribute.Items

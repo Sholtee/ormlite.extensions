@@ -80,7 +80,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;TView&gt; CreateEvent(TStreamId streamId, object evt, CancellationToken cancellation = default(CancellationToken))</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;TView&gt; CreateEvent(TStreamId streamId, object evt, CancellationToken cancellation = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -132,7 +132,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IList&lt;TView&gt;&gt; QueryViews(CancellationToken cancellation = default(CancellationToken))</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IList&lt;TView&gt;&gt; QueryViews(CancellationToken cancellation = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -176,7 +176,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IList&lt;TView&gt;&gt; QueryViewsByStreamId(CancellationToken cancellation = default(CancellationToken), params TStreamId[] ids)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IList&lt;TView&gt;&gt; QueryViewsByStreamId(CancellationToken cancellation = null, params TStreamId[] ids)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
