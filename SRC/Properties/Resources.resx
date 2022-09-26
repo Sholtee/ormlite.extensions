@@ -120,11 +120,17 @@
   <data name="ALREADY_INITIALIZED" xml:space="preserve">
     <value>The schema has already been initialized. To modify the schema use the Migrate() method.</value>
   </data>
+  <data name="ALREADY_PROXIED" xml:space="preserve">
+    <value>The connection is already a proxy instance.</value>
+  </data>
   <data name="CIRCULAR_REFERENCE" xml:space="preserve">
     <value>Circular reference found: {0}</value>
   </data>
   <data name="NULL_EVENT" xml:space="preserve">
     <value>The event cannot be null.</value>
+  </data>
+  <data name="SB_POOL_EMPTY" xml:space="preserve">
+    <value>All pool resources are assigned. This usually indicates that not all bulked DB connections were disposed.</value>
   </data>
   <data name="UNKNOWN_EVENT" xml:space="preserve">
     <value>Unknown event type ({0}).</value>

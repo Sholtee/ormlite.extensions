@@ -70,6 +70,15 @@ namespace Solti.Utils.OrmLite.Extensions.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The connection is already a proxy instance..
+        /// </summary>
+        internal static string ALREADY_PROXIED {
+            get {
+                return ResourceManager.GetString("ALREADY_PROXIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Circular reference found: {0}.
         /// </summary>
         internal static string CIRCULAR_REFERENCE {
@@ -84,6 +93,15 @@ namespace Solti.Utils.OrmLite.Extensions.Properties {
         internal static string NULL_EVENT {
             get {
                 return ResourceManager.GetString("NULL_EVENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All pool resources are assigned. This usually indicates that not all bulked DB connections were disposed..
+        /// </summary>
+        internal static string SB_POOL_EMPTY {
+            get {
+                return ResourceManager.GetString("SB_POOL_EMPTY", resourceCulture);
             }
         }
         

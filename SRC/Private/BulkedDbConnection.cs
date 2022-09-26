@@ -14,6 +14,8 @@ using System.Threading.Tasks;
 
 using ServiceStack.OrmLite;
 
+using Solti.Utils.Primitives.Patterns;
+using Solti.Utils.Primitives.Threading;
 using Solti.Utils.Proxy;
 using Solti.Utils.Proxy.Attributes;
 using Solti.Utils.Proxy.Generators;
@@ -22,24 +24,43 @@ using Solti.Utils.Proxy.Generators;
 
 namespace Solti.Utils.OrmLite.Extensions.Internals
 {
+    using Properties;
+
     internal sealed class BulkedDbConnection: IBulkedDbConnection
     {
-        internal IDbConnection Connection { get; }
+        //
+        // We cannot inherit from StringBuilder since it is sealed.
+        //
 
-        internal StringBuilder Buffer { get; }
+        private sealed class PooledStringBuilder : IResettable
+        {
+            public StringBuilder Instance { get; } = new();
+
+            bool IResettable.Dirty => Instance.Length > 0;
+
+            void IResettable.Reset() => Instance.Clear();
+        }
+
+        private static readonly ObjectPool<PooledStringBuilder> FStringBuilderPool = new(static () => new PooledStringBuilder(), Environment.ProcessorCount * 2);
+
+        private readonly IDbConnection FConnection;
+
+        private readonly PooledStringBuilder FPoolItem;
+
+        private readonly StringBuilder FBuffer;
 
         public BulkedDbConnection(IDbConnection connection)
         {
-            if (connection is BulkedDbConnection) throw new InvalidOperationException(); // TODO
-            Connection = connection;
+            if (connection is BulkedDbConnection)
+                throw new InvalidOperationException(Resources.ALREADY_PROXIED);
 
-            Buffer = new StringBuilder();
+            FConnection = connection;
+
+            FPoolItem = FStringBuilderPool.Get(CheckoutPolicy.Discard) ?? throw new InvalidOperationException(Resources.SB_POOL_EMPTY);
+            FBuffer = FPoolItem.Instance;
         }
 
-        public void Dispose()
-        {
-            Buffer.Clear();
-        }
+        public void Dispose() => FStringBuilderPool.Return(FPoolItem);
 
         public IDbTransaction BeginTransaction() => throw new NotSupportedException();
 
@@ -56,7 +77,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
         {
             private BulkedDbConnection Parent { get; }
 
-            public IDbCommandInterceptor(BulkedDbConnection parent) : base(parent.Connection.CreateCommand()) => 
+            public IDbCommandInterceptor(BulkedDbConnection parent) : base(parent.FConnection.CreateCommand()) => 
                 Parent = parent;
 
             private static readonly Regex FCommandTerminated = new(";\\s*$", RegexOptions.Compiled);
@@ -67,7 +88,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                 {
                     case nameof(Target.ExecuteNonQuery):
                         string command = Parent
-                            .Connection
+                            .FConnection
                             .GetDialectProvider()
                             .MergeParamsIntoSql(Target!.CommandText, Target
                                 .Parameters
@@ -84,8 +105,10 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
                                     return para;
                                 }));
 
-                        if (!FCommandTerminated.IsMatch(command)) command += ";";
-                        Parent.Buffer.AppendLine(command);
+                        if (!FCommandTerminated.IsMatch(command))
+                            command += ";";
+                        
+                        Parent.FBuffer.AppendLine(command);
 
                         return 0;
                     case nameof(Target.ExecuteReader):
@@ -103,44 +126,46 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
 
         public string ConnectionString
         {
-            get => Connection.ConnectionString;
+            get => FConnection.ConnectionString;
             set => throw new NotSupportedException();
         }
 
-        public int ConnectionTimeout => Connection.ConnectionTimeout;
+        public int ConnectionTimeout => FConnection.ConnectionTimeout;
 
-        public string Database => Connection.Database;
+        public string Database => FConnection.Database;
 
-        public ConnectionState State => Connection.State;
+        public ConnectionState State => FConnection.State;
 
         public int Flush()
         {
-            if (Buffer.Length == 0) return 0;
+            if (FBuffer.Length == 0)
+                return 0;
 
             try
             {
-                return Connection.ExecuteNonQuery(Buffer.ToString());
+                return FConnection.ExecuteNonQuery(FBuffer.ToString());
             }
             finally
             {
-                Buffer.Clear();
+                FBuffer.Clear();
             }
         }
 
         public Task<int> FlushAsync(CancellationToken cancellation) 
         {
-            if (Buffer.Length == 0) return Task.FromResult(0);
+            if (FBuffer.Length == 0)
+                return Task.FromResult(0);
 
             try
             {
-                return Connection.ExecuteNonQueryAsync(Buffer.ToString(), cancellation);
+                return FConnection.ExecuteNonQueryAsync(FBuffer.ToString(), cancellation);
             }
             finally
             {
-                Buffer.Clear();
+                FBuffer.Clear();
             }
         }
 
-        public override string ToString() => Buffer.ToString();
+        public override string ToString() => FBuffer.ToString();
     }
 }
