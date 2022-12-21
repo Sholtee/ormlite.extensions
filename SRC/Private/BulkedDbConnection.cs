@@ -84,7 +84,7 @@ namespace Solti.Utils.OrmLite.Extensions.Internals
 
             public override object? Invoke(InvocationContext context)
             {
-                switch (context.Method.Name)
+                switch (context.InterfaceMethod.Name)
                 {
                     case nameof(Target.ExecuteNonQuery):
                         string command = Parent

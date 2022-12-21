@@ -35,12 +35,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.*">
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.*">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="ServiceStack.OrmLite.Core" Version="5.*" />
-    <PackageReference Include="ProxyGen.NET" Version="7.*" />
+    <PackageReference Include="ProxyGen.NET" Version="8.*" />
     <PackageReference Include="Solti.Utils.Primitives" Version="7.*" />
     <PackageReference Include="System.Text.Json" Version="5.*" />
   </ItemGroup>
