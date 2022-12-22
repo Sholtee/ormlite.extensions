@@ -141,11 +141,11 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
 
             Connection.Insert(new Table1 { Id = Guid.NewGuid(), IntField = 10, StringField = "kutya" });
 
-            DateTime now = DateTime.UtcNow;
+            DateTime than = DateTime.UtcNow;
 
-            Assert.That(Schema.Migrate(now, "UPDATE \"Table1\" SET \"IntField\" = 0"));
+            Assert.That(Schema.Migrate("UPDATE \"Table1\" SET \"IntField\" = 0"));
             Assert.That(Connection.Select<Table1>().All(t => t.IntField is 0));
-            Assert.That(Schema.GetLastMigrationUtc(), Is.EqualTo(now));
+            Assert.That(Schema.GetLastMigrationUtc(), Is.GreaterThan(than).And.LessThan(DateTime.UtcNow));
         }
     }
 }

@@ -10,6 +10,8 @@ using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
+using System.Text;
 
 using ServiceStack.DataAnnotations;
 using ServiceStack.OrmLite;
@@ -28,6 +30,17 @@ namespace Solti.Utils.OrmLite.Extensions
     {
         internal const string INITIAL_COMMIT = nameof(INITIAL_COMMIT);
 
+        private static string GetHash(string str)
+        {
+            using HashAlgorithm algorithm = SHA256.Create();
+
+            StringBuilder sb = new();
+            foreach (byte b in algorithm.ComputeHash(Encoding.UTF8.GetBytes(str)))
+                sb.Append(b.ToString("X2"));
+            
+            return sb.ToString();
+        }
+
         private sealed class Migration 
         {
             [PrimaryKey, AutoId]
@@ -39,6 +52,9 @@ namespace Solti.Utils.OrmLite.Extensions
             [Required, StringLength(StringLengthAttribute.MaxText)]
             #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
             public string Sql { get; set; }
+
+            [Required, Index(Unique = true)]
+            public string Hash { get; set; }
 
             public string? Comment { get; set; }
         }
@@ -135,11 +151,14 @@ namespace Solti.Utils.OrmLite.Extensions
                 }
             }
 
+            string sql = bulk.ToString();
+
             bulk.Insert(new Migration
             {
                 Comment = INITIAL_COMMIT,
                 CreatedAtUtc = DateTime.UtcNow.Ticks,
-                Sql = bulk.ToString()
+                Sql = sql,
+                Hash = GetHash(sql)
             });
 
             //
@@ -158,23 +177,22 @@ namespace Solti.Utils.OrmLite.Extensions
         /// <summary>
         /// Executes a named migration script.
         /// </summary>
-        public bool Migrate(DateTime createdAtUtc, string sql, string? comment = null)
+        public bool Migrate(string sql, string? comment = null)
         {
             if (sql is null)
                 throw new ArgumentNullException(nameof(sql));
 
-            if (createdAtUtc.Kind is not DateTimeKind.Utc)
-                createdAtUtc = createdAtUtc.ToUniversalTime();
-
-            if (GetLastMigrationUtc() >= createdAtUtc)
+            string hash = GetHash(sql);
+            if (Connection.Exists<Migration>(m => m.Hash == hash))
                 return false;
 
             Connection.ExecuteNonQuery(sql);
 
             Connection.Insert(new Migration
             {
-                CreatedAtUtc = createdAtUtc.Ticks,
+                CreatedAtUtc = DateTime.UtcNow.Ticks,
                 Sql = sql,
+                Hash = hash,
                 Comment = comment
             });
 
