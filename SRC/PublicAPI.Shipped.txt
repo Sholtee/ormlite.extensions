@@ -1,0 +1,89 @@
+﻿#nullable enable
+abstract Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>.Apply(TEvent5! evt) -> void
+abstract Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>.Apply(TEvent4! evt) -> void
+abstract Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>.Apply(TEvent3! evt) -> void
+abstract Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2>.Apply(TEvent2! evt) -> void
+abstract Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1>.Apply(TEvent1! evt) -> void
+override Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>.StreamId.get -> TStreamId
+override Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>.StreamId.set -> void
+Solti.Utils.OrmLite.Extensions.CommandText
+Solti.Utils.OrmLite.Extensions.DataTableAttribute
+Solti.Utils.OrmLite.Extensions.DataTableAttribute.DataTableAttribute() -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4, TEvent5>.Aggregate() -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3, TEvent4>.Aggregate() -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2, TEvent3>.Aggregate() -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2>
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1, TEvent2>.Aggregate() -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1>
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1>.Aggregate() -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1>.StreamId.get -> TStreamId
+Solti.Utils.OrmLite.Extensions.Eventing.Aggregate<TStreamId, TEvent1>.StreamId.init -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>
+Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>.Document() -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>.LastModifiedUtc.get -> long
+Solti.Utils.OrmLite.Extensions.Eventing.Document<TStreamId>.LastModifiedUtc.set -> void
+Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>
+Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.Connection.get -> System.Data.IDbConnection!
+Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.DocumentRepository(System.Data.IDbConnection! connection) -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>
+Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>.CreatedAtUtc.get -> long
+Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>.CreatedAtUtc.set -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>.Event() -> void
+Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>.Id.get -> System.Guid
+Solti.Utils.OrmLite.Extensions.Eventing.Event<TStreamId>.Id.set -> void
+Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>
+Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.Connection.get -> System.Data.IDbConnection!
+Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId streamId, object! evt, System.Threading.CancellationToken cancellation) -> System.Threading.Tasks.Task<TView>!
+Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.EventRepository(System.Data.IDbConnection! connection) -> void
+Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.QueryViews(System.Threading.CancellationToken cancellation) -> System.Threading.Tasks.Task<System.Collections.Generic.IList<TView>!>!
+Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.QueryViewsByStreamId(System.Threading.CancellationToken cancellation, params TStreamId[]! ids) -> System.Threading.Tasks.Task<System.Collections.Generic.IList<TView>!>!
+Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository<TStreamId, TView>
+Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository<TStreamId, TView>.InsertOrUpdate(TView view, System.Threading.CancellationToken cancellation = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+Solti.Utils.OrmLite.Extensions.Eventing.IDocumentRepository<TStreamId, TView>.QueryBySimpleCondition<TProperty>(string! jsonPath, System.Linq.Expressions.Expression<System.Func<TProperty, bool>!>! predicate, System.Threading.CancellationToken cancellation = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Collections.Generic.IList<TView>!>!
+Solti.Utils.OrmLite.Extensions.Eventing.IEntity<TStreamId>
+Solti.Utils.OrmLite.Extensions.Eventing.IEntity<TStreamId>.StreamId.get -> TStreamId
+Solti.Utils.OrmLite.Extensions.Eventing.IEntity<TStreamId>.StreamId.init -> void
+Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>
+Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.CreateEvent(TStreamId streamId, object! evt, System.Threading.CancellationToken cancellation = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<TView>!
+Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.QueryViews(System.Threading.CancellationToken cancellation = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Collections.Generic.IList<TView>!>!
+Solti.Utils.OrmLite.Extensions.Eventing.IEventRepository<TStreamId, TView>.QueryViewsByStreamId(System.Threading.CancellationToken cancellation = default(System.Threading.CancellationToken), params TStreamId[]! ids) -> System.Threading.Tasks.Task<System.Collections.Generic.IList<TView>!>!
+Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>
+Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.SerializedData() -> void
+Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.Type.get -> string!
+Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.Type.set -> void
+Solti.Utils.OrmLite.Extensions.IBulkedDbConnection
+Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.Flush() -> int
+Solti.Utils.OrmLite.Extensions.IBulkedDbConnection.FlushAsync(System.Threading.CancellationToken cancellation = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<int>!
+Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions
+Solti.Utils.OrmLite.Extensions.Schema
+Solti.Utils.OrmLite.Extensions.Schema.ApplyMigration(string! sql, string? comment = null) -> bool
+Solti.Utils.OrmLite.Extensions.Schema.ApplyMigrations(params (string! Sql, string? Comment)[]! migrations) -> bool[]!
+Solti.Utils.OrmLite.Extensions.Schema.Connection.get -> System.Data.IDbConnection!
+Solti.Utils.OrmLite.Extensions.Schema.Drop() -> void
+Solti.Utils.OrmLite.Extensions.Schema.GetLastMigration() -> string?
+Solti.Utils.OrmLite.Extensions.Schema.Initialize() -> void
+Solti.Utils.OrmLite.Extensions.Schema.IsInitialized.get -> bool
+Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection! connection, params System.Reflection.Assembly![]! asmsToSearch) -> void
+Solti.Utils.OrmLite.Extensions.Schema.Schema(System.Data.IDbConnection! connection, params System.Type![]! tables) -> void
+Solti.Utils.OrmLite.Extensions.Schema.Tables.get -> System.Collections.Generic.IReadOnlyList<System.Type!>!
+Solti.Utils.OrmLite.Extensions.ValuesAttribute
+Solti.Utils.OrmLite.Extensions.ValuesAttribute.Items.get -> System.Collections.Generic.IReadOnlyList<object!>!
+Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute() -> void
+Solti.Utils.OrmLite.Extensions.ValuesAttribute.ValuesAttribute(params object![]! values) -> void
+static Solti.Utils.OrmLite.Extensions.CommandText.Format(string! sql, params System.Data.IDataParameter![]! paramz) -> string!
+static Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.Apply(TView view, object! evt) -> void
+static Solti.Utils.OrmLite.Extensions.IDbConnectionExtensions.CreateBulkedDbConnection(this System.Data.IDbConnection! connection) -> Solti.Utils.OrmLite.Extensions.IBulkedDbConnection!
+virtual Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.GroupConcat(string! quotedColumn, string! quotedSeparator) -> string!
+virtual Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.InsertOrUpdate(TView view, System.Threading.CancellationToken cancellation) -> System.Threading.Tasks.Task!
+virtual Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.JsonExtract(string! quotedColumn, string! quotedJsonPath) -> string!
+virtual Solti.Utils.OrmLite.Extensions.Eventing.DocumentRepository<TStreamId, TDocument, TView>.QueryBySimpleCondition<TProperty>(string! jsonPath, System.Linq.Expressions.Expression<System.Func<TProperty, bool>!>! predicate, System.Threading.CancellationToken cancellation) -> System.Threading.Tasks.Task<System.Collections.Generic.IList<TView>!>!
+virtual Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.Apply(TView view, TEvent! evt) -> void
+virtual Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.CreateEvent(TStreamId streamId, object! evt) -> TEvent!
+virtual Solti.Utils.OrmLite.Extensions.Eventing.EventRepository<TStreamId, TEvent, TView>.MaterializeViews(System.Collections.Generic.IEnumerable<TEvent!>! events, System.Threading.CancellationToken cancellation) -> System.Collections.Generic.IList<TView>!
+virtual Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.Payload.get -> string!
+virtual Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.Payload.set -> void
+virtual Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.StreamId.get -> TStreamId
+virtual Solti.Utils.OrmLite.Extensions.Eventing.SerializedData<TStreamId>.StreamId.set -> void

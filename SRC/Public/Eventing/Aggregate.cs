@@ -15,9 +15,9 @@ namespace Solti.Utils.OrmLite.Extensions.Eventing
         /// <summary>
         /// The id of stream that describes the current entity.
         /// </summary>
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public TStreamId StreamId { get; init; }
-#pragma warning restore CS8618
+        #pragma warning restore CS8618
 
         /// <summary>
         /// When implemented in the derived class it does the <typeparamref name="TEvent1"/> specific mutations.
