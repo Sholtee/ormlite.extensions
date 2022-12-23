@@ -135,17 +135,67 @@ namespace Solti.Utils.OrmLite.Extensions.Tests
         }
 
         [Test]
-        public void Migrate_ShouldSaveTheMigrationStep()
+        public void ApplyMigration_ShouldApplyTheMigrationScript()
         {
             Schema.Initialize();
 
             Connection.Insert(new Table1 { Id = Guid.NewGuid(), IntField = 10, StringField = "kutya" });
 
-            DateTime than = DateTime.UtcNow;
-
-            Assert.That(Schema.Migrate("UPDATE \"Table1\" SET \"IntField\" = 0"));
+            string sql = "UPDATE \"Table1\" SET \"IntField\" = 0";
+            Assert.That(Schema.ApplyMigration(sql));
             Assert.That(Connection.Select<Table1>().All(t => t.IntField is 0));
-            Assert.That(Schema.GetLastMigrationUtc(), Is.GreaterThan(than).And.LessThan(DateTime.UtcNow));
+            Assert.That(Schema.GetLastMigration(), Is.EqualTo(sql));
+        }
+
+        [Test]
+        public void ApplyMigration_ShouldSkipMigrationsAlreadyApplied()
+        { 
+            Schema.Initialize();
+
+            string sql = "UPDATE \"Table1\" SET \"IntField\" = 0";
+            Assert.That(Schema.ApplyMigration(sql));
+            Assert.False(Schema.ApplyMigration(sql));
+        }
+
+        [Test]
+        public void ApplyMigrations_ShouldInitializeTheSchema()
+        {
+            bool[] applied = Schema.ApplyMigrations(("UPDATE \"Table1\" SET \"IntField\" = 0", null));
+
+            Assert.That(applied.Length, Is.EqualTo(1));
+            Assert.That(applied[0], Is.False);
+
+            Assert.That(Connection.TableExists<Table1>());
+            Assert.That(Connection.TableExists<Table2_ReferencingTable1>());
+            Assert.That(Connection.TableExists<Table3_ReferencingNode1AndTable2>());
+        }
+
+        [Test]
+        public void ApplyMigrations_ShouldApplyTheMigrationScripts()
+        {
+            Schema.Initialize();
+
+            Connection.Insert(new Table1 { Id = Guid.NewGuid(), IntField = 10, StringField = "kutya" });
+
+            bool[] applied = Schema.ApplyMigrations(("UPDATE \"Table1\" SET \"IntField\" = 0", null));
+
+            Assert.That(applied.Length, Is.EqualTo(1));
+            Assert.That(applied[0], Is.True);
+            Assert.That(Connection.Select<Table1>().All(t => t.IntField is 0));
+        }
+
+        [Test]
+        public void ApplyMigrations_ShouldSkipMigrationsAlreadyApplied()
+        {
+            Schema.Initialize();
+
+            string sql = "UPDATE \"Table1\" SET \"IntField\" = 0";
+            Schema.ApplyMigration(sql);
+
+            bool[] applied = Schema.ApplyMigrations((sql, null));
+
+            Assert.That(applied.Length, Is.EqualTo(1));
+            Assert.That(applied[0], Is.False);
         }
     }
 }

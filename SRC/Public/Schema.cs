@@ -28,7 +28,7 @@ namespace Solti.Utils.OrmLite.Extensions
     [SuppressMessage("Naming", "CA1724:Type names should not match namespaces")]
     public class Schema
     {
-        internal const string INITIAL_COMMIT = nameof(INITIAL_COMMIT);
+        private const string INITIAL_COMMIT = nameof(INITIAL_COMMIT);
 
         private static string GetHash(string str)
         {
@@ -41,6 +41,7 @@ namespace Solti.Utils.OrmLite.Extensions
             return sb.ToString();
         }
 
+        #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private sealed class Migration 
         {
             [PrimaryKey, AutoId]
@@ -50,14 +51,17 @@ namespace Solti.Utils.OrmLite.Extensions
             public long CreatedAtUtc { get; set; }
 
             [Required, StringLength(StringLengthAttribute.MaxText)]
-            #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+
             public string Sql { get; set; }
 
             [Required, Index(Unique = true)]
             public string Hash { get; set; }
 
+            public bool Skipped { get; set; }
+
             public string? Comment { get; set; }
         }
+        #pragma warning restore CS8618
 
         /// <summary>
         /// The <see cref="IDbConnection"/> to access the database.
@@ -84,12 +88,14 @@ namespace Solti.Utils.OrmLite.Extensions
         /// <summary>
         /// Creates a new <see cref="Schema"/> instance.
         /// </summary>
-        public Schema(IDbConnection connection, params Assembly[] asmsToSearch) : this(connection, asmsToSearch
-            .SelectMany(static asm => asm.GetTypes())
-            .Where(static type => type.GetCustomAttribute<DataTableAttribute>(inherit: false) is not null)
-            .ToArray()) 
-        {
-        } 
+        public Schema(IDbConnection connection, params Assembly[] asmsToSearch) : this
+        (
+            connection, 
+            asmsToSearch
+                .SelectMany(static asm => asm.GetTypes())
+                .Where(static type => type.GetCustomAttribute<DataTableAttribute>(inherit: false) is not null)
+                .ToArray()
+        ) {} 
 
         /// <summary>
         /// Initializes the schema.
@@ -175,9 +181,9 @@ namespace Solti.Utils.OrmLite.Extensions
         public bool IsInitialized => Connection.TableExists<Migration>() && Connection.Exists<Migration>(m => m.Comment == INITIAL_COMMIT);
 
         /// <summary>
-        /// Executes a named migration script.
+        /// Applies the given migration
         /// </summary>
-        public bool Migrate(string sql, string? comment = null)
+        public bool ApplyMigration(string sql, string? comment = null)
         {
             if (sql is null)
                 throw new ArgumentNullException(nameof(sql));
@@ -186,28 +192,111 @@ namespace Solti.Utils.OrmLite.Extensions
             if (Connection.Exists<Migration>(m => m.Hash == hash))
                 return false;
 
-            Connection.ExecuteNonQuery(sql);
+            using IBulkedDbConnection bulk = Connection.CreateBulkedDbConnection();
 
-            Connection.Insert(new Migration
+            bulk.ExecuteNonQuery(sql);
+            bulk.Insert(new Migration
             {
                 CreatedAtUtc = DateTime.UtcNow.Ticks,
                 Sql = sql,
                 Hash = hash,
                 Comment = comment
             });
+            bulk.Flush();
 
             return true;
         }
 
         /// <summary>
-        /// Gets the name of the last migration script.
+        /// Applies the given migration in the specific order.
         /// </summary>
-        public DateTime GetLastMigrationUtc()
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item>This method will initialize the schema if necessary. In this case all the passed <paramref name="migrations"/> will be skipped.</item>
+        /// <item>This method won't take those migrations into account that have been already applied.</item>
+        /// </list>
+        /// </remarks>
+        public bool[] ApplyMigrations(params (string Sql, string? Comment)[] migrations)
         {
-            string sql = Connection.From<Migration>()
-                .Select(static m => Sql.Max(m.CreatedAtUtc))
+            bool skipAll = false;
+
+            if (!IsInitialized)
+            {
+                //
+                // If the schame has not been initialized yet, consider all the given migrations as unnecessary
+                //
+
+                Initialize();
+                skipAll = true;
+            }
+
+            using IBulkedDbConnection bulk = Connection.CreateBulkedDbConnection();
+
+            bool[] applied = new bool[migrations.Length];
+
+            if (skipAll)
+            {
+                foreach ((string Sql, string? Comment) in migrations)
+                {
+                    Connection.Insert(new Migration
+                    {
+                        CreatedAtUtc = DateTime.UtcNow.Ticks,
+                        Sql = Sql,
+                        Hash = GetHash(Sql),
+                        Skipped = true,
+                        Comment = Comment
+                    });
+                }
+            }
+            else
+            {
+                List<string> hashList = Connection.Column<string>
+                (
+                    Connection.From<Migration>().Select(static m => m.Hash)
+                );
+
+                for (int i = 0; i < migrations.Length; i++)
+                {
+                    (string Sql, string? Comment) = migrations[i];
+
+                    string hash = GetHash(Sql);
+                    if (hashList.Contains(hash))
+                        continue;
+
+                    bulk.ExecuteNonQuery(Sql);
+                    bulk.Insert(new Migration
+                    {
+                        CreatedAtUtc = DateTime.UtcNow.Ticks,
+                        Sql = Sql,
+                        Hash = hash,
+                        Comment = Comment
+                    });
+
+                    applied[i] = true;
+                }
+            }
+
+            bulk.Flush();
+
+            return applied;
+        }
+
+        /// <summary>
+        /// Gets the last migration script.
+        /// </summary>
+        public string? GetLastMigration()
+        {
+            string sql = Connection
+                .From<Migration>()
+                .Select()
+                .OrderByDescending(m => m.CreatedAtUtc)
+                .Limit(1)
                 .ToSelectStatement();
-            return new DateTime(ticks: Connection.Scalar<long>(sql), DateTimeKind.Utc);
+
+            return Connection
+                .Select<Migration>(sql)
+                .SingleOrDefault()
+                ?.Sql;
         }
 
         /// <summary>

@@ -36,15 +36,10 @@ private class Table3_ReferencingNode1AndTable2
   public int Table2 { get; set;  }
 }
 ...
-var schema = new Schema(Connection, typeof(Table1).Assembly);
+Schema schema = new(Connection, typeof(Table1).Assembly);
 
-if (!schema.IsInitialized)
-  schema.Initialze();
-else
-{
-  schema.Migrate(step_1_timestamp, "sql...", "step_1");
-  schema.Migrate(step_2_timestamp, "sql...", "step_2");
-}
+schema.ApplyMigrations(("sql...", "step_1"), ("sql...", "step_2"));
+
 ...
 schema.Drop();
 ```
